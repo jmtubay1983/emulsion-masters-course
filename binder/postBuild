@@ -1,3 +1,3 @@
 dot -Tsvg -o img/progression.svg img/progression.dot
-pip install emulsion==1.2b5
+pip install emulsion==1.2b6
 init_emulsion
