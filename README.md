@@ -1,6 +1,6 @@
 # Introduction to the exploration of epidemiological models using EMULSION
 
-| Author: **Sébastien Picault, INRAE** | June 2-4, 2021 |
+| Author: **Sébastien Picault, INRAE** | June 2-4, 2021 (upd. March 28, 2022) |
 |---|---|
 | License: [CC-BY-NC-SA](https://en.wikipedia.org/wiki/Creative_Commons_license) | ![CC-BY-NC-SA](https://upload.wikimedia.org/wikipedia/commons/1/12/Cc-by-nc-sa_icon.svg "License CC-BY-NC-SA") |
 
