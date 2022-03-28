@@ -18,7 +18,7 @@ This training (see details [here](https://sourcesup.renater.fr/www/emulsion-publ
 </table>
 </span>
 
-## Documentation for EMULSION 1.2b6
+## Documentation for EMULSION 1.2b10
 
 The documentation for this version is available [here](https://spicault.pages.mia.inra.fr/emulsion-training/)
 
@@ -75,7 +75,7 @@ Your configuration is correct if you get this:
 
 Choose this approach if you are already familiar with software installation on your machine.
 
-1. Install and test EMULSION version **1.2b6** (with Graphviz) on your own machine following the [installation instructions](https://spicault.pages.mia.inra.fr/emulsion-training/pages/Install.html) and the [section regarding development versions](https://spicault.pages.mia.inra.fr/emulsion-training/pages/Install.html#alternative-2-install-development-version).
+1. Install and test EMULSION version **1.2b10** (with Graphviz) on your own machine following the [installation instructions](https://spicault.pages.mia.inra.fr/emulsion-training/pages/Install.html) and the [section regarding development versions](https://spicault.pages.mia.inra.fr/emulsion-training/pages/Install.html#alternative-2-install-development-version).
 2. Download this repository (see button above) or clone it with `git`
    (`git clone
    https://forgemia.inra.fr/spicault/emulsion-training.git`)
