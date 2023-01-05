@@ -1,8 +1,8 @@
-name: python 3.11
+name: python 3.10
 channels:
   - conda-forge
 dependencies:
-  - python=3.11
+  - python=3.10
   - r-base
   - r-tidyverse
   - rpy2
