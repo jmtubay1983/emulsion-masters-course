@@ -367,7 +367,7 @@ parameters:
     value: '1 - proba_positive_test'
   time_to_test:
     desc: 'condition for performing tests'
-    value: '(total_Untested >= threshold_untested)'
+    value: 'float(total_Untested >= threshold_untested)'
   dur_quarantine:
     desc: 'duration of isolation for detected/suspicious animals (days))'
     value: 40
