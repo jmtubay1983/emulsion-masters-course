@@ -422,7 +422,7 @@ parameters:
     value: '1 - proba_positive_test'
   time_to_test:
     desc: 'condition for performing tests'
-    value: '(total_Untested >= threshold_untested)'
+    value: 'float(total_Untested >= threshold_untested)'
   dur_quarantine:
     desc: 'duration of isolation for detected/suspicious animals (days))'
     value: 40
@@ -443,10 +443,10 @@ parameters:
     value: 15
   any_case:
     desc: 'boolean, 1 if any suspicious or confirmed case, 0 otherwise'
-    value: 'total_Suspicious + total_Confirmed > 0'
+    value: 'float(total_Suspicious + total_Confirmed > 0)'
   any_confirmed:
     desc: 'boolean, 1 if any confirmed case, 0 otherwise'
-    value: 'total_Confirmed > 0'
+    value: 'float(total_Confirmed > 0)'
   all_populations_infected:
     desc: 'boolean, 1 if all populations of the metapopulation have the herd status Infected, 0 otherwise'
     value: 'Eq(metapop_nb_infected, nb_herds)'
