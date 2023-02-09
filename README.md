@@ -83,7 +83,7 @@ Choose this approach if you are already familiar with software installation on y
    - Download: ![download](img/download.png)
    - Clone: ![clone](img/clone.png)
 
-3. For the exercises, follow the instructions provided in the notebook [Getting started](Getting%20started.ipynb). By default, this notebook will be displayed in a read-only mode. To have it work interactively, you need to install [Jupyter lab](https://jupyter.org/) on your machine.
+3. For the exercises, follow the instructions provided in the notebook [Getting started](EMULSION-training.ipynb). By default, this notebook will be displayed in a read-only mode. To have it work interactively, you need to install [Jupyter lab](https://jupyter.org/) on your machine.
 4. To run the exercises themselves, copy-paste commands in your favourite terminal.
 
 
