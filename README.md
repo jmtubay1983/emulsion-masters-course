@@ -20,7 +20,7 @@ This training (see details [here](https://sourcesup.renater.fr/www/emulsion-publ
 
 ## Documentation for EMULSION 1.2b13
 
-The documentation for this version is available [here](https://spicault.pages.mia.inra.fr/emulsion-training/)
+The documentation for this version is available [here](https://dynamo.pages.mia.inra.fr/software/emulsion-training/)
 
 ---
 
