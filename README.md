@@ -33,7 +33,7 @@ Exercises can be run either on your own machine on through a virtual environment
 
 We provide a pre-configured virtual environment thanks to Binder, which ensures that all participants work with the same software environment.
 
-This on-line environment can be launched by clicking this button: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fforgemia.inra.fr%2Fspicault%2femulsion-training/HEAD?urlpath=lab)
+This on-line environment can be launched by clicking this button: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fforgemia.inra.fr%2Fdynamo%2fsoftware%2femulsion-training/HEAD?urlpath=lab)
 
 When the environment is built, you should get the following environment:
 
