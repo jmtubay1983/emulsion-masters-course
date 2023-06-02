@@ -1,2 +1,5 @@
 dot -Tsvg -o img/progression.svg img/progression.dot
 pip install emulsion==1.2rc4
+mkdir .scripts
+wget -P .scripts https://sourcesup.renater.fr/www/emulsion-public/emulsion-bash-completion.sh
+source .scripts/emulsion-bash-completion.sh
