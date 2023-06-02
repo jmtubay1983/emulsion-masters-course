@@ -1,2 +1,3 @@
-graphviz
-bash-completion
+#graphviz
+#bash-completion
+# should not be necessart anymore with 1.2rc4
