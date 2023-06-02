@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>emulsion.model package &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="emulsion.tools package" href="emulsion.tools.html" />
@@ -35,15 +36,15 @@
 
           <div class="body" role="main">
             
-  <section id="module-0">
-<span id="emulsion-model-package"></span><h1>emulsion.model package<a class="headerlink" href="#module-0" title="Permalink to this heading">¶</a></h1>
-<span class="target" id="module-emulsion.model"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
+  <section id="module-emulsion.model">
+<span id="emulsion-model-package"></span><h1>emulsion.model package<a class="headerlink" href="#module-emulsion.model" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-0"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </section>
-<section id="module-1">
-<span id="emulsion-model-emulsion-model-module"></span><h2>emulsion.model.emulsion_model module<a class="headerlink" href="#module-1" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.model.emulsion_model"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
+<section id="module-emulsion.model.emulsion_model">
+<span id="emulsion-model-emulsion-model-module"></span><h2>emulsion.model.emulsion_model module<a class="headerlink" href="#module-emulsion.model.emulsion_model" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-1"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.model.emulsion_model.EmulsionModel">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.model.emulsion_model.</span></span><span class="sig-name descname"><span class="pre">EmulsionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">changed_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/model/emulsion_model.html#EmulsionModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.model.emulsion_model.EmulsionModel" title="Permalink to this definition">¶</a></dt>
@@ -63,7 +64,7 @@ etc.</p>
 <dd><p>Instantiate the model either from a configuration file or from a
 string. Both must contain a YAML-based description of the model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filename</strong> (<em>str</em>) – the path to the YAML file to read</p></li>
 <li><p><strong>description</strong> (<em>str</em>) – a YAML description of the model</p></li>
@@ -113,13 +114,13 @@ final value.</p>
 <span class="sig-name descname"><span class="pre">change_parameter_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_changes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/model/emulsion_model.html#EmulsionModel.change_parameter_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.model.emulsion_model.EmulsionModel.change_parameter_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Naive method to change several parameter values at the same time.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>description</strong> (<em>str</em>) – the YAML description of the model</p></li>
 <li><p><strong>d_changes</strong> (<em>dict</em>) – the dict of parameters that will be modified (name -&gt; new value)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>str</em> – the new YAML description of the model with modified parameter _values</p>
 </dd>
 </dl>
@@ -146,8 +147,6 @@ the same time.</p>
 <dd><p>Parse the outputs options of the model.
 The agents will treat extra variables for outputs (TODO), and
 the simulation classes will treat period outputs.</p>
-<section id="example-of-yaml-specification">
-<h3>Example of YAML specification:<a class="headerlink" href="#example-of-yaml-specification" title="Permalink to this heading">¶</a></h3>
 <dl>
 <dt>outputs:</dt><dd><p># level
 herd:</p>
@@ -168,7 +167,6 @@ extra_vars:</p>
 </div></blockquote>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -178,8 +176,6 @@ extra_vars:</p>
 information related to time management, i.e. time unit,
 duration of a simulation step, origin date, calendars for
 specific events, etc.</p>
-<section id="id1">
-<h3>Example of YAML specification:<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
 <p>time_info:
 time_unit: days
 delta_t: 7
@@ -195,7 +191,6 @@ summer: {begin: ‘July 8’, end: ‘September 3’}
 national: {date: ‘July 14’}</p>
 </div></blockquote>
 </div></blockquote>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -216,19 +211,16 @@ national: {date: ‘July 14’}</p>
 <dd><p>Parse the description of the model and extract the
 parameters, either with their value, or with the expression to
 compute them.</p>
-<section id="id2">
-<h3>Example of YAML specification:<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
 <dl class="field-list simple">
-<dt class="field-odd">param p<span class="colon">:</span></dt>
-<dd class="field-odd"><p>desc: infection probability
-value: ‘(1-exp(-E_total)) * (1 - phi*vaccinated)’</p>
-</dd>
-<dt class="field-even">param phi<span class="colon">:</span></dt>
-<dd class="field-even"><p>desc: efficiency of vaccination
-value: 0.79</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> – desc: infection probability
+value: ‘(1-exp(-E_total)) * (1 - phi*vaccinated)’</p></li>
+<li><p><strong>phi</strong> – desc: efficiency of vaccination
+value: 0.79</p></li>
+</ul>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -236,8 +228,6 @@ value: 0.79</p>
 <span class="sig-name descname"><span class="pre">build_statevars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/model/emulsion_model.html#EmulsionModel.build_statevars"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.model.emulsion_model.EmulsionModel.build_statevars" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse the description of the model and extract the state
 variables that agents running this model must have.</p>
-<section id="id3">
-<h3>Example of YAML specification:<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>statevars:</dt><dd><dl class="simple">
 <dt>E_total:</dt><dd><p>desc: total bacteria deposited in the environment</p>
@@ -247,7 +237,6 @@ variables that agents running this model must have.</p>
 </dl>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -260,8 +249,6 @@ to compute them. A distribution is a dictionary of the form
 (quantity, probability) which is more convenient for
 subsequent processing.</p>
 <p>TODO: check if completely obsolete ??? deprecated ???</p>
-<section id="id4">
-<h3>Example of YAML specification:<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <dl>
 <dt>distributions:</dt><dd><ul>
 <li><dl>
@@ -277,7 +264,6 @@ med_shedding: 0.15</p>
 </ul>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -289,8 +275,6 @@ the expression to compute them. An initial condition is a
 dictionary containing a description of the ‘content’ of the
 level (i.e. the quantity and initial state of sub-levels),
 defined by a list of prototypes and corresponding amounts</p>
-<section id="id5">
-<h3>Example of YAML specification:<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>initial_conditions:</dt><dd><dl class="simple">
 <dt>metapop:</dt><dd><ul class="simple">
@@ -309,7 +293,6 @@ proba: [‘1 - init_prevalence’, ‘init_prevalence’]</p></li>
 </dl>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -319,8 +302,6 @@ proba: [‘1 - init_prevalence’, ‘init_prevalence’]</p></li>
 prototypes for each level, either with their value, or with
 the expression to compute them. A prototype is a dictionary of
 the form {statevar: value}..</p>
-<section id="id6">
-<h3>Example of YAML specification:<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">prototypes</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">animals</span><span class="p">:</span><span class="w">           </span><span class="c1"># name of a level</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">newborn</span><span class="p">:</span><span class="w">       </span><span class="c1"># prototype name</span><span class="w"></span>
@@ -332,7 +313,6 @@ the form {statevar: value}..</p>
 <span class="w">        </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -358,8 +338,6 @@ into tuples (to be hashable).</p>
 <dd><p>Parse the description of input data (for now, data-based parameters
 associated with a level).</p>
 <p>EXPERIMENTAL FEATURE</p>
-<section id="id7">
-<h3>Example of YAML specification:<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
 <dl>
 <dt>input_data:</dt><dd><dl>
 <dt>databased_parameters:</dt><dd><ul>
@@ -381,7 +359,6 @@ parameters:</p>
 </dl>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -390,8 +367,6 @@ parameters:</p>
 <dd><p>Parse the description of different level of simulations.
 Most of time, there are tree differents levels:
 individual, herd, metapopulation.</p>
-<section id="id8">
-<h3>Example of YAML specification:<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
 <dl>
 <dt>levels:</dt><dd><dl>
 <dt>individuals:</dt><dd><dl class="simple">
@@ -416,7 +391,6 @@ master_class: StructuredView</p>
 </dl>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -429,8 +403,6 @@ master_class: StructuredView</p>
 <span class="sig-name descname"><span class="pre">build_processes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/model/emulsion_model.html#EmulsionModel.build_processes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.model.emulsion_model.EmulsionModel.build_processes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse the description of the model and retrieve the list of
 processes with different level.</p>
-<section id="id9">
-<h3>Example of YAML specification:<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>processes:</dt><dd><dl class="simple">
 <dt>herd:</dt><dd><ul class="simple">
@@ -447,7 +419,6 @@ processes with different level.</p>
 </dl>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -517,8 +488,6 @@ attributes.</p>
 <span class="sig-name descname"><span class="pre">build_actions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/model/emulsion_model.html#EmulsionModel.build_actions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.model.emulsion_model.EmulsionModel.build_actions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse the description of the model and extract the actions
 that agents must have.</p>
-<section id="id10">
-<h3>Example of YAML specification:<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>actions:</dt><dd><dl class="simple">
 <dt>say_hello:</dt><dd><p>desc: action performed when entering the S state</p>
@@ -526,7 +495,6 @@ that agents must have.</p>
 </dl>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -586,9 +554,9 @@ the specified module to make the model work under Emulsion.</p>
 </dd></dl>
 
 </section>
-<section id="module-2">
-<span id="emulsion-model-exceptions-module"></span><h2>emulsion.model.exceptions module<a class="headerlink" href="#module-2" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.model.exceptions"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
+<section id="module-emulsion.model.exceptions">
+<span id="emulsion-model-exceptions-module"></span><h2>emulsion.model.exceptions module<a class="headerlink" href="#module-emulsion.model.exceptions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-2"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="emulsion.model.exceptions.SemanticException">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.model.exceptions.</span></span><span class="sig-name descname"><span class="pre">SemanticException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/model/exceptions.html#SemanticException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.model.exceptions.SemanticException" title="Permalink to this definition">¶</a></dt>
@@ -602,9 +570,9 @@ the specified module to make the model work under Emulsion.</p>
 </dd></dl>
 
 </section>
-<section id="module-3">
-<span id="emulsion-model-functions-module"></span><h2>emulsion.model.functions module<a class="headerlink" href="#module-3" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.model.functions"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
+<section id="module-emulsion.model.functions">
+<span id="emulsion-model-functions-module"></span><h2>emulsion.model.functions module<a class="headerlink" href="#module-emulsion.model.functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-3"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.model.functions.make_function">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.model.functions.</span></span><span class="sig-name descname"><span class="pre">make_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">expression,</span> <span class="pre">dtype=&lt;class</span> <span class="pre">'float'&gt;,</span> <span class="pre">modules=['numpy',</span> <span class="pre">'numpy.random',</span> <span class="pre">'math',</span> <span class="pre">'sympy']</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/model/functions.html#make_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.model.functions.make_function" title="Permalink to this definition">¶</a></dt>
@@ -621,14 +589,14 @@ of the specified dtype. The transformation uses sympy function
 <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> for better performances, with the specified
 modules.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>expression</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – the expression to transform</p></li>
 <li><p><strong>dtype</strong> (<code class="docutils literal notranslate"><span class="pre">type</span></code>) – the type in which results are converted to</p></li>
 <li><p><strong>moddules</strong> (<code class="docutils literal notranslate"><span class="pre">list</span></code>) – list of the names of the modules used to lambdify the expression</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>class</em> – a callable which can be called on an agent</p>
 </dd>
 </dl>
@@ -648,13 +616,13 @@ which can be called on a CSV line. The transformation uses
 sympy function <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> for better performances, with the
 specified modules.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>expression</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – the expression to transform</p></li>
 <li><p><strong>moddules</strong> (<code class="docutils literal notranslate"><span class="pre">list</span></code>) – list of the names of the modules used to lambdify the expression</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>class</em> – a callable which can be called on a CSV line</p>
 </dd>
 </dl>
@@ -676,14 +644,14 @@ simulation calendar. The transformation uses sympy function
 <code class="docutils literal notranslate"><span class="pre">lambdify</span></code> for better performances, with the specified
 modules.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>expression</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – the expression to transform</p></li>
 <li><p><strong>dtype</strong> (<code class="docutils literal notranslate"><span class="pre">type</span></code>) – the type in which results are converted to</p></li>
 <li><p><strong>moddules</strong> (<code class="docutils literal notranslate"><span class="pre">list</span></code>) – list of the names of the modules used to lambdify the expression</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>class</em> – a callable which can be called on an agent</p>
 </dd>
 </dl>
@@ -719,10 +687,10 @@ specified state_machine.</p>
 <dd><p>Build and return a callable class, which can be called on an agent
 to return the value of its statevar of the specified name.,</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>varname</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – the name of the statevar to get</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>class</em> – a callable which can be called on an agent</p>
 </dd>
 </dl>
@@ -741,10 +709,10 @@ to return the value of its statevar of the specified name.,</p>
 to return the value of the specified parameter (or expression) in
 the model.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>value_name</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – the name of the statevar to get</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>class</em> – a callable which can be called on an agent</p>
 </dd>
 </dl>
@@ -753,9 +721,9 @@ the model.</p>
 </dd></dl>
 
 </section>
-<section id="module-4">
-<span id="emulsion-model-state-machines-module"></span><h2>emulsion.model.state_machines module<a class="headerlink" href="#module-4" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.model.state_machines"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
+<section id="module-emulsion.model.state_machines">
+<span id="emulsion-model-state-machines-module"></span><h2>emulsion.model.state_machines module<a class="headerlink" href="#module-emulsion.model.state_machines" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-4"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.model.state_machines.StateMachine">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.model.state_machines.</span></span><span class="sig-name descname"><span class="pre">StateMachine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">machine_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregation_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/model/state_machines.html#StateMachine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.model.state_machines.StateMachine" title="Permalink to this definition">¶</a></dt>
@@ -770,7 +738,7 @@ adaptations to biology.</p>
 <dd><p>Build a State Machine within the specified model, based on
 the specified description (dictionary).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>machine_name</strong> (<em>str</em>) – name of the state machine</p></li>
 <li><p><strong>description</strong> (<em>dict</em>) – dictionary corresponding to the YAML description of the state machine</p></li>
@@ -838,8 +806,6 @@ graph of the transitions between the states. Since a
 MultiDiGraph is used, each pair of nodes can be bound by
 several transitions if needed (beware the associated
 semantics).</p>
-<section id="id11">
-<h3>Example of YAML specification:<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>transitions:</dt><dd><ul class="simple">
 <li><p>{from: S, to: I-, proba: p, cond: not_vaccinated}</p></li>
@@ -849,7 +815,6 @@ semantics).</p>
 </ul>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -857,8 +822,6 @@ semantics).</p>
 <span class="sig-name descname"><span class="pre">build_actions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/model/state_machines.html#StateMachine.build_actions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.model.state_machines.StateMachine.build_actions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse the description of the state machine and extract the
 actions that agents running this state machine must have.</p>
-<section id="id12">
-<h3>Example of YAML specification:<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>actions:</dt><dd><dl class="simple">
 <dt>say_hello:</dt><dd><p>desc: action performed when entering the S state</p>
@@ -866,7 +829,6 @@ actions that agents running this state machine must have.</p>
 </dl>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -957,7 +919,7 @@ specified filename, according to the dot/graphviz format.</p>
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -974,7 +936,7 @@ specified filename, according to the dot/graphviz format.</p>
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

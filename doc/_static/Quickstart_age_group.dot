@@ -1,11 +1,13 @@
 digraph {
+          charset="utf-8"
         	rankdir=LR;
+        
         	node[fontsize=16, fontname=Arial, shape=box, style="filled,rounded"];
-        	edge[minlen=1.5, penwidth=1.5, tailtooltip="", headtooltip=""];
+        	edge[minlen=1.5, fontname=Times, penwidth=1.5, tailtooltip="", headtooltip=""];
 
         	"J" [shape="Mrecord", label="{{\ J\ |&#9670;}}", tooltip="J (Juvenile):
-	juvenile animals", fillcolor=orange, style="filled,rounded,bold"] ;
+	juvenile animals", fillcolor="orange", style="filled,rounded,bold"] ;
 	"A" [shape="Mrecord", label="{{\ A\ |&#9670;}}", tooltip="A (Adult):
-	adult animals", fillcolor=brown, style="filled,rounded"] ;
+	adult animals", fillcolor="brown", style="filled,rounded"] ;
 	"J" -> "A" [label="proba: 1", labeltooltip="proba: 1", arrowtail="nonetee", arrowhead="normalnone", dir=both, tooltip="COND: GreaterThan(age, adult_age)", minlen=3, style="solid"];
 }

@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>5. Modelling language (basics) &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="../_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="../_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6. Modelling language (advanced)" href="Modelling_language_advanced.html" />
@@ -36,9 +37,9 @@
           <div class="body" role="main">
             
   <section id="modelling-language-basics">
-<h1><span class="section-number">5. </span>Modelling language (basics)<a class="headerlink" href="#modelling-language-basics" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">5. </span>Modelling language (basics)<a class="headerlink" href="#modelling-language-basics" title="Permalink to this headline">¶</a></h1>
 <section id="yaml-syntax-in-a-nutshell">
-<h2><span class="section-number">5.1. </span>YAML Syntax in a nutshell<a class="headerlink" href="#yaml-syntax-in-a-nutshell" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">5.1. </span>YAML Syntax in a nutshell<a class="headerlink" href="#yaml-syntax-in-a-nutshell" title="Permalink to this headline">¶</a></h2>
 <p>EMULSION models must respect the <a class="reference external" href="https://en.wikipedia.org/wiki/YAML">YAML</a> format, which is based
 on <strong>lists</strong> and <strong>key-value mappings</strong>. Data structures are delimited by <strong>2-space indentation</strong>.</p>
 <dl>
@@ -93,7 +94,7 @@ structures, for instance:</p>
 </div>
 </section>
 <section id="model-structure">
-<h2><span class="section-number">5.2. </span>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Model structure<a class="headerlink" href="#model-structure" title="Permalink to this headline">¶</a></h2>
 <p>An EMULSION model is divided in several “sections”, corresponding to
 the main components of a model. Each section corresponds to a
 <strong>first-level key</strong> (i.e. put directly at the beginning of a line without
@@ -102,7 +103,7 @@ any indentation).</p>
 of what can be found in a typical EMULSION model. To go further, dive
 into <a class="reference internal" href="Modelling_language_advanced.html#modelling-language-advanced"><span class="std std-ref">the next chapter</span></a>!</p>
 <section id="model-name">
-<span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">model_name</span></code><a class="headerlink" href="#model-name" title="Permalink to this heading">¶</a></h3>
+<span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">model_name</span></code><a class="headerlink" href="#model-name" title="Permalink to this headline">¶</a></h3>
 <p>The name of the model. Used to name figures and diagrams.</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
@@ -112,7 +113,7 @@ into <a class="reference internal" href="Modelling_language_advanced.html#modell
 </div>
 </section>
 <section id="model-info">
-<span id="id2"></span><h3><code class="docutils literal notranslate"><span class="pre">model_info</span></code><a class="headerlink" href="#model-info" title="Permalink to this heading">¶</a></h3>
+<span id="id2"></span><h3><code class="docutils literal notranslate"><span class="pre">model_info</span></code><a class="headerlink" href="#model-info" title="Permalink to this headline">¶</a></h3>
 <p>Several optional information on the model, such as an abstract to
 describe the model principles and purpose, the authors, references, a
 license if any, etc.</p>
@@ -131,7 +132,7 @@ license if any, etc.</p>
 subsections can be freely defined according to the modeller’s needs.</p>
 </section>
 <section id="time-info">
-<span id="id3"></span><h3><code class="docutils literal notranslate"><span class="pre">time_info</span></code><a class="headerlink" href="#time-info" title="Permalink to this heading">¶</a></h3>
+<span id="id3"></span><h3><code class="docutils literal notranslate"><span class="pre">time_info</span></code><a class="headerlink" href="#time-info" title="Permalink to this headline">¶</a></h3>
 <p>This section defines the <strong>time unit</strong> used in the whole model for
 parameter values (e.g. hours, days, weeks) and the <strong>duration of one time
 step</strong> in the simulation. Optionally, it can specify:</p>
@@ -159,7 +160,7 @@ step</strong> in the simulation. Optionally, it can specify:</p>
 </div>
 </section>
 <section id="state-machines">
-<span id="id4"></span><h3><code class="docutils literal notranslate"><span class="pre">state_machines</span></code><a class="headerlink" href="#state-machines" title="Permalink to this heading">¶</a></h3>
+<span id="id4"></span><h3><code class="docutils literal notranslate"><span class="pre">state_machines</span></code><a class="headerlink" href="#state-machines" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="Modelling_principles.html#state-machines"><span class="std std-ref">State machines</span></a> are the main way to define processes involved in
 an EMULSION model. A state machine is defined by a list of states and
 a list of transitions between the states. It can also define a list of
@@ -201,7 +202,7 @@ constraint being that <strong>all state names must be different</strong>.</p>
 <p>State machine diagrams can be produced automatically by EMULSION with command <code class="docutils literal notranslate"><span class="pre">emulsion</span> <span class="pre">diagrams</span> <span class="pre">&lt;model.yaml&gt;</span></code>.</p>
 </section>
 <section id="levels">
-<span id="id5"></span><h3><code class="docutils literal notranslate"><span class="pre">levels</span></code><a class="headerlink" href="#levels" title="Permalink to this heading">¶</a></h3>
+<span id="id5"></span><h3><code class="docutils literal notranslate"><span class="pre">levels</span></code><a class="headerlink" href="#levels" title="Permalink to this headline">¶</a></h3>
 <p>In EMULSION, a <strong>level</strong> is a name associated with an entity of a
 given scale. At least two levels are expected in a model
 (e.g. individuals and the population).  A level can contain other
@@ -229,7 +230,7 @@ the sublevel.</p>
 </div>
 </section>
 <section id="grouping">
-<span id="id6"></span><h3><code class="docutils literal notranslate"><span class="pre">grouping</span></code><a class="headerlink" href="#grouping" title="Permalink to this heading">¶</a></h3>
+<span id="id6"></span><h3><code class="docutils literal notranslate"><span class="pre">grouping</span></code><a class="headerlink" href="#grouping" title="Permalink to this headline">¶</a></h3>
 <p>This section is <strong>mandatory in hybrid models</strong>, to describe explicitly
 how entities from a sublevel are grouped for optimizing the
 calculations.</p>
@@ -258,7 +259,7 @@ be chosen arbitrarily.</p>
 </div>
 </section>
 <section id="processes">
-<span id="id7"></span><h3><code class="docutils literal notranslate"><span class="pre">processes</span></code><a class="headerlink" href="#processes" title="Permalink to this heading">¶</a></h3>
+<span id="id7"></span><h3><code class="docutils literal notranslate"><span class="pre">processes</span></code><a class="headerlink" href="#processes" title="Permalink to this headline">¶</a></h3>
 <p>This section specifies the list of major processes that take place at
 each level during the simulation. A process name can be either:</p>
 <ul class="simple">
@@ -297,7 +298,7 @@ model:</p>
 </div>
 </section>
 <section id="parameters">
-<span id="id8"></span><h3><code class="docutils literal notranslate"><span class="pre">parameters</span></code><a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h3>
+<span id="id8"></span><h3><code class="docutils literal notranslate"><span class="pre">parameters</span></code><a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
 <p>This section is intended to define:</p>
 <ul class="simple">
 <li><p>model parameters (<em>stricto sensu</em>), i.e. numerical values coming
@@ -333,7 +334,7 @@ expression) comes from (<code class="docutils literal notranslate"><span class="
 </div>
 </section>
 <section id="prototypes">
-<span id="id9"></span><h3><code class="docutils literal notranslate"><span class="pre">prototypes</span></code><a class="headerlink" href="#prototypes" title="Permalink to this heading">¶</a></h3>
+<span id="id9"></span><h3><code class="docutils literal notranslate"><span class="pre">prototypes</span></code><a class="headerlink" href="#prototypes" title="Permalink to this headline">¶</a></h3>
 <p>Prototypes are intended to specify typical individuals or populations
 which are characterized by specific values of their variables (in
 compartmental models, such variables can only be state machines).</p>
@@ -367,7 +368,7 @@ compartmental models, such variables can only be state machines).</p>
 </div>
 </section>
 <section id="initial-conditions">
-<span id="id10"></span><h3><code class="docutils literal notranslate"><span class="pre">initial_conditions</span></code><a class="headerlink" href="#initial-conditions" title="Permalink to this heading">¶</a></h3>
+<span id="id10"></span><h3><code class="docutils literal notranslate"><span class="pre">initial_conditions</span></code><a class="headerlink" href="#initial-conditions" title="Permalink to this headline">¶</a></h3>
 <p>Initial conditions specify how to initialize each level. They rely on
 prototypes, considered as the description of typical sub-levels
 (e.g. typical populations in metapopulations, typical individuals in
@@ -389,7 +390,7 @@ models).</p>
 </div>
 </section>
 <section id="outputs">
-<span id="id11"></span><h3><code class="docutils literal notranslate"><span class="pre">outputs</span></code><a class="headerlink" href="#outputs" title="Permalink to this heading">¶</a></h3>
+<span id="id11"></span><h3><code class="docutils literal notranslate"><span class="pre">outputs</span></code><a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h3>
 <p>When running an EMULSION model, the amounts of individuals in each
 state for all state machines are computed automatically at each time
 step. The outputs section specifies how the output data are stored
@@ -413,7 +414,7 @@ automatically produced, as well as one plot for all extra variables.</p>
 </div>
 </section>
 <section id="statevars">
-<span id="id12"></span><h3><code class="docutils literal notranslate"><span class="pre">statevars</span></code><a class="headerlink" href="#statevars" title="Permalink to this heading">¶</a></h3>
+<span id="id12"></span><h3><code class="docutils literal notranslate"><span class="pre">statevars</span></code><a class="headerlink" href="#statevars" title="Permalink to this headline">¶</a></h3>
 <p>This section appears when a level requires variables which are not
 defined automatically by their state machines, nor defined as
 expressions in the parameters section, nor computed by aggregating
@@ -431,7 +432,7 @@ Python code add-on.</p>
 </div>
 </section>
 <section id="input-data">
-<span id="id13"></span><h3><code class="docutils literal notranslate"><span class="pre">input_data</span></code><a class="headerlink" href="#input-data" title="Permalink to this heading">¶</a></h3>
+<span id="id13"></span><h3><code class="docutils literal notranslate"><span class="pre">input_data</span></code><a class="headerlink" href="#input-data" title="Permalink to this headline">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This feature is experimental and likely to evolve in further versions.</p>
@@ -525,7 +526,7 @@ based on data with their description.</p>
 </div>
 </section>
 <section id="actions">
-<span id="id14"></span><h3><code class="docutils literal notranslate"><span class="pre">actions</span></code><a class="headerlink" href="#actions" title="Permalink to this heading">¶</a></h3>
+<span id="id14"></span><h3><code class="docutils literal notranslate"><span class="pre">actions</span></code><a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h3>
 <p>This section appears when a level requires actions which are not
 provided in EMULSION generic engine. In that case, the section
 contains a simple description of the meaning of the action, which has
@@ -613,7 +614,7 @@ to be defined in a separate Python file.</p>
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -630,7 +631,7 @@ to be defined in a separate Python file.</p>
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>11. emulsion package &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="emulsion.agent package" href="emulsion.agent.html" />
@@ -35,11 +36,11 @@
 
           <div class="body" role="main">
             
-  <section id="module-0">
-<span id="emulsion-package"></span><h1><span class="section-number">11. </span>emulsion package<a class="headerlink" href="#module-0" title="Permalink to this heading">¶</a></h1>
-<span class="target" id="module-emulsion"></span><p>EMULSION: Epidemiologic Multi-Level Simulation framework</p>
+  <section id="module-emulsion">
+<span id="emulsion-package"></span><h1><span class="section-number">11. </span>emulsion package<a class="headerlink" href="#module-emulsion" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-0"></span><p>EMULSION: Epidemiologic Multi-Level Simulation framework</p>
 <section id="subpackages">
-<h2><span class="section-number">11.1. </span>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">11.1. </span>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="emulsion.agent.html">emulsion.agent package</a><ul>
@@ -47,15 +48,15 @@
 <li class="toctree-l3"><a class="reference internal" href="emulsion.agent.core.html">emulsion.agent.core package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#module-emulsion.agent.core.abstract_agent">emulsion.agent.core.abstract_agent module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#module-1">emulsion.agent.core.emulsion_agent module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#module-2">emulsion.agent.core.groups module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#module-emulsion.agent.core.emulsion_agent">emulsion.agent.core.emulsion_agent module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#module-emulsion.agent.core.groups">emulsion.agent.core.groups module</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="emulsion.agent.managers.html">emulsion.agent.managers package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.abstract_process_manager">emulsion.agent.managers.abstract_process_manager module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.compart_process_manager">emulsion.agent.managers.compart_process_manager module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#module-3">emulsion.agent.managers.functions module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#module-2">emulsion.agent.managers.functions module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.group_manager">emulsion.agent.managers.group_manager module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.ibm_process_manager">emulsion.agent.managers.ibm_process_manager module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.metapop_process_manager">emulsion.agent.managers.metapop_process_manager module</a></li>
@@ -65,650 +66,48 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.action">emulsion.agent.action module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.InvalidActionException"><code class="docutils literal notranslate"><span class="pre">InvalidActionException</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.InvalidActionException.__init__"><code class="docutils literal notranslate"><span class="pre">InvalidActionException.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.AbstractAction"><code class="docutils literal notranslate"><span class="pre">AbstractAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.AbstractAction.__init__"><code class="docutils literal notranslate"><span class="pre">AbstractAction.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.AbstractAction.execute_action"><code class="docutils literal notranslate"><span class="pre">AbstractAction.execute_action()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.AbstractAction.build_action"><code class="docutils literal notranslate"><span class="pre">AbstractAction.build_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.ValueAction"><code class="docutils literal notranslate"><span class="pre">ValueAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.ValueAction.__init__"><code class="docutils literal notranslate"><span class="pre">ValueAction.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.RecordChangeAction"><code class="docutils literal notranslate"><span class="pre">RecordChangeAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.RecordChangeAction.__init__"><code class="docutils literal notranslate"><span class="pre">RecordChangeAction.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.RecordChangeAction.execute_action"><code class="docutils literal notranslate"><span class="pre">RecordChangeAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.SampleDurationsAction"><code class="docutils literal notranslate"><span class="pre">SampleDurationsAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.SampleDurationsAction.__init__"><code class="docutils literal notranslate"><span class="pre">SampleDurationsAction.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.SampleDurationsAction.execute_action"><code class="docutils literal notranslate"><span class="pre">SampleDurationsAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.SetVarAction"><code class="docutils literal notranslate"><span class="pre">SetVarAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.SetVarAction.__init__"><code class="docutils literal notranslate"><span class="pre">SetVarAction.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.SetVarAction.execute_action"><code class="docutils literal notranslate"><span class="pre">SetVarAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.SetUpperVarAction"><code class="docutils literal notranslate"><span class="pre">SetUpperVarAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.SetUpperVarAction.__init__"><code class="docutils literal notranslate"><span class="pre">SetUpperVarAction.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.SetUpperVarAction.execute_action"><code class="docutils literal notranslate"><span class="pre">SetUpperVarAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.RateAdditiveAction"><code class="docutils literal notranslate"><span class="pre">RateAdditiveAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.RateAdditiveAction.__init__"><code class="docutils literal notranslate"><span class="pre">RateAdditiveAction.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.RateAdditiveAction.execute_action"><code class="docutils literal notranslate"><span class="pre">RateAdditiveAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.RateDecreaseAction"><code class="docutils literal notranslate"><span class="pre">RateDecreaseAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.RateDecreaseAction.__init__"><code class="docutils literal notranslate"><span class="pre">RateDecreaseAction.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.RateIncreaseAction"><code class="docutils literal notranslate"><span class="pre">RateIncreaseAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.RateIncreaseAction.__init__"><code class="docutils literal notranslate"><span class="pre">RateIncreaseAction.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.StochAdditiveAction"><code class="docutils literal notranslate"><span class="pre">StochAdditiveAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.StochAdditiveAction.__init__"><code class="docutils literal notranslate"><span class="pre">StochAdditiveAction.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.StochAdditiveAction.execute_action"><code class="docutils literal notranslate"><span class="pre">StochAdditiveAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.StochDecreaseAction"><code class="docutils literal notranslate"><span class="pre">StochDecreaseAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.StochDecreaseAction.__init__"><code class="docutils literal notranslate"><span class="pre">StochDecreaseAction.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.StochIncreaseAction"><code class="docutils literal notranslate"><span class="pre">StochIncreaseAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.StochIncreaseAction.__init__"><code class="docutils literal notranslate"><span class="pre">StochIncreaseAction.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.StringAction"><code class="docutils literal notranslate"><span class="pre">StringAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.StringAction.__init__"><code class="docutils literal notranslate"><span class="pre">StringAction.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.BecomeAction"><code class="docutils literal notranslate"><span class="pre">BecomeAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.BecomeAction.__init__"><code class="docutils literal notranslate"><span class="pre">BecomeAction.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.BecomeAction.execute_action"><code class="docutils literal notranslate"><span class="pre">BecomeAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.CloneAction"><code class="docutils literal notranslate"><span class="pre">CloneAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.CloneAction.__init__"><code class="docutils literal notranslate"><span class="pre">CloneAction.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.CloneAction.execute_action"><code class="docutils literal notranslate"><span class="pre">CloneAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.MessageAction"><code class="docutils literal notranslate"><span class="pre">MessageAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.MessageAction.execute_action"><code class="docutils literal notranslate"><span class="pre">MessageAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.LogVarsAction"><code class="docutils literal notranslate"><span class="pre">LogVarsAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.LogVarsAction.execute_action"><code class="docutils literal notranslate"><span class="pre">LogVarsAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.MethodAction"><code class="docutils literal notranslate"><span class="pre">MethodAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.MethodAction.__init__"><code class="docutils literal notranslate"><span class="pre">MethodAction.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.MethodAction.execute_action"><code class="docutils literal notranslate"><span class="pre">MethodAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.FunctionAction"><code class="docutils literal notranslate"><span class="pre">FunctionAction</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.FunctionAction.__init__"><code class="docutils literal notranslate"><span class="pre">FunctionAction.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.action.FunctionAction.execute_action"><code class="docutils literal notranslate"><span class="pre">FunctionAction.execute_action()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.atoms">emulsion.agent.atoms module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent"><code class="docutils literal notranslate"><span class="pre">AtomAgent</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent.__init__"><code class="docutils literal notranslate"><span class="pre">AtomAgent.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent.get_content"><code class="docutils literal notranslate"><span class="pre">AtomAgent.get_content()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent.add_host"><code class="docutils literal notranslate"><span class="pre">AtomAgent.add_host()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent.remove_host"><code class="docutils literal notranslate"><span class="pre">AtomAgent.remove_host()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent.get_host"><code class="docutils literal notranslate"><span class="pre">AtomAgent.get_host()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent.clone"><code class="docutils literal notranslate"><span class="pre">AtomAgent.clone()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent.agcount"><code class="docutils literal notranslate"><span class="pre">AtomAgent.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent.agdict"><code class="docutils literal notranslate"><span class="pre">AtomAgent.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent.families"><code class="docutils literal notranslate"><span class="pre">AtomAgent.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent.members"><code class="docutils literal notranslate"><span class="pre">AtomAgent.members</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom.__init__"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom.set_statemachines"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom.set_statemachines()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom.init_level_processes"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom.init_level_processes()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom.add_method_process"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom.add_method_process()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom.get_machine"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom.get_machine()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom.evolve"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom.evolve_states"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom.evolve_states()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom.agcount"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom.agdict"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom.families"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.EvolvingAtom.members"><code class="docutils literal notranslate"><span class="pre">EvolvingAtom.members</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.comparts">emulsion.agent.comparts module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment"><code class="docutils literal notranslate"><span class="pre">Compartment</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.__init__"><code class="docutils literal notranslate"><span class="pre">Compartment.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.get_content"><code class="docutils literal notranslate"><span class="pre">Compartment.get_content()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.update_time_to_exit"><code class="docutils literal notranslate"><span class="pre">Compartment.update_time_to_exit()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.add"><code class="docutils literal notranslate"><span class="pre">Compartment.add()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.remove"><code class="docutils literal notranslate"><span class="pre">Compartment.remove()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.get_random_exit_dates"><code class="docutils literal notranslate"><span class="pre">Compartment.get_random_exit_dates()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.move_to"><code class="docutils literal notranslate"><span class="pre">Compartment.move_to()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.population"><code class="docutils literal notranslate"><span class="pre">Compartment.population</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.shift_times_to_exit"><code class="docutils literal notranslate"><span class="pre">Compartment.shift_times_to_exit()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.clone"><code class="docutils literal notranslate"><span class="pre">Compartment.clone()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.next_states"><code class="docutils literal notranslate"><span class="pre">Compartment.next_states()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.agcount"><code class="docutils literal notranslate"><span class="pre">Compartment.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.agdict"><code class="docutils literal notranslate"><span class="pre">Compartment.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.families"><code class="docutils literal notranslate"><span class="pre">Compartment.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.comparts.Compartment.members"><code class="docutils literal notranslate"><span class="pre">Compartment.members</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.exceptions">emulsion.agent.exceptions module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.exceptions.StateVarNotFoundException"><code class="docutils literal notranslate"><span class="pre">StateVarNotFoundException</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.exceptions.StateVarNotFoundException.__init__"><code class="docutils literal notranslate"><span class="pre">StateVarNotFoundException.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.exceptions.LevelException"><code class="docutils literal notranslate"><span class="pre">LevelException</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.exceptions.LevelException.__init__"><code class="docutils literal notranslate"><span class="pre">LevelException.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.exceptions.InvalidCompartmentOperation"><code class="docutils literal notranslate"><span class="pre">InvalidCompartmentOperation</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.exceptions.InvalidCompartmentOperation.__init__"><code class="docutils literal notranslate"><span class="pre">InvalidCompartmentOperation.__init__()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.meta">emulsion.agent.meta module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.meta.MetaAgent"><code class="docutils literal notranslate"><span class="pre">MetaAgent</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.process">emulsion.agent.process module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.AbstractProcess"><code class="docutils literal notranslate"><span class="pre">AbstractProcess</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.AbstractProcess.__init__"><code class="docutils literal notranslate"><span class="pre">AbstractProcess.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.AbstractProcess.evolve"><code class="docutils literal notranslate"><span class="pre">AbstractProcess.evolve()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.MethodProcess"><code class="docutils literal notranslate"><span class="pre">MethodProcess</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.MethodProcess.__init__"><code class="docutils literal notranslate"><span class="pre">MethodProcess.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.MethodProcess.evolve"><code class="docutils literal notranslate"><span class="pre">MethodProcess.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.MethodProcess.detach_model"><code class="docutils literal notranslate"><span class="pre">MethodProcess.detach_model()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.StateMachineProcess"><code class="docutils literal notranslate"><span class="pre">StateMachineProcess</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.StateMachineProcess.__init__"><code class="docutils literal notranslate"><span class="pre">StateMachineProcess.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.StateMachineProcess.evolve"><code class="docutils literal notranslate"><span class="pre">StateMachineProcess.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.StateMachineProcess.evolve_transitions"><code class="docutils literal notranslate"><span class="pre">StateMachineProcess.evolve_transitions()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.process.StateMachineProcess.evolve_productions"><code class="docutils literal notranslate"><span class="pre">StateMachineProcess.evolve_productions()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.views">emulsion.agent.views module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.SimpleView"><code class="docutils literal notranslate"><span class="pre">SimpleView</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.SimpleView.__init__"><code class="docutils literal notranslate"><span class="pre">SimpleView.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.SimpleView.get_content"><code class="docutils literal notranslate"><span class="pre">SimpleView.get_content()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.SimpleView.add"><code class="docutils literal notranslate"><span class="pre">SimpleView.add()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.SimpleView.remove"><code class="docutils literal notranslate"><span class="pre">SimpleView.remove()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.SimpleView.next_states"><code class="docutils literal notranslate"><span class="pre">SimpleView.next_states()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.SimpleView.agcount"><code class="docutils literal notranslate"><span class="pre">SimpleView.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.SimpleView.agdict"><code class="docutils literal notranslate"><span class="pre">SimpleView.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.SimpleView.families"><code class="docutils literal notranslate"><span class="pre">SimpleView.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.SimpleView.members"><code class="docutils literal notranslate"><span class="pre">SimpleView.members</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView"><code class="docutils literal notranslate"><span class="pre">AdaptiveView</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView.__init__"><code class="docutils literal notranslate"><span class="pre">AdaptiveView.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView.evaluate_condition"><code class="docutils literal notranslate"><span class="pre">AdaptiveView.evaluate_condition()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView.next_states"><code class="docutils literal notranslate"><span class="pre">AdaptiveView.next_states()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView.evolve"><code class="docutils literal notranslate"><span class="pre">AdaptiveView.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView.check_consistency"><code class="docutils literal notranslate"><span class="pre">AdaptiveView.check_consistency()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView.clone"><code class="docutils literal notranslate"><span class="pre">AdaptiveView.clone()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView.agcount"><code class="docutils literal notranslate"><span class="pre">AdaptiveView.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView.agdict"><code class="docutils literal notranslate"><span class="pre">AdaptiveView.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView.families"><code class="docutils literal notranslate"><span class="pre">AdaptiveView.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView.members"><code class="docutils literal notranslate"><span class="pre">AdaptiveView.members</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView"><code class="docutils literal notranslate"><span class="pre">StructuredView</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.__init__"><code class="docutils literal notranslate"><span class="pre">StructuredView.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.get_content"><code class="docutils literal notranslate"><span class="pre">StructuredView.get_content()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.add"><code class="docutils literal notranslate"><span class="pre">StructuredView.add()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.remove"><code class="docutils literal notranslate"><span class="pre">StructuredView.remove()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.notify_changed_units"><code class="docutils literal notranslate"><span class="pre">StructuredView.notify_changed_units()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.handle_notifications"><code class="docutils literal notranslate"><span class="pre">StructuredView.handle_notifications()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.get_or_build"><code class="docutils literal notranslate"><span class="pre">StructuredView.get_or_build()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.evolve"><code class="docutils literal notranslate"><span class="pre">StructuredView.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.agcount"><code class="docutils literal notranslate"><span class="pre">StructuredView.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.agdict"><code class="docutils literal notranslate"><span class="pre">StructuredView.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.families"><code class="docutils literal notranslate"><span class="pre">StructuredView.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView.members"><code class="docutils literal notranslate"><span class="pre">StructuredView.members</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredViewWithCounts"><code class="docutils literal notranslate"><span class="pre">StructuredViewWithCounts</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredViewWithCounts.__init__"><code class="docutils literal notranslate"><span class="pre">StructuredViewWithCounts.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredViewWithCounts.init_counts"><code class="docutils literal notranslate"><span class="pre">StructuredViewWithCounts.init_counts()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredViewWithCounts.update_counts"><code class="docutils literal notranslate"><span class="pre">StructuredViewWithCounts.update_counts()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredViewWithCounts.evolve"><code class="docutils literal notranslate"><span class="pre">StructuredViewWithCounts.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredViewWithCounts.agcount"><code class="docutils literal notranslate"><span class="pre">StructuredViewWithCounts.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredViewWithCounts.agdict"><code class="docutils literal notranslate"><span class="pre">StructuredViewWithCounts.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredViewWithCounts.families"><code class="docutils literal notranslate"><span class="pre">StructuredViewWithCounts.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredViewWithCounts.members"><code class="docutils literal notranslate"><span class="pre">StructuredViewWithCounts.members</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AutoStructuredView"><code class="docutils literal notranslate"><span class="pre">AutoStructuredView</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AutoStructuredView.__init__"><code class="docutils literal notranslate"><span class="pre">AutoStructuredView.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AutoStructuredView.add"><code class="docutils literal notranslate"><span class="pre">AutoStructuredView.add()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AutoStructuredView.remove"><code class="docutils literal notranslate"><span class="pre">AutoStructuredView.remove()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AutoStructuredView.agcount"><code class="docutils literal notranslate"><span class="pre">AutoStructuredView.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AutoStructuredView.agdict"><code class="docutils literal notranslate"><span class="pre">AutoStructuredView.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AutoStructuredView.families"><code class="docutils literal notranslate"><span class="pre">AutoStructuredView.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AutoStructuredView.members"><code class="docutils literal notranslate"><span class="pre">AutoStructuredView.members</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.action">emulsion.agent.action module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.atoms">emulsion.agent.atoms module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.comparts">emulsion.agent.comparts module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.exceptions">emulsion.agent.exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.meta">emulsion.agent.meta module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.process">emulsion.agent.process module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.html#module-emulsion.agent.views">emulsion.agent.views module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="emulsion.model.html">emulsion.model package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="emulsion.model.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.model.html#module-1">emulsion.model.emulsion_model module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel"><code class="docutils literal notranslate"><span class="pre">EmulsionModel</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.__init__"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.normalize_format"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.normalize_format()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.copy"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.copy()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.add_init_action"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.add_init_action()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.get_value"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.get_value()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.change_parameter_values"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.change_parameter_values()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.set_value"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.set_value()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.parse"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.parse()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_outputs_options"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_outputs_options()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_timeinfo"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_timeinfo()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_calendar"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_calendar()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.get_calendar_for_event"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.get_calendar_for_event()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_parameters"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_parameters()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_statevars"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_statevars()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_distributions"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_distributions()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_initial_conds"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_initial_conds()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_prototypes"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_prototypes()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.parse_prototype_line"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.parse_prototype_line()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.get_prototype"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.get_prototype()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_input_data"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_input_data()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_levels"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_levels()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.get_agent_class_for_level"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.get_agent_class_for_level()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_processes"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_processes()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.check_state_machines"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.check_state_machines()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_state_machines"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_state_machines()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_compartment_desc"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_compartment_desc()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.get_sublevels"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.get_sublevels()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.add_expression"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.add_expression()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.expand_expression"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.expand_expression()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.parse_dict"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.parse_dict()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.parse_if"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.parse_if()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.parse_or"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.parse_or()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.parse_and"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.parse_and()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.build_actions"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.build_actions()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.compute_values"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.compute_values()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.get_modifiable_parameters"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.get_modifiable_parameters()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.describe_parameter"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.describe_parameter()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.describe_variable"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.describe_variable()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.describe_name"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.describe_name()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.write_dot"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.write_dot()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.emulsion_model.EmulsionModel.generate_skeleton"><code class="docutils literal notranslate"><span class="pre">EmulsionModel.generate_skeleton()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.model.html#module-2">emulsion.model.exceptions module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.model.html#emulsion.model.exceptions.SemanticException"><code class="docutils literal notranslate"><span class="pre">SemanticException</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.exceptions.SemanticException.__init__"><code class="docutils literal notranslate"><span class="pre">SemanticException.__init__()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.model.html#module-3">emulsion.model.functions module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_function"><code class="docutils literal notranslate"><span class="pre">make_function</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_function.__init__"><code class="docutils literal notranslate"><span class="pre">make_function.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_CSV_function"><code class="docutils literal notranslate"><span class="pre">make_CSV_function</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_CSV_function.__init__"><code class="docutils literal notranslate"><span class="pre">make_CSV_function.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_when_condition"><code class="docutils literal notranslate"><span class="pre">make_when_condition</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_when_condition.__init__"><code class="docutils literal notranslate"><span class="pre">make_when_condition.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_duration_condition"><code class="docutils literal notranslate"><span class="pre">make_duration_condition()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_duration_init_action"><code class="docutils literal notranslate"><span class="pre">make_duration_init_action()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_statevar_getter"><code class="docutils literal notranslate"><span class="pre">make_statevar_getter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_statevar_getter.__init__"><code class="docutils literal notranslate"><span class="pre">make_statevar_getter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_model_value_getter"><code class="docutils literal notranslate"><span class="pre">make_model_value_getter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.functions.make_model_value_getter.__init__"><code class="docutils literal notranslate"><span class="pre">make_model_value_getter.__init__()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.model.html#module-4">emulsion.model.state_machines module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine"><code class="docutils literal notranslate"><span class="pre">StateMachine</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.__init__"><code class="docutils literal notranslate"><span class="pre">StateMachine.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.parse"><code class="docutils literal notranslate"><span class="pre">StateMachine.parse()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.get_property"><code class="docutils literal notranslate"><span class="pre">StateMachine.get_property()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.build_states"><code class="docutils literal notranslate"><span class="pre">StateMachine.build_states()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.get_random_state"><code class="docutils literal notranslate"><span class="pre">StateMachine.get_random_state()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.get_default_state"><code class="docutils literal notranslate"><span class="pre">StateMachine.get_default_state()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.state_colors"><code class="docutils literal notranslate"><span class="pre">StateMachine.state_colors</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.state_style"><code class="docutils literal notranslate"><span class="pre">StateMachine.state_style</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.build_graph"><code class="docutils literal notranslate"><span class="pre">StateMachine.build_graph()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.build_actions"><code class="docutils literal notranslate"><span class="pre">StateMachine.build_actions()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.get_value"><code class="docutils literal notranslate"><span class="pre">StateMachine.get_value()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.describe_state"><code class="docutils literal notranslate"><span class="pre">StateMachine.describe_state()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.model.html#emulsion.model.state_machines.StateMachine.write_dot"><code class="docutils literal notranslate"><span class="pre">StateMachine.write_dot()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.model.html#module-emulsion.model.emulsion_model">emulsion.model.emulsion_model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.model.html#module-emulsion.model.exceptions">emulsion.model.exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.model.html#module-emulsion.model.functions">emulsion.model.functions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.model.html#module-emulsion.model.state_machines">emulsion.model.state_machines module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="emulsion.tools.html">emulsion.tools package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-0">emulsion.tools.calendar module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.InvalidIntervalException"><code class="docutils literal notranslate"><span class="pre">InvalidIntervalException</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.InvalidIntervalException.__init__"><code class="docutils literal notranslate"><span class="pre">InvalidIntervalException.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.date_in"><code class="docutils literal notranslate"><span class="pre">date_in()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.periodic_date_tester"><code class="docutils literal notranslate"><span class="pre">periodic_date_tester</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.periodic_date_tester.__init__"><code class="docutils literal notranslate"><span class="pre">periodic_date_tester.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.periodic_date_tester_inverted"><code class="docutils literal notranslate"><span class="pre">periodic_date_tester_inverted</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.periodic_date_tester_inverted.__init__"><code class="docutils literal notranslate"><span class="pre">periodic_date_tester_inverted.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.date_tester"><code class="docutils literal notranslate"><span class="pre">date_tester</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.date_tester.__init__"><code class="docutils literal notranslate"><span class="pre">date_tester.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.EventCalendar"><code class="docutils literal notranslate"><span class="pre">EventCalendar</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.EventCalendar.__init__"><code class="docutils literal notranslate"><span class="pre">EventCalendar.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.EventCalendar.increment"><code class="docutils literal notranslate"><span class="pre">EventCalendar.increment()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.EventCalendar.step_to_date"><code class="docutils literal notranslate"><span class="pre">EventCalendar.step_to_date()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.EventCalendar.date_to_step"><code class="docutils literal notranslate"><span class="pre">EventCalendar.date_to_step()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.EventCalendar.add_event"><code class="docutils literal notranslate"><span class="pre">EventCalendar.add_event()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.calendar.EventCalendar.get_events"><code class="docutils literal notranslate"><span class="pre">EventCalendar.get_events()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-1">emulsion.tools.debug module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.debug.debuginfo"><code class="docutils literal notranslate"><span class="pre">debuginfo()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-2">emulsion.tools.functions module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.IfThenElse"><code class="docutils literal notranslate"><span class="pre">IfThenElse()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.NOT"><code class="docutils literal notranslate"><span class="pre">NOT()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.AND"><code class="docutils literal notranslate"><span class="pre">AND()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.OR"><code class="docutils literal notranslate"><span class="pre">OR()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.MIN"><code class="docutils literal notranslate"><span class="pre">MIN()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.MAX"><code class="docutils literal notranslate"><span class="pre">MAX()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.DIV"><code class="docutils literal notranslate"><span class="pre">DIV()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.ROUND"><code class="docutils literal notranslate"><span class="pre">ROUND()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.random_bool"><code class="docutils literal notranslate"><span class="pre">random_bool()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.random_choice"><code class="docutils literal notranslate"><span class="pre">random_choice()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.random_choice_weighted"><code class="docutils literal notranslate"><span class="pre">random_choice_weighted()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.random_multinomial"><code class="docutils literal notranslate"><span class="pre">random_multinomial()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.random_uniform"><code class="docutils literal notranslate"><span class="pre">random_uniform()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.random_integers"><code class="docutils literal notranslate"><span class="pre">random_integers()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.random_exponential"><code class="docutils literal notranslate"><span class="pre">random_exponential()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.random_beta"><code class="docutils literal notranslate"><span class="pre">random_beta()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.random_gamma"><code class="docutils literal notranslate"><span class="pre">random_gamma()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.random_normal"><code class="docutils literal notranslate"><span class="pre">random_normal()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.random_poisson"><code class="docutils literal notranslate"><span class="pre">random_poisson()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.Eq"><code class="docutils literal notranslate"><span class="pre">Eq()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.GreaterThan"><code class="docutils literal notranslate"><span class="pre">GreaterThan()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.StrictGreaterThan"><code class="docutils literal notranslate"><span class="pre">StrictGreaterThan()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.LessThan"><code class="docutils literal notranslate"><span class="pre">LessThan()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.functions.StrictLessThan"><code class="docutils literal notranslate"><span class="pre">StrictLessThan()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-3">emulsion.tools.getters module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_population_getter"><code class="docutils literal notranslate"><span class="pre">create_population_getter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_population_getter.__init__"><code class="docutils literal notranslate"><span class="pre">create_population_getter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_relative_population_getter"><code class="docutils literal notranslate"><span class="pre">create_relative_population_getter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_relative_population_getter.__init__"><code class="docutils literal notranslate"><span class="pre">create_relative_population_getter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_counter_getter"><code class="docutils literal notranslate"><span class="pre">create_counter_getter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_counter_getter.__init__"><code class="docutils literal notranslate"><span class="pre">create_counter_getter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_state_tester"><code class="docutils literal notranslate"><span class="pre">create_state_tester</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_state_tester.__init__"><code class="docutils literal notranslate"><span class="pre">create_state_tester.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_duration_getter"><code class="docutils literal notranslate"><span class="pre">create_duration_getter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_duration_getter.__init__"><code class="docutils literal notranslate"><span class="pre">create_duration_getter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.find_operator"><code class="docutils literal notranslate"><span class="pre">find_operator</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.find_operator.__init__"><code class="docutils literal notranslate"><span class="pre">find_operator.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_aggregator"><code class="docutils literal notranslate"><span class="pre">create_aggregator</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_aggregator.__init__"><code class="docutils literal notranslate"><span class="pre">create_aggregator.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_group_aggregator"><code class="docutils literal notranslate"><span class="pre">create_group_aggregator</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_group_aggregator.__init__"><code class="docutils literal notranslate"><span class="pre">create_group_aggregator.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_atoms_aggregator"><code class="docutils literal notranslate"><span class="pre">create_atoms_aggregator</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_atoms_aggregator.__init__"><code class="docutils literal notranslate"><span class="pre">create_atoms_aggregator.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.serial"><code class="docutils literal notranslate"><span class="pre">serial()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_new_serial"><code class="docutils literal notranslate"><span class="pre">create_new_serial</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_new_serial.__init__"><code class="docutils literal notranslate"><span class="pre">create_new_serial.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_successor_getter"><code class="docutils literal notranslate"><span class="pre">create_successor_getter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_successor_getter.__init__"><code class="docutils literal notranslate"><span class="pre">create_successor_getter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_predecessor_getter"><code class="docutils literal notranslate"><span class="pre">create_predecessor_getter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_predecessor_getter.__init__"><code class="docutils literal notranslate"><span class="pre">create_predecessor_getter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_weighted_random"><code class="docutils literal notranslate"><span class="pre">create_weighted_random</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_weighted_random.__init__"><code class="docutils literal notranslate"><span class="pre">create_weighted_random.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.make_random_prototype_getter"><code class="docutils literal notranslate"><span class="pre">make_random_prototype_getter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.make_random_prototype_getter.__init__"><code class="docutils literal notranslate"><span class="pre">make_random_prototype_getter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.PrototypeGenerator"><code class="docutils literal notranslate"><span class="pre">PrototypeGenerator</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.PrototypeGenerator.__init__"><code class="docutils literal notranslate"><span class="pre">PrototypeGenerator.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.PrototypeGenerator.set_simu_id"><code class="docutils literal notranslate"><span class="pre">PrototypeGenerator.set_simu_id()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.make_generator_prototype_getter"><code class="docutils literal notranslate"><span class="pre">make_generator_prototype_getter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.make_generator_prototype_getter.__init__"><code class="docutils literal notranslate"><span class="pre">make_generator_prototype_getter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.make_information_getter"><code class="docutils literal notranslate"><span class="pre">make_information_getter</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.make_information_getter.__init__"><code class="docutils literal notranslate"><span class="pre">make_information_getter.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_state_indexer"><code class="docutils literal notranslate"><span class="pre">create_state_indexer</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_state_indexer.__init__"><code class="docutils literal notranslate"><span class="pre">create_state_indexer.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_my_state_indexer"><code class="docutils literal notranslate"><span class="pre">create_my_state_indexer</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_my_state_indexer.__init__"><code class="docutils literal notranslate"><span class="pre">create_my_state_indexer.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_lazy_ternary"><code class="docutils literal notranslate"><span class="pre">create_lazy_ternary</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_lazy_ternary.__init__"><code class="docutils literal notranslate"><span class="pre">create_lazy_ternary.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_lazy_OR"><code class="docutils literal notranslate"><span class="pre">create_lazy_OR</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_lazy_OR.__init__"><code class="docutils literal notranslate"><span class="pre">create_lazy_OR.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_lazy_AND"><code class="docutils literal notranslate"><span class="pre">create_lazy_AND</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.getters.create_lazy_AND.__init__"><code class="docutils literal notranslate"><span class="pre">create_lazy_AND.__init__()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.graph">emulsion.tools.graph module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.graph.EdgeTypes"><code class="docutils literal notranslate"><span class="pre">EdgeTypes</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.graph.EdgeTypes.TRANSITION"><code class="docutils literal notranslate"><span class="pre">EdgeTypes.TRANSITION</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.graph.EdgeTypes.PRODUCTION"><code class="docutils literal notranslate"><span class="pre">EdgeTypes.PRODUCTION</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.graph.EdgeTypes.linestyle"><code class="docutils literal notranslate"><span class="pre">EdgeTypes.linestyle</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.graph.MultiDiGraph"><code class="docutils literal notranslate"><span class="pre">MultiDiGraph</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.graph.MultiDiGraph.__init__"><code class="docutils literal notranslate"><span class="pre">MultiDiGraph.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.graph.MultiDiGraph.add_node"><code class="docutils literal notranslate"><span class="pre">MultiDiGraph.add_node()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.graph.MultiDiGraph.add_edge"><code class="docutils literal notranslate"><span class="pre">MultiDiGraph.add_edge()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.graph.MultiDiGraph.edges"><code class="docutils literal notranslate"><span class="pre">MultiDiGraph.edges()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.graph.MultiDiGraph.edges_from"><code class="docutils literal notranslate"><span class="pre">MultiDiGraph.edges_from()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-4">emulsion.tools.misc module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.AGENTS"><code class="docutils literal notranslate"><span class="pre">AGENTS</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.POPULATION"><code class="docutils literal notranslate"><span class="pre">POPULATION</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.load_class"><code class="docutils literal notranslate"><span class="pre">load_class()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.load_module"><code class="docutils literal notranslate"><span class="pre">load_module()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.rates_to_probabilities"><code class="docutils literal notranslate"><span class="pre">rates_to_probabilities()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.aggregate_probability"><code class="docutils literal notranslate"><span class="pre">aggregate_probability()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.aggregate_probabilities"><code class="docutils literal notranslate"><span class="pre">aggregate_probabilities()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.probabilities_to_rates"><code class="docutils literal notranslate"><span class="pre">probabilities_to_rates()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.rewrite_keys"><code class="docutils literal notranslate"><span class="pre">rewrite_keys()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.complement_key"><code class="docutils literal notranslate"><span class="pre">complement_key()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.count_population"><code class="docutils literal notranslate"><span class="pre">count_population()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.select_random"><code class="docutils literal notranslate"><span class="pre">select_random()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.read_from_file"><code class="docutils literal notranslate"><span class="pre">read_from_file()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.retrieve_value"><code class="docutils literal notranslate"><span class="pre">retrieve_value()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.moving_average"><code class="docutils literal notranslate"><span class="pre">moving_average()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.add_new_property"><code class="docutils literal notranslate"><span class="pre">add_new_property()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.add_all_test_properties"><code class="docutils literal notranslate"><span class="pre">add_all_test_properties()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.add_all_relative_population_getters"><code class="docutils literal notranslate"><span class="pre">add_all_relative_population_getters()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.misc.read_csv_prototypes"><code class="docutils literal notranslate"><span class="pre">read_csv_prototypes()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.parallel">emulsion.tools.parallel module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.parallel.job_dist"><code class="docutils literal notranslate"><span class="pre">job_dist()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.parallel.job"><code class="docutils literal notranslate"><span class="pre">job()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.parallel.parallel_multi"><code class="docutils literal notranslate"><span class="pre">parallel_multi()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.parallel.parallel_sensi"><code class="docutils literal notranslate"><span class="pre">parallel_sensi()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.plot">emulsion.tools.plot module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.plot.q10"><code class="docutils literal notranslate"><span class="pre">q10()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.plot.q90"><code class="docutils literal notranslate"><span class="pre">q90()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.plot.perc"><code class="docutils literal notranslate"><span class="pre">perc()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.plot.build_state_plot"><code class="docutils literal notranslate"><span class="pre">build_state_plot()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.plot.build_machine_plot"><code class="docutils literal notranslate"><span class="pre">build_machine_plot()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.plot.plot_outputs"><code class="docutils literal notranslate"><span class="pre">plot_outputs()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-5">emulsion.tools.preprocessor module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.preprocessor.EmulsionPreprocessor"><code class="docutils literal notranslate"><span class="pre">EmulsionPreprocessor</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.preprocessor.EmulsionPreprocessor.__init__"><code class="docutils literal notranslate"><span class="pre">EmulsionPreprocessor.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.preprocessor.EmulsionPreprocessor.init_preprocessor"><code class="docutils literal notranslate"><span class="pre">EmulsionPreprocessor.init_preprocessor()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.preprocessor.EmulsionPreprocessor.run_preprocessor"><code class="docutils literal notranslate"><span class="pre">EmulsionPreprocessor.run_preprocessor()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-6">emulsion.tools.simulation module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.OutputManager"><code class="docutils literal notranslate"><span class="pre">OutputManager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.OutputManager.__init__"><code class="docutils literal notranslate"><span class="pre">OutputManager.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.OutputManager.update_output_type"><code class="docutils literal notranslate"><span class="pre">OutputManager.update_output_type()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.OutputManager.update_output_information"><code class="docutils literal notranslate"><span class="pre">OutputManager.update_output_information()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.OutputManager.update_outputs"><code class="docutils literal notranslate"><span class="pre">OutputManager.update_outputs()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.AbstractSimulation"><code class="docutils literal notranslate"><span class="pre">AbstractSimulation</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.AbstractSimulation.__init__"><code class="docutils literal notranslate"><span class="pre">AbstractSimulation.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.AbstractSimulation.evolve"><code class="docutils literal notranslate"><span class="pre">AbstractSimulation.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.AbstractSimulation.run"><code class="docutils literal notranslate"><span class="pre">AbstractSimulation.run()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.AbstractSimulation.update_csv_counts"><code class="docutils literal notranslate"><span class="pre">AbstractSimulation.update_csv_counts()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.AbstractSimulation.init_input_data"><code class="docutils literal notranslate"><span class="pre">AbstractSimulation.init_input_data()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.Simulation"><code class="docutils literal notranslate"><span class="pre">Simulation</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.Simulation.__init__"><code class="docutils literal notranslate"><span class="pre">Simulation.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.Simulation.log_path"><code class="docutils literal notranslate"><span class="pre">Simulation.log_path()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.Simulation.init_agent"><code class="docutils literal notranslate"><span class="pre">Simulation.init_agent()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.Simulation.evolve"><code class="docutils literal notranslate"><span class="pre">Simulation.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.Simulation.run"><code class="docutils literal notranslate"><span class="pre">Simulation.run()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.Simulation.counts"><code class="docutils literal notranslate"><span class="pre">Simulation.counts</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.MultiSimulation"><code class="docutils literal notranslate"><span class="pre">MultiSimulation</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.MultiSimulation.__init__"><code class="docutils literal notranslate"><span class="pre">MultiSimulation.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.MultiSimulation.evolve"><code class="docutils literal notranslate"><span class="pre">MultiSimulation.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.MultiSimulation.run"><code class="docutils literal notranslate"><span class="pre">MultiSimulation.run()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.MultiSimulation.counts"><code class="docutils literal notranslate"><span class="pre">MultiSimulation.counts</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.MultiSimulation.write_dot"><code class="docutils literal notranslate"><span class="pre">MultiSimulation.write_dot()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.SensitivitySimulation"><code class="docutils literal notranslate"><span class="pre">SensitivitySimulation</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.SensitivitySimulation.__init__"><code class="docutils literal notranslate"><span class="pre">SensitivitySimulation.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.SensitivitySimulation.run"><code class="docutils literal notranslate"><span class="pre">SensitivitySimulation.run()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.SensitivitySimulation.counts"><code class="docutils literal notranslate"><span class="pre">SensitivitySimulation.counts</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.simulation.SensitivitySimulation.write_dot"><code class="docutils literal notranslate"><span class="pre">SensitivitySimulation.write_dot()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-7">emulsion.tools.state module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.state.StateVarDict"><code class="docutils literal notranslate"><span class="pre">StateVarDict</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.state.StateVarDict.__init__"><code class="docutils literal notranslate"><span class="pre">StateVarDict.__init__()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.state.EmulsionEnum"><code class="docutils literal notranslate"><span class="pre">EmulsionEnum</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.timing">emulsion.tools.timing module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.timing.timethis"><code class="docutils literal notranslate"><span class="pre">timethis()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.view">emulsion.tools.view module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.view.show_img"><code class="docutils literal notranslate"><span class="pre">show_img()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.view.show_contour"><code class="docutils literal notranslate"><span class="pre">show_contour()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.view.show_histo"><code class="docutils literal notranslate"><span class="pre">show_histo()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.tools.html#emulsion.tools.view.build_animation"><code class="docutils literal notranslate"><span class="pre">build_animation()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.calendar">emulsion.tools.calendar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.debug">emulsion.tools.debug module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.functions">emulsion.tools.functions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.getters">emulsion.tools.getters module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.graph">emulsion.tools.graph module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.misc">emulsion.tools.misc module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.parallel">emulsion.tools.parallel module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.plot">emulsion.tools.plot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.preprocessor">emulsion.tools.preprocessor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.simulation">emulsion.tools.simulation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.state">emulsion.tools.state module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.timing">emulsion.tools.timing module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.tools.html#module-emulsion.tools.view">emulsion.tools.view module</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </section>
 <section id="submodules">
-<h2><span class="section-number">11.2. </span>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">11.2. </span>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </section>
 <section id="module-emulsion.init_emulsion">
-<span id="emulsion-init-emulsion-module"></span><h2><span class="section-number">11.3. </span>emulsion.init_emulsion module<a class="headerlink" href="#module-emulsion.init_emulsion" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-init-emulsion-module"></span><h2><span class="section-number">11.3. </span>emulsion.init_emulsion module<a class="headerlink" href="#module-emulsion.init_emulsion" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="emulsion.init_emulsion.main">
 <span class="sig-prename descclassname"><span class="pre">emulsion.init_emulsion.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/init_emulsion.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.init_emulsion.main" title="Permalink to this definition">¶</a></dt>
@@ -755,10 +154,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">11.2. Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-emulsion.init_emulsion">11.3. emulsion.init_emulsion module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#emulsion.init_emulsion.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-emulsion.init_emulsion">11.3. emulsion.init_emulsion module</a></li>
 </ul>
 </li>
 </ul>
@@ -781,7 +177,7 @@
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -798,7 +194,7 @@
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

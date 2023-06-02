@@ -1,0 +1,248 @@
+****************
+Transition guide
+****************
+
+From 1.1 to 1.2
+***************
+
+The syntax of model declarations changed slightly from EMULSION 1.1 to EMULSION 1.2.
+The purpose of this guide is to summarize the transformations to do in 1.1 models to comply with the 1.2 syntax.
+
+General principles
+==================
+
+- the syntax was changed to make compartment-based, hybrid and individual-based models more homogeneous in their declaration
+- hence, now there are at least two levels in any model, even in compartment-based models, where the individual level has to be declared explicitily, even if the simulation only handles aggregate populations
+- processes names are now the either the name of a state machine, or the name of an external Python method in a code add-on (instead of the name of groupings for compartments/hybrid models)
+- processes are now declared at the level of entities that are supposed to perform them (e.g. health states affect individuals)
+- groupings are required:
+
+  - in all models, to calculate counts and other aggregate variables on specific sub-populations, e.g. ``total_Healthy_Juveniles``. Calculations on groups associated with a single state (e.g. ``total_Juvenile``) or with a level (e.g. ``total_population``) do not have to be declared explicitly
+  - in hybrid models only, determining on which group a state machine is operating as a process, for instance to specify that ``health_state`` runs on the grouping ``infection`` based on variables, e.g. ``[health_state, vaccination_status]``
+
+- the syntax of grouping definition has been simplified
+- now all models use *prototypes* to describe the state of either specific individuals or specific sub-populations: these prototypes are used (at least):
+
+  - for production links in the definition of state machines
+  - for initial conditions
+
+Individual-based models (``aggregation_type: IBM``)
+===================================================
+
+Basically, 1.1 IBM models should work with 1.2 without additional changes. Only, now it is possible to add groupings in IBM models to calculate count sub-populations (with an extra computational cost)
+
+Hybrid models (``aggregation_type: hybrid``)
+============================================
+
+- section ``levels`` is unchanged
+
+.. code-block:: yaml
+
+   levels:
+     population:
+       desc: 'level of the population'
+       aggregation_type: 'hybrid'
+       contains:
+         - individuals
+     individuals:
+       desc: 'level of the individuals'
+
+
+- section ``groupings`` must be rewritten to comply with the new 1.2 simplified syntax
+
+  - EMULSION 1.1:
+
+    .. code-block:: yaml
+
+       grouping:
+         population:
+           infection:
+             machine_name: health_state
+             key_variables: [health_state]
+           aging:
+             machine_name: age_group
+             key_variables: [age_group]
+
+
+  - EMULSION 1.2:
+
+    .. code-block:: yaml
+
+       grouping:
+         population:
+           infection: [health_state]
+           aging: [age_group]
+
+- section ``processes`` must be changed as follows:
+
+  1. now processes names are state machine names
+  2. processes that were affected to the population level (because the state machines operate on sub-groups) are now assigned to the individual level
+
+  - EMULSION 1.1:
+`
+    .. code-block:: yaml
+
+       processes:
+         population:
+           - infection
+           - aging
+
+  - EMULSION 1.2:
+
+    .. code-block:: yaml
+
+       processes:
+         individuals:
+           - health_state: infection
+           - age_group: aging
+
+.. admonition:: Files
+
+   - `hybrid_SIR_JA_demo-1.1.yaml <../_static/models/transition/hybrid_SIR_JA_demo-1.1.yaml>`_
+   - `hybrid_SIR_JA_demo-1.2.yaml <../_static/models/transition/hybrid_SIR_JA_demo-1.2.yaml>`_
+
+
+
+Compartment-based models (``aggregation_type: compartment``)
+============================================================
+
+- section ``levels`` now makes individual level explicit (though considered virtual)
+
+  - EMULSION 1.1:
+
+    .. code-block:: yaml
+
+       levels:
+         population:
+           desc: 'level of the population'
+           aggregation_type: 'compartment'
+
+
+  - EMULSION 1.2:
+
+    .. code-block:: yaml
+
+       levels:
+         population:
+           desc: 'level of the population'
+           aggregation_type: 'compartment'
+           contains:
+             - individuals
+         individuals:
+           desc: 'level of individuals'
+
+- section ``groupings`` is not mandatory anymore, required only for counting sub-groups, hence it can be simplified:
+
+  - EMULSION 1.1:
+
+    .. code-block:: yaml
+
+       grouping:
+         population:
+           infection:
+             machine_name: health_state
+             key_variables: [health_state]
+           aging:
+             machine_name: age_group
+             key_variables: [age_group]
+
+  - EMULSION 1.2: the declaration must be removed
+
+- section ``processes`` now refer directly to state machines at the (virtual) individual level
+
+  - EMULSION 1.1:
+
+    .. code-block:: yaml
+
+       processes:
+         population:
+           - infection
+           - aging
+
+  - EMULSION 1.2:
+
+    .. code-block:: yaml
+
+       processes:
+         individuals:
+           - health_state
+           - age_group
+
+- section ``prototypes`` is now mandatory (at least for initial conditions)
+
+  - EMULSION 1.1: there was no ``prototypes`` section
+  - EMULSION 1.2:
+
+    .. code-block:: yaml
+
+       prototypes:
+         individuals:
+           - healthy:
+               desc: 'healthy individuals'
+               health_state: S
+               age_group: random
+           - infected:
+               desc: 'infected individuals'
+               health_state: I
+               age_group: random
+           - newborn:
+               desc: 'newly created individuals'
+               health_state: default
+               age_group: J
+
+- in section ``state_machines``, production links now refer to prototypes
+
+  - EMULSION 1.1:
+
+    .. code-block:: yaml
+
+       state_machines:
+         age_group:
+           desc: 'The state machine which defines the evolution of age groups.'
+           ...
+           productions:
+             - {from: A, to: J, rate: 'birth'}
+
+  - EMULSION 1.2:
+
+    .. code-block:: yaml
+
+       state_machines:
+         age_group:
+           desc: 'The state machine which defines the evolution of age groups.'
+           ...
+           productions:
+             - {from: A, to: J, rate: 'birth', prototype: 'newborn'}
+
+
+- section ``initial_conditions`` is now based on prototypes
+
+  - EMULSION 1.1:
+
+    .. code-block:: yaml
+
+       initial_conditions:
+         population:
+           - population:
+               - total: 'initial_population_size'
+               - vars: [S]
+                 amount: 'initial_population_size - initial_infected'
+               - vars: [I]
+                 amount: 'initial_infected'
+
+  - EMULSION 1.2:
+
+    .. code-block:: yaml
+
+       initial_conditions:
+         population:
+           - prototype: healthy
+             amount: 'initial_population_size - initial_infected'
+           - prototype: infected
+             amount: 'initial_infected'
+
+.. admonition:: Files
+
+   - `compart_SIR_JA_demo-1.1.yaml <../_static/models/transition/compart_SIR_JA_demo-1.1.yaml>`_
+   - `compart_SIR_JA_demo-1.2.yaml <../_static/models/transition/compart_SIR_JA_demo-1.2.yaml>`_
+

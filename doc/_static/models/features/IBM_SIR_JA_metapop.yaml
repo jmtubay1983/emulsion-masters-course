@@ -135,8 +135,8 @@ levels:
 # place at the population level and are managed by groupings
 processes:
   individuals:
-    - health_state: infection
-    - age_group: aging
+    - health_state
+    - age_group
 
 #   _____                       _
 #  / ____|                     (_)
@@ -149,17 +149,6 @@ processes:
 
 # DESCRIPTION OF GROUPINGS, ASSOCIATED WITH PROCESSES WHICH ARE NOT
 # DIRECTLY BASED ON STATE MACHINES
-# A grouping is based on one or more variables. For instance, the
-# grouping for managing the 'infection' process is based on the
-# variable 'health_state' (coming from the state machine with the same
-# name): hence, one group will be defined for all possible values of
-# the health_state variable.
-# Groupings are required for defining processes in compartement-based
-# or hybrid models.
-grouping:
-  population:
-    infection: [health_state]
-    aging: [age_group]
 
 
 

@@ -11,9 +11,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="../../../_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="../../../_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
    
@@ -51,6 +52,8 @@
 <span class="kn">from</span>   <span class="nn">sympy</span>                   <span class="kn">import</span> <span class="n">sympify</span>
 
 <span class="kn">from</span>   <span class="nn">sortedcontainers</span>        <span class="kn">import</span> <span class="n">SortedSet</span>
+
+<span class="kn">import</span> <span class="nn">pydot</span>
 
 <span class="kn">import</span> <span class="nn">emulsion.tools.graph</span>    <span class="k">as</span>     <span class="nn">enx</span>
 <span class="kn">from</span>   <span class="nn">emulsion.agent.action</span>   <span class="kn">import</span> <span class="n">AbstractAction</span>
@@ -424,48 +427,6 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">_values</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">expression</span><span class="p">)]</span> <span class="o">=</span> <span class="n">make_when_condition</span><span class="p">(</span>
                 <span class="n">expression</span><span class="p">,</span> <span class="n">modules</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">modules</span><span class="p">)</span>
 
-    <span class="c1"># def _parse_conditions_durations(self, from_, edge_desc):</span>
-    <span class="c1">#     &quot;&quot;&quot;Parse the edge description in search for durations,</span>
-    <span class="c1">#     escapement and conditions specifications. Durations</span>
-    <span class="c1">#     (&#39;duration&#39; clause )are handled as an additional condition</span>
-    <span class="c1">#     (agents entering the state are given a &#39;time to live&#39; in the</span>
-    <span class="c1">#     state, then they are not allowed to leave the state until</span>
-    <span class="c1">#     their stay reaches that value). Escapements (&#39;escape&#39; clause)</span>
-    <span class="c1">#     are also translated as a condition, allowing the agent to</span>
-    <span class="c1">#     leave the state when the expression is true, only while the</span>
-    <span class="c1">#     stay duration is below its nominal value.</span>
-    <span class="c1">#</span>
-    <span class="c1">#     &quot;&quot;&quot;</span>
-    <span class="c1">#     cond, escape = None, False</span>
-    <span class="c1">#     if &#39;cond&#39; in edge_desc:</span>
-    <span class="c1">#         cond = edge_desc[&#39;cond&#39;]</span>
-    <span class="c1">#     if &#39;escape&#39; in edge_desc:</span>
-    <span class="c1">#         cond = edge_desc[&#39;escape&#39;]</span>
-    <span class="c1">#         escape = True</span>
-    <span class="c1">#     if cond is not None:</span>
-    <span class="c1">#         ### WARNING the operation below is not completely</span>
-    <span class="c1">#         ### safe... it is done to replace conditions of the form</span>
-    <span class="c1">#         ### &#39;x == y&#39; by &#39;Eq(x, y)&#39;, but it is a simple</span>
-    <span class="c1">#         ### substitution instead of parsing the syntax</span>
-    <span class="c1">#         ### tree... Thus it is *highly* recommended to express</span>
-    <span class="c1">#         ### conditions directly with Eq(x, y)</span>
-    <span class="c1">#         if &#39;==&#39; in str(cond):</span>
-    <span class="c1">#             cond = &#39;Eq({})&#39;.format(&#39;,&#39;.join(cond.split(&#39;==&#39;)))</span>
-    <span class="c1">#             # edge_desc[&#39;label&#39;] = &#39;, &#39;.join(edge_desc.values()) if</span>
-    <span class="c1">#     # duration specified for this state, handle it as an</span>
-    <span class="c1">#     # additional condition</span>
-    <span class="c1">#     if &#39;duration&#39; in self._statedesc[from_]:</span>
-    <span class="c1">#         duration_cond = make_duration_condition(self.model, self.machine_name)</span>
-    <span class="c1">#         if cond is None:</span>
-    <span class="c1">#             cond = duration_cond</span>
-    <span class="c1">#         elif escape:</span>
-    <span class="c1">#             cond = &#39;AND(Not({}),{})&#39;.format(duration_cond, cond)</span>
-    <span class="c1">#         else:</span>
-    <span class="c1">#             cond = &#39;AND({},{})&#39;.format(duration_cond, cond)</span>
-    <span class="c1">#         edge_desc[&#39;cond&#39;] = cond</span>
-    <span class="c1">#     if cond is not None:</span>
-    <span class="c1">#         # self.model.conditions[cond] = sympify(cond, locals=self.model._namespace)</span>
-    <span class="c1">#         self.model._expressions[cond] = sympify(cond, locals=self.model._namespace)</span>
 
 <div class="viewcode-block" id="StateMachine.build_actions"><a class="viewcode-back" href="../../../emulsion.model.html#emulsion.model.state_machines.StateMachine.build_actions">[docs]</a>    <span class="k">def</span> <span class="nf">build_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Parse the description of the state machine and extract the</span>
@@ -654,23 +615,17 @@
 
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="n">rankdir</span> <span class="o">=</span> <span class="s2">&quot;LR&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;TB&quot;</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;digraph {</span>
-<span class="s1">          charset=&quot;utf-8&quot;</span>
-<span class="s1">        &#39;&#39;&#39;</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;&#39;&#39;</span><span class="se">\t</span><span class="s1">rankdir=</span><span class="si">{}</span><span class="s1">;</span>
-<span class="s1">        &#39;&#39;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rankdir</span><span class="p">)</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">        </span><span class="se">\t</span><span class="s1">node[fontsize=16, fontname=Arial, shape=box, style=&quot;filled,rounded&quot;];</span>
-<span class="s1">        </span><span class="se">\t</span><span class="s1">edge[minlen=1.5, fontname=Times, penwidth=1.5, tailtooltip=&quot;&quot;, headtooltip=&quot;&quot;];</span>
+        <span class="n">dot_graph</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">Dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">machine_name</span><span class="p">,</span> <span class="n">graph_type</span><span class="o">=</span><span class="s2">&quot;digraph&quot;</span><span class="p">,</span> <span class="n">rankdir</span><span class="o">=</span><span class="s2">&quot;LR&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;TB&quot;</span><span class="p">,</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">dot_graph</span><span class="o">.</span><span class="n">set_node_defaults</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;Arial&quot;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;&quot;filled,rounded&quot;&#39;</span><span class="p">)</span>
+        <span class="n">dot_graph</span><span class="o">.</span><span class="n">set_edge_defaults</span><span class="p">(</span><span class="n">minlen</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">penwidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">tailtooltip</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">headtooltip</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
-<span class="s1">        &#39;&#39;&#39;</span>
         <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">states</span><span class="p">:</span>
             <span class="n">name</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">name</span>
             <span class="n">name_lab</span> <span class="o">=</span> <span class="n">name</span>
             <span class="k">if</span> <span class="s1">&#39;duration&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_statedesc</span><span class="p">[</span><span class="n">name</span><span class="p">]:</span>
                 <span class="n">name_lab</span> <span class="o">+=</span> <span class="s1">&#39;&amp;nbsp;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">CLOCK_SYMBOL</span><span class="p">)</span>
-            <span class="n">actions</span> <span class="o">=</span> <span class="s1">&#39;shape=&quot;Mrecord&quot;, label=&quot;</span><span class="si">{}</span><span class="s1">&quot;, &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name_lab</span><span class="p">)</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="s2">&quot;Mrecord&quot;</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="n">name_lab</span>
             <span class="n">nodestyle</span> <span class="o">=</span> <span class="s2">&quot;filled,rounded&quot;</span>
             <span class="k">if</span> <span class="n">state</span><span class="o">.</span><span class="n">is_default</span><span class="p">:</span>
                 <span class="n">nodestyle</span> <span class="o">+=</span> <span class="s2">&quot;,bold&quot;</span>
@@ -684,19 +639,9 @@
                 <span class="n">onexit</span> <span class="o">=</span> <span class="s1">&#39;|&#39;</span><span class="o">+</span><span class="n">ACTION_SYMBOL</span>\
                          <span class="k">if</span> <span class="s1">&#39;on_exit&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_statedesc</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
                 <span class="k">if</span> <span class="n">onenter</span> <span class="ow">or</span> <span class="n">onstay</span> <span class="ow">or</span> <span class="n">onexit</span><span class="p">:</span>
-                    <span class="n">actions</span> <span class="o">=</span> <span class="s1">&#39;shape=&quot;Mrecord&quot;, label=&quot;{</span><span class="si">%s</span><span class="s1">{\ </span><span class="si">%s</span><span class="s1">\ </span><span class="si">%s</span><span class="s1">}</span><span class="si">%s</span><span class="s1">}&quot;, &#39;</span> <span class="o">%</span> <span class="p">(</span>
-                        <span class="n">onenter</span><span class="p">,</span> <span class="n">name_lab</span><span class="p">,</span> <span class="n">onstay</span><span class="p">,</span> <span class="n">onexit</span><span class="p">)</span>
-            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&quot;</span><span class="si">{}</span><span class="s1">&quot; [</span><span class="si">{}</span><span class="s1">tooltip=&quot;</span><span class="si">{}</span><span class="s1">&quot;, fillcolor=&quot;</span><span class="si">{}</span><span class="s1">&quot;, style=&quot;</span><span class="si">{}</span><span class="s1">&quot;] ;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                <span class="n">name</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_statedesc</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;tooltip&#39;</span><span class="p">],</span>
-                <span class="c1"># &#39;\n\tON ENTER: {}&#39;.format(self.state_actions[name][&#39;on_enter&#39;])\</span>
-                <span class="c1"># if onenter else &#39;&#39; +\</span>
-                <span class="c1"># &#39;\n\tON STAY: {}&#39;.format(self.state_actions[name][&#39;on_stay&#39;])\</span>
-                <span class="c1"># if onstay else &#39;&#39; +\</span>
-                <span class="c1"># &#39;\n\tON EXIT: {}&#39;.format(self.state_actions[name][&#39;on_exit&#39;])\</span>
-                <span class="c1"># if onexit else &#39;&#39;,</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_statedesc</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;fillcolor&#39;</span><span class="p">],</span>
-                <span class="n">nodestyle</span><span class="p">)</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;{</span><span class="si">%s</span><span class="s2">{\ </span><span class="si">%s</span><span class="s2">\ </span><span class="si">%s</span><span class="s2">}</span><span class="si">%s</span><span class="s2">}&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">onenter</span><span class="p">,</span> <span class="n">name_lab</span><span class="p">,</span> <span class="n">onstay</span><span class="p">,</span> <span class="n">onexit</span><span class="p">)</span>
+            <span class="n">new_node</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">Node</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="n">shape</span><span class="o">=</span><span class="n">shape</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">label</span><span class="p">),</span> <span class="n">tooltip</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_statedesc</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;tooltip&#39;</span><span class="p">]),</span> <span class="n">fillcolor</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_statedesc</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;fillcolor&#39;</span><span class="p">]),</span> <span class="n">style</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">nodestyle</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+            <span class="n">dot_graph</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">new_node</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">from_</span><span class="p">,</span> <span class="n">to_</span> <span class="ow">in</span> <span class="n">SortedSet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">edges</span><span class="p">()):</span>
             <span class="k">for</span> <span class="n">desc</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">edge</span><span class="p">[</span><span class="n">from_</span><span class="p">][</span><span class="n">to_</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
                 <span class="n">edgetip</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
@@ -714,14 +659,9 @@
                 <span class="k">if</span> <span class="s1">&#39;on_cross&#39;</span> <span class="ow">in</span> <span class="n">desc</span><span class="p">:</span>
                     <span class="n">head</span> <span class="o">+=</span> <span class="n">CROSS_SYMBOL</span>
                     <span class="c1"># edgetip += &#39;ON CROSS: {}\\n&#39;.format(desc[&#39;on_cross&#39;])</span>
-                <span class="n">output</span> <span class="o">+=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&quot;</span><span class="si">{}</span><span class="s1">&quot; -&gt; &quot;</span><span class="si">{}</span><span class="s1">&quot; [label=&quot;</span><span class="si">{}</span><span class="s1">&quot;, labeltooltip=&quot;</span><span class="si">{}</span><span class="s1">&quot;, &#39;</span>
-                           <span class="s1">&#39;arrowtail=&quot;</span><span class="si">{}</span><span class="s1">&quot;, arrowhead=&quot;</span><span class="si">{}</span><span class="s1">&quot;, dir=both, &#39;</span>
-                           <span class="s1">&#39;tooltip=&quot;</span><span class="si">{}</span><span class="s1">&quot;, minlen=3, style=&quot;</span><span class="si">{}</span><span class="s1">&quot;];</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                               <span class="n">from_</span><span class="p">,</span> <span class="n">to_</span><span class="p">,</span> <span class="n">desc</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span> <span class="n">desc</span><span class="p">[</span><span class="s1">&#39;labeltooltip&#39;</span><span class="p">],</span>
-                               <span class="n">tail</span><span class="p">,</span> <span class="n">head</span><span class="p">,</span> <span class="n">edgetip</span><span class="p">,</span> <span class="n">desc</span><span class="p">[</span><span class="s1">&#39;type_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">linestyle</span><span class="p">)</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;}&#39;</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span></div></div>
+                <span class="n">new_edge</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">Edge</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">from_</span><span class="p">),</span> <span class="n">dst</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">to_</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">desc</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]),</span> <span class="n">labeltooltip</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">desc</span><span class="p">[</span><span class="s1">&#39;labeltooltip&#39;</span><span class="p">]),</span> <span class="n">arrowtail</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">tail</span><span class="p">),</span> <span class="n">arrowhead</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">head</span><span class="p">),</span> <span class="nb">dir</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">tooltip</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">edgetip</span><span class="p">),</span> <span class="n">minlen</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">desc</span><span class="p">[</span><span class="s1">&#39;type_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">linestyle</span><span class="p">))</span>
+                <span class="n">dot_graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">new_edge</span><span class="p">)</span>
+        <span class="n">dot_graph</span><span class="o">.</span><span class="n">write_raw</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div></div>
 </pre></div>
 
           </div>
@@ -774,7 +714,7 @@
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -791,7 +731,7 @@
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

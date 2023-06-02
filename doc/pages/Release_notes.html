@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>8. Release notes &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="../_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="../_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="9. License" href="License.html" />
@@ -36,12 +37,12 @@
           <div class="body" role="main">
             
   <section id="release-notes">
-<h1><span class="section-number">8. </span>Release notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">8. </span>Release notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
 <section id="notes-on-emulsion-1-2">
-<h2><span class="section-number">8.1. </span>Notes on EMULSION 1.2<a class="headerlink" href="#notes-on-emulsion-1-2" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">8.1. </span>Notes on EMULSION 1.2<a class="headerlink" href="#notes-on-emulsion-1-2" title="Permalink to this headline">¶</a></h2>
 <p>Release date: Sept 2022</p>
 <section id="modelling-language">
-<h3>Modelling language<a class="headerlink" href="#modelling-language" title="Permalink to this heading">¶</a></h3>
+<h3>Modelling language<a class="headerlink" href="#modelling-language" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>revised syntax to make compartment-based, hybrid and IBM models more homogeneous</p>
 <div class="admonition seealso">
@@ -57,20 +58,20 @@
 </ul>
 </section>
 <section id="simulation-engine">
-<h3>Simulation engine<a class="headerlink" href="#simulation-engine" title="Permalink to this heading">¶</a></h3>
+<h3>Simulation engine<a class="headerlink" href="#simulation-engine" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>revised architecture of compartment-based models and hybrid models to build appropriate groupings without duplicates</p></li>
 <li><p>optimised implementation of built-in variables/functions e.g. counts of groupings and state testing</p></li>
 </ul>
 </section>
 <section id="documentation">
-<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">¶</a></h3>
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>introduced example models for new features of the modelling language</p></li>
 </ul>
 </section>
 <section id="bugfixes">
-<h3>Bugfixes<a class="headerlink" href="#bugfixes" title="Permalink to this heading">¶</a></h3>
+<h3>Bugfixes<a class="headerlink" href="#bugfixes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>revised architecture of compartment-based models to enable correct interactions between all state machines</p></li>
 <li><p>changed loading of YAML file to ensure that no error occurs due to text encoding. Encoding is now expected to be utf-8; if not (e.g. specific to Windows, or latin-1), non-ASCII characters (e.g. accented letters) are replaced
@@ -79,10 +80,10 @@ by a symbol.</p></li>
 </section>
 </section>
 <section id="notes-on-emulsion-1-1">
-<h2><span class="section-number">8.2. </span>Notes on EMULSION 1.1<a class="headerlink" href="#notes-on-emulsion-1-1" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">8.2. </span>Notes on EMULSION 1.1<a class="headerlink" href="#notes-on-emulsion-1-1" title="Permalink to this headline">¶</a></h2>
 <p>Release date: October 19, 2020</p>
 <section id="id1">
-<h3>Documentation<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<h3>Documentation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>fixed minor errors in installation instructions or code examples</p></li>
 <li><p>introduced example models for new features of the modelling language</p></li>
@@ -90,7 +91,7 @@ by a symbol.</p></li>
 </ul>
 </section>
 <section id="command-line">
-<h3>Command-line<a class="headerlink" href="#command-line" title="Permalink to this heading">¶</a></h3>
+<h3>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>added an option <code class="docutils literal notranslate"><span class="pre">--table-params</span></code> which prints a table of
 parameters and initial conditions</p></li>
@@ -101,7 +102,7 @@ outputs must be handled explicitly with actions such as
 </ul>
 </section>
 <section id="id2">
-<h3>Modelling language<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<h3>Modelling language<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>introduced wrapper function <code class="docutils literal notranslate"><span class="pre">MIN</span></code> and <code class="docutils literal notranslate"><span class="pre">MAX</span></code> to be used with any number of arguments in models, instead of <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code></p></li>
 <li><p>modified <a class="reference internal" href="Modelling_language_advanced.html#become-action"><span class="std std-ref">built-in action</span></a> <code class="docutils literal notranslate"><span class="pre">become</span></code> to accept a list of prototypes and a keyword <code class="docutils literal notranslate"><span class="pre">proba</span></code> with a list of probabilities (similar to <code class="docutils literal notranslate"><span class="pre">clone</span></code>)</p></li>
@@ -154,7 +155,7 @@ complete syntax and additional options (experimental feature)</p></li>
 </ul>
 </section>
 <section id="id3">
-<h3>Bugfixes<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<h3>Bugfixes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Fixed YAML unsafe loading</p></li>
 <li><p>set explicit encoding to utf8 when writing graphviz/dot file (to overcome problems in Windows version)</p></li>
@@ -172,7 +173,7 @@ complete syntax and additional options (experimental feature)</p></li>
 </section>
 </section>
 <section id="notes-on-emulsion-1-0">
-<h2><span class="section-number">8.3. </span>Notes on EMULSION 1.0<a class="headerlink" href="#notes-on-emulsion-1-0" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">8.3. </span>Notes on EMULSION 1.0<a class="headerlink" href="#notes-on-emulsion-1-0" title="Permalink to this headline">¶</a></h2>
 <p>Release date: February 20, 2019</p>
 <p>First public release of EMULSION (support Python 3.6+)</p>
 <p>Last stable version: 1.0.12 (August 17, 2020)</p>
@@ -247,7 +248,7 @@ complete syntax and additional options (experimental feature)</p></li>
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -264,7 +265,7 @@ complete syntax and additional options (experimental feature)</p></li>
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

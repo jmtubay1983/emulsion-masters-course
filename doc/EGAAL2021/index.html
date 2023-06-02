@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Introduction to the exploration of epidemiological models using EMULSION &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="../_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="../_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
    
@@ -33,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="introduction-to-the-exploration-of-epidemiological-models-using-emulsion">
-<h1>Introduction to the exploration of epidemiological models using EMULSION<a class="headerlink" href="#introduction-to-the-exploration-of-epidemiological-models-using-emulsion" title="Permalink to this heading">¶</a></h1>
+<h1>Introduction to the exploration of epidemiological models using EMULSION<a class="headerlink" href="#introduction-to-the-exploration-of-epidemiological-models-using-emulsion" title="Permalink to this headline">¶</a></h1>
 <p>This training is part of the <a class="reference external" href="https://ed-egaal.doctorat-bretagneloire.fr/fr/5_documents-de-led-egaal">EGAAL doctoral school</a> and is open to doctoral students (in priority), post-doctoral students and researchers.</p>
 <p>Notions in mechanistic modelling, fair knowledge of epidemiological models (SIR-like models), and for the last session, an experience in programming (even limited) are required.</p>
 <div class="admonition warning">
@@ -42,13 +43,19 @@
 entirely on-line.</p>
 </div>
 <section id="purpose-of-the-training">
-<h2>Purpose of the training<a class="headerlink" href="#purpose-of-the-training" title="Permalink to this heading">¶</a></h2>
+<h2>Purpose of the training<a class="headerlink" href="#purpose-of-the-training" title="Permalink to this headline">¶</a></h2>
 <p>The aim of this training is to introduce the principles of modelling and simulation implemented in framework <a class="reference external" href="https://sourcesup.renater.fr/www/emulsion-public/">EMULSION</a>, and to endow doctoral students (or researchers) with the ability to use this framework for their own research. In particular, the practical work and case study proposed will enable them to master the model description language, through exercises of graduated difficulty illustrating various concrete problems that may arise in epidemiological modeling. We will also present the integration of EMULSION in a workflow (experiment plans, outcomes synthesis).</p>
 <p><a class="reference external" href="https://sourcesup.renater.fr/www/emulsion-public/">EMULSION</a> is a new software framework designed to facilitate multi-scale and multi-paradigm mechanistic modelling of infectious diseases in animal, human or plant epidemiology. It relies upon a generic simulation engine (which integrates many of the functionalities required for simulating the spread of pathogens), controlled by a <strong>language dedicated to epidemiological modelling</strong>. This language fosters the explicit and exhaustive description of epidemiological models, to make them intelligible and revisable by non-computer scientists (modelers, epidemiologists, veterinarians, agronomists, biologists.) who can thus, throughout the model development process, <strong>participate in the reflection on the hypotheses and parameters required without having to dive in computer code</strong>. It thus allows a <strong>focus on epidemiological research issues</strong> (comparison of biological assumptions, evaluation of control strategies, health and economic impact of diseases) by reducing the time invested in programming, and enhances the reproducibility of simulations. EMULSION is released under an open source license to make it usable and mobilizable for various categories of users, including those involved in modeling.</p>
 </section>
 <section id="schedule">
-<h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this heading">¶</a></h2>
+<h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Hours (UTC+2)</p></th>
 <th class="head"><p>June 2, 2021</p></th>
@@ -71,7 +78,7 @@ entirely on-line.</p>
 </table>
 </section>
 <section id="program">
-<h2>Program<a class="headerlink" href="#program" title="Permalink to this heading">¶</a></h2>
+<h2>Program<a class="headerlink" href="#program" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Presentation of the problems of implementation and reproducibility
 of epidemiological models. Presentation of EMULSION principles,
@@ -94,7 +101,7 @@ from the generic simulation engine (TP, 1H30, PART 3)</p></li>
 </ol>
 </section>
 <section id="registration">
-<h2>Registration<a class="headerlink" href="#registration" title="Permalink to this heading">¶</a></h2>
+<h2>Registration<a class="headerlink" href="#registration" title="Permalink to this headline">¶</a></h2>
 <p>Deadline for registration is <strong>May 21, 2021</strong>.</p>
 <p>For Ph.D. students from Brittany and Région Pays-de-la-Loire,
 please register directly through one of the following portals
@@ -117,7 +124,7 @@ please register directly through one of the following portals
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

@@ -11,9 +11,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="../../_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="../../_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
    
@@ -33,20 +34,19 @@
           <div class="body" role="main">
             
   <h1>Source code for emulsion.init_emulsion</h1><div class="highlight"><pre>
-<span></span>
-<span class="c1">#!/usr/bin/env python3</span>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="c1"># [HEADER]</span>
 
-<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span>   <span class="nn">pathlib</span>    <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">from</span>   <span class="nn">shutil</span>     <span class="kn">import</span> <span class="n">copy</span>
 
 <span class="kn">from</span>   <span class="nn">colorama</span>   <span class="kn">import</span> <span class="n">Style</span>
 <span class="kn">import</span> <span class="nn">emulsion</span>
 
-<span class="n">COMMAND</span> <span class="o">=</span> <span class="s1">&#39;source $HOME/.emulsionrc/emulsion-completion.sh&#39;</span>
-<span class="n">CPATH</span> <span class="o">=</span> <span class="s1">&#39;export PYTHONPATH=$PYTHONPATH:.&#39;</span>
+
+<span class="n">COMMAND</span> <span class="o">=</span> <span class="s1">&#39;source $HOME/.emulsionrc/emulsion-bash-completion.sh&#39;</span>
+<span class="c1"># CPATH = &#39;export PYTHONPATH=$PYTHONPATH:.&#39;</span>
 
 <div class="viewcode-block" id="main"><a class="viewcode-back" href="../../emulsion.html#emulsion.init_emulsion.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="c1"># retrieve $HOME and path to EMULSION repository</span>
@@ -57,16 +57,16 @@
     <span class="c1"># create .emulsionrc</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating $HOME/.emulsionrc with EMULSION init files&quot;</span><span class="p">)</span>
     <span class="n">EMULSION_RC</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="c1"># copy emulsion-completion.sh</span>
-    <span class="n">copy</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">EMULSION_SCRIPTS</span><span class="p">,</span> <span class="s1">&#39;emulsion-completion.sh&#39;</span><span class="p">)),</span>
+    <span class="c1"># copy emulsion-bash-completion.sh</span>
+    <span class="n">copy</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">EMULSION_SCRIPTS</span><span class="p">,</span> <span class="s1">&#39;emulsion-bash-completion.sh&#39;</span><span class="p">)),</span>
          <span class="nb">str</span><span class="p">(</span><span class="n">EMULSION_RC</span><span class="p">))</span>
     <span class="c1"># change .bashrc</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adding initialization instructions to $HOME/.bashrc&quot;</span><span class="p">)</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">HOMEDIR</span><span class="p">,</span> <span class="s1">&#39;.bashrc&#39;</span><span class="p">),</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># init EMULSION completion</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">COMMAND</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># update PYTHONPATH to allow importing local modules</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">CPATH</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># f.write(&quot;\n# update PYTHONPATH to allow importing local modules\n&quot;)</span>
+        <span class="c1"># f.write(CPATH + &quot;\n&quot;)</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Initialization finished.&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">Style</span><span class="o">.</span><span class="n">BRIGHT</span> <span class="o">+</span> <span class="s2">&quot;&quot;&quot;</span>
@@ -128,7 +128,7 @@
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -145,7 +145,7 @@
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

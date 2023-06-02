@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>4. Modelling principles &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="../_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="../_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5. Modelling language (basics)" href="Modelling_language_basics.html" />
@@ -36,10 +37,10 @@
           <div class="body" role="main">
             
   <section id="modelling-principles">
-<h1><span class="section-number">4. </span>Modelling principles<a class="headerlink" href="#modelling-principles" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">4. </span>Modelling principles<a class="headerlink" href="#modelling-principles" title="Permalink to this headline">¶</a></h1>
 <p>First, a few words on key concepts used in EMULSION.</p>
 <section id="individuals-populations-metapopulations">
-<h2><span class="section-number">4.1. </span>Individuals, populations, metapopulations<a class="headerlink" href="#individuals-populations-metapopulations" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Individuals, populations, metapopulations<a class="headerlink" href="#individuals-populations-metapopulations" title="Permalink to this headline">¶</a></h2>
 <p>EMULSION models can represent the dynamics of several organization
 levels (or scales), through classical paradigms used in epidemiological modelling:</p>
 <ul>
@@ -72,9 +73,9 @@ compartment-based, individual-based or hybrid modelling paradigms.</p>
 </figure>
 </section>
 <section id="from-flow-diagrams-to-state-machines">
-<h2><span class="section-number">4.2. </span>From flow diagrams to state machines<a class="headerlink" href="#from-flow-diagrams-to-state-machines" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.2. </span>From flow diagrams to state machines<a class="headerlink" href="#from-flow-diagrams-to-state-machines" title="Permalink to this headline">¶</a></h2>
 <section id="flow-diagrams">
-<h3>Flow diagrams<a class="headerlink" href="#flow-diagrams" title="Permalink to this heading">¶</a></h3>
+<h3>Flow diagrams<a class="headerlink" href="#flow-diagrams" title="Permalink to this headline">¶</a></h3>
 <p>Flow diagrams are a broadly adopted representation in epidemiological
 modelling. Possible states are represented as boxes. Plain arrows
 specify at which rate individuals move from one state to another. For
@@ -112,7 +113,7 @@ many model features cannot be represented explicitly.</p></li>
 </ol>
 </section>
 <section id="state-machines">
-<h3>State machines<a class="headerlink" href="#state-machines" title="Permalink to this heading">¶</a></h3>
+<h3>State machines<a class="headerlink" href="#state-machines" title="Permalink to this headline">¶</a></h3>
 <p>State machines (<a class="reference internal" href="#state-machine"><span class="std std-numref">Fig. 4.2</span></a>) is a formalism which
 completely encompasses flow diagrams but can also support more complex
 features while making them appear explicitly. Especially:</p>
@@ -223,7 +224,7 @@ must be represented by one transition, with its own features
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -240,7 +241,7 @@ must be represented by one transition, with its own features
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

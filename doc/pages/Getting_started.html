@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>3. Getting started with EMULSION &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="../_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="../_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4. Modelling principles" href="Modelling_principles.html" />
@@ -36,12 +37,12 @@
           <div class="body" role="main">
             
   <section id="getting-started-with-emulsion">
-<h1><span class="section-number">3. </span>Getting started with EMULSION<a class="headerlink" href="#getting-started-with-emulsion" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">3. </span>Getting started with EMULSION<a class="headerlink" href="#getting-started-with-emulsion" title="Permalink to this headline">¶</a></h1>
 <p>We assume in what follows that you have downloaded and unzipped the
 <a class="reference external" href="../models.zip">models directory</a> provided
 on <a class="reference external" href="https://sourcesup.renater.fr/www/emulsion-public/">EMULSION website.</a></p>
 <section id="running-emulsion">
-<h2><span class="section-number">3.1. </span>Running EMULSION<a class="headerlink" href="#running-emulsion" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Running EMULSION<a class="headerlink" href="#running-emulsion" title="Permalink to this headline">¶</a></h2>
 <p>To simulate an EMULSION model (named e.g. <code class="docutils literal notranslate"><span class="pre">MODEL</span></code>), open a terminal
 in the directory where your files are located, and type the following
 command:</p>
@@ -79,7 +80,7 @@ append option <code class="docutils literal notranslate"><span class="pre">--vie
 <img alt="../_images/SIR1.png" class="align-left" src="../_images/SIR1.png" />
 <img alt="../_images/SIR1b.png" class="align-left" src="../_images/SIR1b.png" />
 <p>You can also check the results of a more complex model, e.g. <code class="docutils literal notranslate"><span class="pre">quickstart</span></code>,
-tested <a class="reference internal" href="Install.html#test-your-installation"><span class="std std-ref">at install</span></a>.</p>
+tested <span class="xref std std-ref">at install</span>.</p>
 <p>When running a model, EMULSION:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -119,7 +120,7 @@ outputs web page) to <code class="docutils literal notranslate"><span class="pre
 <p>(Other options are available with <code class="docutils literal notranslate"><span class="pre">emulsion</span> <span class="pre">-h</span></code>.)</p>
 </section>
 <section id="producing-model-diagrams">
-<h2><span class="section-number">3.2. </span>Producing model diagrams<a class="headerlink" href="#producing-model-diagrams" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Producing model diagrams<a class="headerlink" href="#producing-model-diagrams" title="Permalink to this headline">¶</a></h2>
 <p>When running a model, you can use options <code class="docutils literal notranslate"><span class="pre">--plot</span></code> and
 <code class="docutils literal notranslate"><span class="pre">--view-model</span></code> to plot simulation outcomes and model diagrams,
 respectively.</p>
@@ -136,7 +137,7 @@ with option <code class="docutils literal notranslate"><span class="pre">--forma
 </div>
 </section>
 <section id="viewing-parameters">
-<h2><span class="section-number">3.3. </span>Viewing parameters<a class="headerlink" href="#viewing-parameters" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.3. </span>Viewing parameters<a class="headerlink" href="#viewing-parameters" title="Permalink to this headline">¶</a></h2>
 <p>EMULSION command can also show the actual values of model parameters:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>emulsion show compart_SIR.yaml
 </pre></div>
@@ -178,7 +179,7 @@ with option <code class="docutils literal notranslate"><span class="pre">--forma
 </div>
 </section>
 <section id="changing-parameters">
-<h2><span class="section-number">3.4. </span>Changing parameters<a class="headerlink" href="#changing-parameters" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.4. </span>Changing parameters<a class="headerlink" href="#changing-parameters" title="Permalink to this headline">¶</a></h2>
 <p>Now, to run the model with other parameter values without changing the
 model file, you can specify the new values with option <code class="docutils literal notranslate"><span class="pre">-p</span>
 <span class="pre">PARAM=VALUE</span></code> (one for each parameter to change), for instance:</p>
@@ -190,7 +191,7 @@ model file, you can specify the new values with option <code class="docutils lit
 <img alt="../_images/SIR2b.png" class="align-left" src="../_images/SIR2b.png" />
 </section>
 <section id="changing-the-model">
-<h2><span class="section-number">3.5. </span>Changing the model<a class="headerlink" href="#changing-the-model" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.5. </span>Changing the model<a class="headerlink" href="#changing-the-model" title="Permalink to this headline">¶</a></h2>
 <p>To change model structure and assumptions, open the file in a text
 editor. For instance, to change the above SIR model into a SEIRS
 model, open <code class="docutils literal notranslate"><span class="pre">compart_SIR.yaml</span></code> and save it as a new file,
@@ -297,7 +298,7 @@ incubation&quot;, arrowtail=&quot;none&quot;, arrowhead=&quot;normalnone&quot;, 
 <img alt="../_images/SEIRS.png" class="align-left" src="../_images/SEIRS.png" />
 </section>
 <section id="going-further">
-<h2><span class="section-number">3.6. </span>Going further…<a class="headerlink" href="#going-further" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.6. </span>Going further…<a class="headerlink" href="#going-further" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-check-our-examples admonition">
 <p class="admonition-title">Check our examples</p>
 <p>EMULSION provides a large number of modelling features. To go
@@ -376,7 +377,7 @@ epidemiological models and how they are handled with EMULSION.</p></li>
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -393,7 +394,7 @@ epidemiological models and how they are handled with EMULSION.</p></li>
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

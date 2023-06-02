@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>emulsion.agent.core package &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="emulsion.agent.managers package" href="emulsion.agent.managers.html" />
@@ -35,16 +36,16 @@
 
           <div class="body" role="main">
             
-  <section id="module-0">
-<span id="emulsion-agent-core-package"></span><h1>emulsion.agent.core package<a class="headerlink" href="#module-0" title="Permalink to this heading">¶</a></h1>
-<span class="target" id="module-emulsion.agent.core"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
+  <section id="module-emulsion.agent.core">
+<span id="emulsion-agent-core-package"></span><h1>emulsion.agent.core package<a class="headerlink" href="#module-emulsion.agent.core" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-0"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <p>Part of this code was adapted from the PADAWAN framework (S. Picault,
 Univ. Lille).</p>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </section>
 <section id="module-emulsion.agent.core.abstract_agent">
-<span id="emulsion-agent-core-abstract-agent-module"></span><h2>emulsion.agent.core.abstract_agent module<a class="headerlink" href="#module-emulsion.agent.core.abstract_agent" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-core-abstract-agent-module"></span><h2>emulsion.agent.core.abstract_agent module<a class="headerlink" href="#module-emulsion.agent.core.abstract_agent" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-emulsion.agent.core.asbtract_agent"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <p>Part of this code was adapted from the PADAWAN framework (S. Picault,
 Univ. Lille).</p>
@@ -178,7 +179,7 @@ the current state is stored in a statevar called
 <code class="docutils literal notranslate"><span class="pre">_time_to_exit_machine_name</span></code>, is computed from the
 current time (<code class="docutils literal notranslate"><span class="pre">step</span></code>) plus the <em>duration</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>machine_name</strong> (<em>str</em>) – name of the state machine for which
 the duration in the current state must be updated</p></li>
@@ -196,11 +197,11 @@ current time in the simulation</p></li>
 <dd><p>Return the duration (in time units) this agent has spent in the
 current state of the specified state machine (<em>machine_name</em>).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>machine_name</strong> – the name of the state machine for which
 the duration in the current state must be computed</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A duration (expressed in time units) corresponding to the
 duration spent in the current state for this state machine.</p>
 </dd>
@@ -264,15 +265,15 @@ applied before creating entities for the sublevels.</p>
 </dd></dl>
 
 </section>
-<section id="module-1">
-<span id="emulsion-agent-core-emulsion-agent-module"></span><h2>emulsion.agent.core.emulsion_agent module<a class="headerlink" href="#module-1" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.agent.core.emulsion_agent"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
+<section id="module-emulsion.agent.core.emulsion_agent">
+<span id="emulsion-agent-core-emulsion-agent-module"></span><h2>emulsion.agent.core.emulsion_agent module<a class="headerlink" href="#module-emulsion.agent.core.emulsion_agent" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-1"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <p>Part of this code was adapted from the PADAWAN framework (S. Picault,
 Univ. Lille).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.core.emulsion_agent.EmulsionAgent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.core.emulsion_agent.</span></span><span class="sig-name descname"><span class="pre">EmulsionAgent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simulation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/core/emulsion_agent.html#EmulsionAgent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.core.emulsion_agent.EmulsionAgent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="emulsion_for_modellers.html#id2" title="emulsion.agent.core.abstract_agent.AbstractAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractAgent</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="emulsion_for_modellers.html#id2" title="emulsion.agent.core.abstract_agent.AbstractAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.core.abstract_agent.AbstractAgent</span></code></a></p>
 <p>The EmulsionAgent is the base class for multi-level
 epidemiologic agents. An EmulsionAgent can represent any entity
 involved in the epidemiologic model (individual, compartment,
@@ -543,15 +544,15 @@ statevars of the agent.</p>
 </dd></dl>
 
 </section>
-<section id="module-2">
-<span id="emulsion-agent-core-groups-module"></span><h2>emulsion.agent.core.groups module<a class="headerlink" href="#module-2" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.agent.core.groups"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
+<section id="module-emulsion.agent.core.groups">
+<span id="emulsion-agent-core-groups-module"></span><h2>emulsion.agent.core.groups module<a class="headerlink" href="#module-emulsion.agent.core.groups" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-2"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <p>Part of this code was adapted from the PADAWAN framework (S. Picault,
 Univ. Lille).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.core.groups.GroupAgent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.core.groups.</span></span><span class="sig-name descname"><span class="pre">GroupAgent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/core/groups.html#GroupAgent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.core.groups.GroupAgent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.core.emulsion_agent.EmulsionAgent" title="emulsion.agent.core.emulsion_agent.EmulsionAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmulsionAgent</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.core.emulsion_agent.EmulsionAgent" title="emulsion.agent.core.emulsion_agent.EmulsionAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.core.emulsion_agent.EmulsionAgent</span></code></a></p>
 <p>A GroupAgent is aimed at representing a group of agents. The
 underlying level may be either explicitly represented (using a
 ViewCompartment) or aggregated (using an Compartment). Each
@@ -610,7 +611,7 @@ entering/exiting nodes and crossing edges if needed.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.core.groups.Aggregation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.core.groups.</span></span><span class="sig-name descname"><span class="pre">Aggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/core/groups.html#Aggregation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.core.groups.Aggregation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.core.groups.GroupAgent" title="emulsion.agent.core.groups.GroupAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">GroupAgent</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.core.groups.GroupAgent" title="emulsion.agent.core.groups.GroupAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.core.groups.GroupAgent</span></code></a></p>
 <p>An Aggregation is aimed at grouping agents from the underlying
 level. Thus, aggregate information such as the total number of
 agents in the compartment (population) is calculated from the
@@ -752,7 +753,7 @@ agents. Required before serialization.</p>
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -769,7 +770,7 @@ agents. Required before serialization.</p>
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

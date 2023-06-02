@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>6. Modelling language (advanced) &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,10 +12,11 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="icon" href="../_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="../_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Feature examples" href="Feature_examples.html" />
@@ -37,7 +38,7 @@
           <div class="body" role="main">
             
   <section id="modelling-language-advanced">
-<h1><span class="section-number">6. </span>Modelling language (advanced)<a class="headerlink" href="#modelling-language-advanced" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">6. </span>Modelling language (advanced)<a class="headerlink" href="#modelling-language-advanced" title="Permalink to this headline">¶</a></h1>
 <p><strong>TODO: documentation of new experimental features=input data (pre-processors and data-driven parameters)</strong></p>
 <p>EMULSION modelling language allows model designers to specify complex
 assumptions in a readable way, to foster interactions with other
@@ -46,7 +47,7 @@ without having to dive into the simulation code.</p>
 <p>Most language features documented below are associated with example
 files, located in the <code class="docutils literal notranslate"><span class="pre">models/features</span></code> directory.</p>
 <section id="compartments-ibm-or-hybrid-models">
-<h2><span class="section-number">6.1. </span>Compartments, IBM or hybrid models?<a class="headerlink" href="#compartments-ibm-or-hybrid-models" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.1. </span>Compartments, IBM or hybrid models?<a class="headerlink" href="#compartments-ibm-or-hybrid-models" title="Permalink to this headline">¶</a></h2>
 <p>EMULSION helps to transform compartment-based models into
 invidual-based models (or vice-versa, assuming the individual-based
 model can get rid of individual specificities). An intermediate
@@ -57,6 +58,14 @@ groupings (see: <a class="reference internal" href="Modelling_principles.html#in
 models, regarding the sections and keywords to modify in an EMULSION
 model file.</p>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 30%" />
+<col style="width: 18%" />
+<col style="width: 23%" />
+<col style="width: 0%" />
+<col style="width: 10%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head" rowspan="2"><p>EMULSION section</p></th>
 <th class="head" rowspan="2"><p>section keyword</p></th>
@@ -106,9 +115,9 @@ processes (<code class="docutils literal notranslate"><span class="pre">compart_
 </div>
 </section>
 <section id="master-state-machines">
-<h2><span class="section-number">6.2. </span>Master state machines<a class="headerlink" href="#master-state-machines" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.2. </span>Master state machines<a class="headerlink" href="#master-state-machines" title="Permalink to this headline">¶</a></h2>
 <section id="set-states-attributes">
-<h3>Set states attributes<a class="headerlink" href="#set-states-attributes" title="Permalink to this heading">¶</a></h3>
+<h3>Set states attributes<a class="headerlink" href="#set-states-attributes" title="Permalink to this headline">¶</a></h3>
 <p>States can be endowed with <em>attributes</em>. For instance, <code class="docutils literal notranslate"><span class="pre">fillcolor</span></code>
 (default: gray) or <code class="docutils literal notranslate"><span class="pre">line_style</span></code> (default: solid) defines,
 respectively, the color of the boxes on state machine diagrams, which
@@ -189,7 +198,7 @@ add-on (e.g. <code class="docutils literal notranslate"><span class="pre">action
 </dl>
 </section>
 <section id="customize-transitions">
-<h3>Customize transitions<a class="headerlink" href="#customize-transitions" title="Permalink to this heading">¶</a></h3>
+<h3>Customize transitions<a class="headerlink" href="#customize-transitions" title="Permalink to this headline">¶</a></h3>
 <p>In state machines, transitions are composed of at least three items:</p>
 <ul class="simple" id="quantifiers">
 <li><p><code class="docutils literal notranslate"><span class="pre">from</span></code> followed by the origin state</p></li>
@@ -242,7 +251,7 @@ transition have to perform</p>
 </ul>
 </section>
 <section id="produce-new-individuals">
-<h3>Produce new individuals<a class="headerlink" href="#produce-new-individuals" title="Permalink to this heading">¶</a></h3>
+<h3>Produce new individuals<a class="headerlink" href="#produce-new-individuals" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Section <code class="docutils literal notranslate"><span class="pre">productions</span></code> in state machines allow to define how some
 states can produce new individuals. Production links are very
@@ -269,7 +278,7 @@ with a state (see <a class="reference internal" href="#set-states-attributes"><s
 </ul>
 </section>
 <section id="state-machines-without-transitions">
-<h3>State machines without transitions<a class="headerlink" href="#state-machines-without-transitions" title="Permalink to this heading">¶</a></h3>
+<h3>State machines without transitions<a class="headerlink" href="#state-machines-without-transitions" title="Permalink to this headline">¶</a></h3>
 <p>State machines can also be used only for defining states, e.g. to
 differentiate discrete values such as categories (male/female
 individuals) or enumerations (e.g. female parities). In that case, the
@@ -281,7 +290,7 @@ state machine does not require any transition at all.</p>
 </section>
 </section>
 <section id="design-prototypes-for-typical-individuals-or-populations">
-<h2><span class="section-number">6.3. </span>Design prototypes for typical individuals or populations<a class="headerlink" href="#design-prototypes-for-typical-individuals-or-populations" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.3. </span>Design prototypes for typical individuals or populations<a class="headerlink" href="#design-prototypes-for-typical-individuals-or-populations" title="Permalink to this headline">¶</a></h2>
 <p>In EMULSION, prototypes are meant to represent typical individuals
 (within populations) or populations (within metapopulations),
 characterized by their state variables, either regarding the state of
@@ -293,7 +302,7 @@ prototypes are those corresponding to state machines (because
 individuals are not simulated as entities but only as an aggregate
 population).</p>
 <section id="define-prototypes">
-<h3>Define prototypes<a class="headerlink" href="#define-prototypes" title="Permalink to this heading">¶</a></h3>
+<h3>Define prototypes<a class="headerlink" href="#define-prototypes" title="Permalink to this headline">¶</a></h3>
 <p>Prototypes are defined in the section named <code class="docutils literal notranslate"><span class="pre">prototypes</span></code> (see
 <a class="reference internal" href="Modelling_language_basics.html#model-structure"><span class="std std-ref">Model structure</span></a>).</p>
 <ul>
@@ -361,7 +370,7 @@ weights and normalized to compute probabilities as follows:</p>
 </div>
 </section>
 <section id="default-prototypes">
-<h3>Default prototypes<a class="headerlink" href="#default-prototypes" title="Permalink to this heading">¶</a></h3>
+<h3>Default prototypes<a class="headerlink" href="#default-prototypes" title="Permalink to this headline">¶</a></h3>
 <p>Each level can be associated with a default prototype, defined in the
 <code class="docutils literal notranslate"><span class="pre">prototypes</span></code> section. This ensures for instance that agents created
 for a level have some variables initialized properly, or avoids
@@ -386,7 +395,7 @@ other possible prototypes.</p>
 </div>
 </section>
 <section id="data-based-prototype-collections">
-<h3>Data-based prototype collections<a class="headerlink" href="#data-based-prototype-collections" title="Permalink to this heading">¶</a></h3>
+<h3>Data-based prototype collections<a class="headerlink" href="#data-based-prototype-collections" title="Permalink to this headline">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This feature is experimental and likely to evolve in further versions.</p>
@@ -497,7 +506,7 @@ of each line.</p>
 </div>
 </section>
 <section id="order-of-variables-assignment-in-prototypes">
-<h3>Order of variables assignment in prototypes<a class="headerlink" href="#order-of-variables-assignment-in-prototypes" title="Permalink to this heading">¶</a></h3>
+<h3>Order of variables assignment in prototypes<a class="headerlink" href="#order-of-variables-assignment-in-prototypes" title="Permalink to this headline">¶</a></h3>
 <p>By default, in prototype definition, the only order that applies in
 setting the value of variables is the following:</p>
 <ul class="simple">
@@ -536,7 +545,7 @@ synchronized. After that, the <code class="docutils literal notranslate"><span c
 </section>
 </section>
 <section id="regulate-time">
-<h2><span class="section-number">6.4. </span>Regulate time<a class="headerlink" href="#regulate-time" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.4. </span>Regulate time<a class="headerlink" href="#regulate-time" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>The simulation time step can be changed either in the model file
 (section <code class="docutils literal notranslate"><span class="pre">time_info</span></code>), or at runtime with option <code class="docutils literal notranslate"><span class="pre">-p</span>
@@ -569,7 +578,7 @@ two other events, here for instance <code class="docutils literal notranslate"><
 <code class="docutils literal notranslate"><span class="pre">duration_of_EVENT</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">duration_of_pasture_period</span></code></p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>model <a class="reference internal" href="Install.html#test-your-installation"><span class="std std-ref">Quickstart</span></a> provided to test
+<p>model <span class="xref std std-ref">Quickstart</span> provided to test
 EMULSION installation</p>
 </div>
 </div>
@@ -577,7 +586,7 @@ EMULSION installation</p>
 </ul>
 </section>
 <section id="complexify-grouping">
-<h2><span class="section-number">6.5. </span>Complexify grouping<a class="headerlink" href="#complexify-grouping" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.5. </span>Complexify grouping<a class="headerlink" href="#complexify-grouping" title="Permalink to this headline">¶</a></h2>
 <p>Grouping can be based on several variables, especially when the
 dynamics of one process is affected by another one. For instance, if
 infection is driven by age groups, the grouping section should be
@@ -612,7 +621,7 @@ processes: otherwise the grouping is not updated at each time step
 </div>
 </section>
 <section id="aggregate-variables">
-<h2><span class="section-number">6.6. </span>Aggregate variables<a class="headerlink" href="#aggregate-variables" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.6. </span>Aggregate variables<a class="headerlink" href="#aggregate-variables" title="Permalink to this headline">¶</a></h2>
 <p>When defining levels, variables that aggregate other variables from a
 sublevel can be defined, for instance:</p>
 <div class="admonition-example admonition">
@@ -645,7 +654,7 @@ percentile.</p>
 </div>
 </section>
 <section id="automatic-variables">
-<h2><span class="section-number">6.7. </span>Automatic variables<a class="headerlink" href="#automatic-variables" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.7. </span>Automatic variables<a class="headerlink" href="#automatic-variables" title="Permalink to this headline">¶</a></h2>
 <p>EMULSION automatically provides variables in relation to model
 components.</p>
 <ul class="simple">
@@ -681,7 +690,7 @@ their counterpart is automatically defined for the grouping
 </div>
 </section>
 <section id="built-in-functions">
-<h2><span class="section-number">6.8. </span>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.8. </span>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">¶</a></h2>
 <p>Expressions used in EMULSION models can refer to classical Python
 mathematical operators (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code> for
 exponentiation, etc. ) and functions (e.g. <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code>,
@@ -727,7 +736,7 @@ available:</p>
 </div>
 </section>
 <section id="built-in-actions">
-<h2><span class="section-number">6.9. </span>Built-in actions<a class="headerlink" href="#built-in-actions" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.9. </span>Built-in actions<a class="headerlink" href="#built-in-actions" title="Permalink to this headline">¶</a></h2>
 <dl id="generic-action">
 <dt><code class="docutils literal notranslate"><span class="pre">{action:</span> <span class="pre">action_name,</span> <span class="pre">d_params:</span> <span class="pre">dict_of_parameters}</span></code></dt><dd><p>The generic keyword to call an external actions, requires Python code.</p>
 <ul>
@@ -876,7 +885,7 @@ from distinct state machines.</p>
 </dl>
 </section>
 <section id="changing-scale-metapopulations">
-<h2><span class="section-number">6.10. </span>Changing scale: metapopulations<a class="headerlink" href="#changing-scale-metapopulations" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.10. </span>Changing scale: metapopulations<a class="headerlink" href="#changing-scale-metapopulations" title="Permalink to this headline">¶</a></h2>
 <p>In EMULSION, <code class="docutils literal notranslate"><span class="pre">metapopulation</span></code> is an aggregation type which allows to
 handle multiple populations without regard to how this population is
 built (compartment-based/hybrid/IBM).</p>
@@ -890,7 +899,7 @@ into variables to allow for heterogeneous populations.</p>
 </div>
 </section>
 <section id="connecting-to-python-code-add-ons">
-<h2><span class="section-number">6.11. </span>Connecting to Python code add-ons<a class="headerlink" href="#connecting-to-python-code-add-ons" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.11. </span>Connecting to Python code add-ons<a class="headerlink" href="#connecting-to-python-code-add-ons" title="Permalink to this headline">¶</a></h2>
 <p>EMULSION is aimed at providing <em>generic</em> features required for
 designing epidemiological models. Thus, some very specific operations
 are not available in the generic engine. In such cases, a small code
@@ -924,7 +933,7 @@ unnecessary parts.</p>
 </div>
 </section>
 <section id="using-pre-processors">
-<h2><span class="section-number">6.12. </span>Using pre-processors<a class="headerlink" href="#using-pre-processors" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">6.12. </span>Using pre-processors<a class="headerlink" href="#using-pre-processors" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>TODO</p>
@@ -1013,7 +1022,7 @@ unnecessary parts.</p>
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -1030,7 +1039,7 @@ unnecessary parts.</p>
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

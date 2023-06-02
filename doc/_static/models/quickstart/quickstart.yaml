@@ -340,7 +340,7 @@ parameters:
     desc: '1 if number of animals in quarantine < quarantine_size, 0
     otherwise
     '
-    value: 'StrictLessThan(total_Q, quarantine_size)'
+    value: 'float(StrictLessThan(total_Q, quarantine_size))'
   percentage_prevalence:
     desc: '% of animals infected (E+I+Q)'
     value: '100 * (total_E + total_I + total_Q) / total_population'

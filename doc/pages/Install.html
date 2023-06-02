@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>2. Installation &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="../_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="../_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. Getting started with EMULSION" href="Getting_started.html" />
@@ -36,180 +37,221 @@
           <div class="body" role="main">
             
   <section id="installation">
-<h1><span class="section-number">2. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">2. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <section id="requirements">
-<h2><span class="section-number">2.1. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">2.1. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <dl>
 <dt>System</dt><dd><p>EMULSION has been designed under <strong>MacOS</strong> and <strong>Linux</strong>, and
-works (with minor limitations) with <strong>Windows 10</strong>. See the
+works (with minor limitations) with <strong>Windows 10</strong> or later. See the
 installation procedure specific to your system.</p>
 <p>Also, in what follows, we assume that MacOS and Linux users are
 working with a <strong>bash</strong> shell. If you are not sure, typing: <code class="docutils literal notranslate"><span class="pre">echo</span>
 <span class="pre">$SHELL</span></code> in a terminal should print <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code>. Otherwise, please refer to
 the documentation of your shell to adapt the commands below.</p>
 </dd>
-<dt>Language</dt><dd><p>EMULSION is written in <strong>Python 3</strong> (version 3.9 or higher). In what
-follows, we assume that <code class="docutils literal notranslate"><span class="pre">python3</span></code> and <code class="docutils literal notranslate"><span class="pre">pip3</span></code> refer to your
-Python3 installation. If not, replace them by your own
-configuration in the commands below (e.g. with Windows:
-respectively <code class="docutils literal notranslate"><span class="pre">python.exe</span></code> and <code class="docutils literal notranslate"><span class="pre">pip.exe</span></code>).</p>
-<p>To install Python on your system, please consult
-<a class="reference external" href="https://www.python.org/downloads/">Python website</a>. When
-installing on Windows, check the box “Add Python 3.x to PATH” to
-make python commands available from the terminal.</p>
+<dt>Language</dt><dd><p>EMULSION is written in <strong>Python 3</strong> (version 3.9 or higher).</p>
 </dd>
 </dl>
 </section>
-<section id="install-with-pip-recommended">
-<h2><span class="section-number">2.2. </span>Install with <code class="docutils literal notranslate"><span class="pre">pip</span></code> (recommended)<a class="headerlink" href="#install-with-pip-recommended" title="Permalink to this heading">¶</a></h2>
+<section id="using-installation-script-recommended">
+<h2><span class="section-number">2.2. </span>Using installation script (recommended)<a class="headerlink" href="#using-installation-script-recommended" title="Permalink to this headline">¶</a></h2>
+<p>This installation script installs everything you need to run EMULSION without requiring administrator rights.
+To do so, it installs a <strong>conda</strong> environment (based on <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a>),
+unless you already have conda installed on your system.</p>
+<p>By installing EMULSION that way, we assume that you agree with the
+terms of the Miniconda3 license and of EMULSION license (see <a class="reference internal" href="License.html#license"><span class="std std-ref">License</span></a>).</p>
+<ol class="arabic simple">
+<li><p>Download the installation script dedicated to your platform:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="../dist/install_emulsion-1.2rc4-Windows.exe">Windows</a>: <code class="docutils literal notranslate"><span class="pre">install_emulsion-1.2rc4-Windows.exe</span></code></p></li>
+<li><p>MacOS (<a class="reference external" href="../dist/install_emulsion-1.2rc4-MacOS-arm64">Silicon processor</a> e.g. M1, M2): <code class="docutils literal notranslate"><span class="pre">install_emulsion-1.2rc4-MacOS-arm64</span></code></p></li>
+<li><p>MacOS (<a class="reference external" href="../dist/install_emulsion-1.2rc4-MacOS-x86_64">Intel processor</a>): <code class="docutils literal notranslate"><span class="pre">install_emulsion-1.2rc4-MacOS-x86_64</span></code></p></li>
+<li><p><a class="reference external" href="../dist/install_emulsion-1.2rc4-Linux-x86_64.sh">Linux</a>: <code class="docutils literal notranslate"><span class="pre">install_emulsion-1.2rc4-Linux-x86_64.sh</span></code></p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="2">
+<li><p>Run the script (double-click or from the terminal). You need to be online during the process
+to download installation files. The installation process might ask you some questions:</p>
+<blockquote>
+<div><p>most of the time, default answers are OK.</p>
+</div></blockquote>
+<p>e.g., on MacOS/Linux:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sh install_emulsion-1.2rc4-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>or on Windows (open <code class="docutils literal notranslate"><span class="pre">powershell</span></code>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>install_emulsion-1.2rc4-Windows.exe
+</pre></div>
+</div>
+<p>This will install version 1.2rc4, but the script can also be used to install the latest
+stable version, for instance:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sh install_emulsion-1.2rc4-Linux-x86_64.sh latest
+</pre></div>
+</div>
+</li>
+<li><p>At the end of the installation, you can download example models (the <code class="docutils literal notranslate"><span class="pre">Quickstart</span></code> model and those provided in <a class="reference internal" href="Feature_examples.html#feature-examples"><span class="std std-ref">Feature examples</span></a>) and run the <code class="docutils literal notranslate"><span class="pre">Quickstart</span></code> model  to make sure that the installation succeeded.</p></li>
+</ol>
+<p>EMULSION <a class="reference external" href="https://sourcesup.renater.fr/www/emulsion-public">documentation</a>
+is provided on-line.</p>
+<p>If you need a <strong>specific version</strong> of EMULSION (e.g., a development version such
+as 1.3b1), you can specify it when running the script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sh install_emulsion-latest-Linux-x86_64.sh <span class="m">1</span>.3b1
+</pre></div>
+</div>
+<p>or on Windows (open <code class="docutils literal notranslate"><span class="pre">powershell</span></code>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>install_emulsion-latest-Windows.exe <span class="m">1</span>.3b1
+</pre></div>
+</div>
+<section id="build-your-own-installation-script">
+<h3>Build your own installation script<a class="headerlink" href="#build-your-own-installation-script" title="Permalink to this headline">¶</a></h3>
+<p>If you do not find the installation script corresponding to your own machine,
+you can either install EMULSION step-by-step (see next section), or try to
+build an installation script on your system.</p>
+<p>To do so, you need a Python 3 environment with packages <code class="docutils literal notranslate"><span class="pre">pyinstaller</span></code>, <code class="docutils literal notranslate"><span class="pre">pyyaml</span></code> and <code class="docutils literal notranslate"><span class="pre">colorama</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Download the multi-platform installation script <a class="reference external" href="../install_emulsion.py">install_emulsion.py</a></p></li>
+<li><p>Run:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 install_emulsion.py --build
+</pre></div>
+</div>
+<p>The resulting installation script is now located in <code class="docutils literal notranslate"><span class="pre">dist/</span></code>. You can also specify a version number in the build command.</p>
+</section>
+</section>
+<section id="alternative-1-manual-install-with-pip">
+<h2><span class="section-number">2.3. </span>Alternative 1: Manual install with <code class="docutils literal notranslate"><span class="pre">pip</span></code><a class="headerlink" href="#alternative-1-manual-install-with-pip" title="Permalink to this headline">¶</a></h2>
 <img alt="https://img.shields.io/pypi/pyversions/emulsion.svg?logo=python&amp;logoColor=white" src="https://img.shields.io/pypi/pyversions/emulsion.svg?logo=python&amp;logoColor=white" />
 <img alt="https://img.shields.io/pypi/v/emulsion.svg?" src="https://img.shields.io/pypi/v/emulsion.svg?" />
 <img alt="https://img.shields.io/pypi/wheel/emulsion.svg?" src="https://img.shields.io/pypi/wheel/emulsion.svg?" />
 <img alt="https://img.shields.io/pypi/status/emulsion.svg?" src="https://img.shields.io/pypi/status/emulsion.svg?" />
 <img alt="https://img.shields.io/pypi/l/emulsion.svg?" src="https://img.shields.io/pypi/l/emulsion.svg?" />
 <img alt="https://img.shields.io/pypi/dm/emulsion.svg?" src="https://img.shields.io/pypi/dm/emulsion.svg?" />
-<section id="linux-and-macos">
-<h3>Linux and MacOS:<a class="headerlink" href="#linux-and-macos" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo pip3 install emulsion
+<section id="install-a-python-3-environment">
+<h3>1. Install a Python 3 environment<a class="headerlink" href="#install-a-python-3-environment" title="Permalink to this headline">¶</a></h3>
+<p>To ensure a consistent environment, we recommend installing
+<a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda3</a>.
+Otherwise, to install a classical Python environment on your system,
+please consult <a class="reference external" href="https://www.python.org/downloads/">Python website</a>
+(when installing on Windows, check the box “Add Python 3.x to PATH” to
+make python commands available from the powershell).</p>
+<p>In what follows, we assume that <code class="docutils literal notranslate"><span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> refer to your
+Python3 installation.
+If not, replace them by your own configuration in the commands below.</p>
+</section>
+<section id="a-linux-and-macos">
+<h3>2a. Linux and MacOS:<a class="headerlink" href="#a-linux-and-macos" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install emulsion
 init_emulsion
 <span class="nb">source</span> <span class="nv">$HOME</span>/.bashrc
 </pre></div>
 </div>
-<p>Depending on how you installed Python, <code class="docutils literal notranslate"><span class="pre">sudo</span></code> is sometimes
-optional.</p>
+<p>Depending on how you installed Python, you might need administrator privileges
+(<code class="docutils literal notranslate"><span class="pre">sudo</span></code> before <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code>).</p>
 <p>The second command (<code class="docutils literal notranslate"><span class="pre">init_emulsion</span></code>) initializes command-line
 completion (available with a bash shell, under Linux or MacOS), which allows
 to use <code class="docutils literal notranslate"><span class="pre">TAB</span></code> key to get suggestions on what is expected (options,
-files, parameters…) in the command. It also creates (or modifies)
-the environment variable named <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> to make EMULSION able to
-find code add-ons located in the same directory as your models.</p>
-<p>EMULSION <a class="reference external" href="https://sourcesup.renater.fr/www/emulsion-public">documentation</a>
-is provided on-line.</p>
+files, parameters…) in the command.</p>
 </section>
-<section id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">¶</a></h3>
+<section id="b-windows">
+<h3>2b. Windows<a class="headerlink" href="#b-windows" title="Permalink to this headline">¶</a></h3>
 <p>Open a terminal (“Command Prompt” or “Windows Power Shell”), then
 type:</p>
 <div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>pip.exe install emulsion
 </pre></div>
 </div>
-<p>To make EMULSION able to find code add-ons in the directory where your model
-files are located, you must declare (or modify) an environment
-variable named <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> to add the current directory (”<code class="docutils literal notranslate"><span class="pre">.</span></code>”).</p>
-<p>To do so, you can use the graphical interface (from System
-Preferences), or the terminal. The syntax depends on the kind of
-terminal you are using:</p>
-<blockquote>
-<div><ul>
-<li><p>with the “Command Prompt” (<code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code>), type:</p>
-<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>setx PYTHONPATH <span class="s2">&quot;.;</span><span class="nv">%PYTHONPATH%</span><span class="s2">&quot;</span>
+</section>
+<section id="install-completion-optional">
+<h3>3. Install completion (optional)<a class="headerlink" href="#install-completion-optional" title="Permalink to this headline">¶</a></h3>
+<p>As typing long <code class="docutils literal notranslate"><span class="pre">emulsion</span></code> commands with many options may be tedious,
+EMULSION comes with completion scripts, so that you can get value proposals
+using the <code class="docutils literal notranslate"><span class="pre">TAB</span></code> key.</p>
+<p>To do so, you can download one of the following files and run it at the opening
+of your session:</p>
+<ul>
+<li><p>Windows <a class="reference external" href="../emulsion-powershell-completion.ps1">powershell script</a>: <code class="docutils literal notranslate"><span class="pre">emulsion-powershell-completion.ps1</span></code></p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="n">emulsion-powershell-completion</span><span class="p">.</span><span class="n">ps1</span>
 </pre></div>
 </div>
 </li>
-<li><p>with “Windows Power Shell”, type:</p>
-<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>setx PYTHONPATH <span class="s2">&quot;.;$Env:PYTHONPATH&quot;</span>
+<li><p>Linux/MacOS <a class="reference external" href="../emulsion-bash-completion.sh">bash script</a>: <code class="docutils literal notranslate"><span class="pre">emulsion-bash-completion.sh</span></code>
+then add to your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code>, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;source emulsion-bash-completion.sh&quot;</span> &gt;&gt;<span class="nv">$HOME</span>/.bashrc
 </pre></div>
 </div>
 </li>
-</ul>
-</div></blockquote>
-</section>
-</section>
-<section id="install-third-party-software">
-<h2><span class="section-number">2.3. </span>Install third-party software<a class="headerlink" href="#install-third-party-software" title="Permalink to this heading">¶</a></h2>
-<p><a class="reference external" href="http://www.graphviz.org">Graphviz</a> is highly recommended
-(otherwise, simulations will run but you will not be able to get the
-nice diagrams representing model structure).</p>
-<section id="linux">
-<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install graphviz
-</pre></div>
-</div>
-</section>
-<section id="macos">
-<h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this heading">¶</a></h3>
-<p>To install on MacOS, use for instance <a class="reference external" href="https://brew.sh/">homebrew</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install graphviz
-</pre></div>
-</div>
-</section>
-<section id="id1">
-<h3>Windows<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
-<p>To install on Windows, download the latest stable version from
-<a class="reference external" href="https://graphviz.gitlab.io/_pages/Download/Download_windows.html">Graphviz website</a>
-and update the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable according to where you
-installed the executable files (especially <code class="docutils literal notranslate"><span class="pre">dot.exe</span></code>). You also need
-to let Graphviz find the relevant plug-ins (especially for SVG, PDF,
-PNG diagram production) in the Windows environment.
-For instance, if <code class="docutils literal notranslate"><span class="pre">dot.exe</span></code> is located in
-<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Graphviz\bin</span></code>, just type:</p>
-<blockquote>
-<div><ul>
-<li><p>in the “Command Prompt”:</p>
-<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>setx PATH <span class="s2">&quot;C:\Program Files (x86)\Graphviz\bin;</span><span class="nv">%PATH%</span><span class="s2">&quot;</span>
-dot -c
-</pre></div>
-</div>
-</li>
-<li><p>in “Windows Power Shell”:</p>
-<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>setx PATH <span class="s2">&quot;C:\Program Files (x86)\Graphviz\bin;$Env:PATH&quot;</span>
-dot -c
+<li><p>Linux/MacOS <a class="reference external" href="../emulsion-zsh-completion.sh">zsh script</a>: <code class="docutils literal notranslate"><span class="pre">emulsion-zsh-completion.sh</span></code>
+then add to your <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code>:</p>
+<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> -e <span class="s2">&quot;autoload -U compinit ; compinit\nsource </span><span class="nv">$HOME</span><span class="s2">/emulsion-zsh-completion.sh&quot;</span> &gt;&gt;<span class="nv">$HOME</span>/.zshrc
 </pre></div>
 </div>
 </li>
 </ul>
-</div></blockquote>
-<p>If you encounter any problem with the <code class="docutils literal notranslate"><span class="pre">dot</span></code> command (e.g. a message
-saying that some file does not have the proper writing permission),
-execute your shell (“Command Prompt” or “Windows Power Shell”) as an
-administrator and retry the command.</p>
 </section>
+<section id="install-graphviz-optional">
+<h3>4. Install Graphviz (optional)<a class="headerlink" href="#install-graphviz-optional" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://graphviz.org/">Graphviz</a> is a third-party software used by EMULSION to produce diagrams
+for the processes represented by state machines (more specifically, the
+program called <code class="docutils literal notranslate"><span class="pre">dot</span></code>).</p>
+<p>If you installed Python 3 with Miniconda (or Anaconda), the installation
+of Graphviz within the Python environment does not require administrator privileges:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge python-graphviz
+# configure &#39;dot&#39; program
+dot -c
+</pre></div>
+</div>
+<p>An alternative is to follow Graphviz <a class="reference external" href="https://graphviz.org/download/">installation instructions</a>.</p>
 </section>
 <section id="test-your-installation">
-<h2><span class="section-number">2.4. </span>Test your installation<a class="headerlink" href="#test-your-installation" title="Permalink to this heading">¶</a></h2>
+<h3>5. Test your installation<a class="headerlink" href="#test-your-installation" title="Permalink to this headline">¶</a></h3>
 <p>Download <strong>model examples</strong> <a class="reference external" href="../models.zip">here.</a></p>
 <p>Extract the archive, open a terminal in the <code class="docutils literal notranslate"><span class="pre">models</span></code> directory, then type:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> quickstart
-emulsion run --plot quickstart.yaml --view-model --silent
+emulsion run --plot quickstart.yaml -r <span class="m">20</span> --view-model --silent
 </pre></div>
 </div>
 <p>This should produce the following output:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Simulation</span> <span class="n">level</span><span class="p">:</span><span class="n">population</span>
-<span class="n">Generated</span> <span class="n">state</span> <span class="n">machine</span> <span class="n">diagram</span> <span class="n">img</span><span class="o">/</span><span class="n">Quickstart_age_group_machine</span><span class="o">.</span><span class="n">svg</span>
-<span class="n">Generated</span> <span class="n">state</span> <span class="n">machine</span> <span class="n">diagram</span> <span class="n">img</span><span class="o">/</span><span class="n">Quickstart_life_cycle_machine</span><span class="o">.</span><span class="n">svg</span>
-<span class="n">Generated</span> <span class="n">state</span> <span class="n">machine</span> <span class="n">diagram</span> <span class="n">img</span><span class="o">/</span><span class="n">Quickstart_health_state_machine</span><span class="o">.</span><span class="n">svg</span>
-<span class="mi">100</span><span class="o">%|*************************************************************|</span> <span class="mi">10</span><span class="o">/</span><span class="mi">10</span>
-<span class="n">Simulation</span> <span class="n">finished</span> <span class="ow">in</span> <span class="mf">12.37</span> <span class="n">s</span>
-<span class="n">Outputs</span> <span class="n">stored</span> <span class="ow">in</span> <span class="n">outputs</span><span class="o">/</span><span class="n">counts</span><span class="o">.</span><span class="n">csv</span>
-<span class="n">Outputs</span> <span class="n">plot</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span> <span class="n">img</span><span class="o">/</span><span class="n">Quickstart</span><span class="o">.</span><span class="n">html</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Simulation level:population
+Generated state machine diagram img/Quickstart_age_group_machine.svg
+Generated state machine diagram img/Quickstart_life_cycle_machine.svg
+Generated state machine diagram img/Quickstart_health_state_machine.svg
+100%|█████████████████████████████████████████████████████████████████| 20/20
+Simulation finished in 6.75 s
+Outputs stored in outputs/counts.csv
+Outputs plot in file: img/Quickstart.html
 </pre></div>
 </div>
 <p>and the following figures should appear in your navigator:</p>
-<div align="center" class="align-center"><div class="graphviz"><object data="../_images/graphviz-e36a425fdef7370b251e8b9cae812272d7282e46.svg" type="image/svg+xml" class="graphviz">
+<div align="center" class="align-center"><div class="graphviz"><object data="../_images/graphviz-8ea286d8b6222398704f473c27a9051bfe0b0846.svg" type="image/svg+xml" class="graphviz">
 <p class="warning">digraph {
+          charset=&quot;utf-8&quot;
         	rankdir=LR;
+        
         	node[fontsize=16, fontname=Arial, shape=box, style=&quot;filled,rounded&quot;];
-        	edge[minlen=1.5, penwidth=1.5, tailtooltip=&quot;&quot;, headtooltip=&quot;&quot;];
+        	edge[minlen=1.5, fontname=Times, penwidth=1.5, tailtooltip=&quot;&quot;, headtooltip=&quot;&quot;];
 
         	&quot;J&quot; [shape=&quot;Mrecord&quot;, label=&quot;{{\ J\ |&amp;#9670;}}&quot;, tooltip=&quot;J (Juvenile):
-	juvenile animals&quot;, fillcolor=orange, style=&quot;filled,rounded,bold&quot;] ;
+	juvenile animals&quot;, fillcolor=&quot;orange&quot;, style=&quot;filled,rounded,bold&quot;] ;
 	&quot;A&quot; [shape=&quot;Mrecord&quot;, label=&quot;{{\ A\ |&amp;#9670;}}&quot;, tooltip=&quot;A (Adult):
-	adult animals&quot;, fillcolor=brown, style=&quot;filled,rounded&quot;] ;
+	adult animals&quot;, fillcolor=&quot;brown&quot;, style=&quot;filled,rounded&quot;] ;
 	&quot;J&quot; -&gt; &quot;A&quot; [label=&quot;proba: 1&quot;, labeltooltip=&quot;proba: 1&quot;, arrowtail=&quot;nonetee&quot;, arrowhead=&quot;normalnone&quot;, dir=both, tooltip=&quot;COND: GreaterThan(age, adult_age)&quot;, minlen=3, style=&quot;solid&quot;];
 }</p></object></div>
 </div>
 <img alt="../_images/Quickstart_JA.png" class="align-left" src="../_images/Quickstart_JA.png" />
-<div align="center" class="align-center"><div class="graphviz"><object data="../_images/graphviz-633772735fe57a94f9561f54e79c1b6f09d0e89d.svg" type="image/svg+xml" class="graphviz">
+<div align="center" class="align-center"><div class="graphviz"><object data="../_images/graphviz-41ef9fb963827a92d70de716d2f1189b1f780967.svg" type="image/svg+xml" class="graphviz">
 <p class="warning">digraph {
+          charset=&quot;utf-8&quot;
         	rankdir=LR;
+        
         	node[fontsize=16, fontname=Arial, shape=box, style=&quot;filled,rounded&quot;];
-        	edge[minlen=1.5, penwidth=1.5, tailtooltip=&quot;&quot;, headtooltip=&quot;&quot;];
+        	edge[minlen=1.5, fontname=Times, penwidth=1.5, tailtooltip=&quot;&quot;, headtooltip=&quot;&quot;];
 
         	&quot;G&quot; [shape=&quot;Mrecord&quot;, label=&quot;G&amp;nbsp;&amp;#9719;&quot;, tooltip=&quot;G (Gestating):
-	state for gestating animals&quot;, fillcolor=green, style=&quot;filled,rounded&quot;] ;
+	state for gestating animals&quot;, fillcolor=&quot;green&quot;, style=&quot;filled,rounded&quot;] ;
 	&quot;NG&quot; [shape=&quot;Mrecord&quot;, label=&quot;NG&amp;nbsp;&amp;#9719;&quot;, tooltip=&quot;NG (NonGestating):
-	state for empty animals&quot;, fillcolor=cyan, style=&quot;filled,rounded,bold&quot;] ;
-	&quot;G&quot; -&gt; &quot;NG&quot; [label=&quot;proba: 1&quot;, labeltooltip=&quot;proba: 1&quot;, arrowtail=&quot;none&quot;, arrowhead=&quot;normalnonediamond&quot;, dir=both, tooltip=&quot;&quot;, minlen=3, style=&quot;solid&quot;];
+	state for empty animals&quot;, fillcolor=&quot;cyan&quot;, style=&quot;filled,rounded,bold&quot;] ;
+	&quot;G&quot; -&gt; &quot;NG&quot; [label=&quot;amount-all-but: 0&quot;, labeltooltip=&quot;amount-all-but: 0&quot;, arrowtail=&quot;none&quot;, arrowhead=&quot;normalnonediamond&quot;, dir=both, tooltip=&quot;&quot;, minlen=3, style=&quot;solid&quot;];
 	&quot;G&quot; -&gt; &quot;NG&quot; [label=&quot;proba: daily_abortion&quot;, labeltooltip=&quot;daily_abortion [parameter]:
 	daily probability that an infected animal aborts during gestation       
 	1 - (1 - global_abortion)**(1/gestation_duration)&quot;, arrowtail=&quot;noneoinv&quot;, arrowhead=&quot;normalnonediamond&quot;, dir=both, tooltip=&quot;ESCAPE: is_I&quot;, minlen=3, style=&quot;solid&quot;];
@@ -219,7 +261,7 @@ emulsion run --plot quickstart.yaml --view-model --silent
 }</p></object></div>
 </div>
 <img alt="../_images/Quickstart_GNG.png" class="align-left" src="../_images/Quickstart_GNG.png" />
-<div align="center" class="align-center"><div class="graphviz"><object data="../_images/graphviz-e82977a425889b22f23031d7a33f81d23b054667.svg" type="image/svg+xml" class="graphviz">
+<div align="center" class="align-center"><div class="graphviz"><object data="../_images/graphviz-fe6509897da09e084fe9929c45873137f676b41f.svg" type="image/svg+xml" class="graphviz">
 <p class="warning">digraph {
           charset=&quot;utf-8&quot;
         	rankdir=LR;
@@ -228,19 +270,19 @@ emulsion run --plot quickstart.yaml --view-model --silent
         	edge[minlen=1.5, fontname=Times, penwidth=1.5, tailtooltip=&quot;&quot;, headtooltip=&quot;&quot;];
 
         	&quot;M&quot; [shape=&quot;Mrecord&quot;, label=&quot;M&amp;nbsp;&amp;#9719;&quot;, tooltip=&quot;M (Maternal protection):
-	animal protected by maternal antibodies&quot;, fillcolor=cyan, style=&quot;filled,rounded&quot;] ;
+	animal protected by maternal antibodies&quot;, fillcolor=&quot;cyan&quot;, style=&quot;filled,rounded&quot;] ;
 	&quot;S&quot; [shape=&quot;Mrecord&quot;, label=&quot;S&quot;, tooltip=&quot;S (Susceptible):
-	suceptible of becoming infectious&quot;, fillcolor=wheat, style=&quot;filled,rounded,bold&quot;] ;
+	suceptible of becoming infectious&quot;, fillcolor=&quot;wheat&quot;, style=&quot;filled,rounded,bold&quot;] ;
 	&quot;E&quot; [shape=&quot;Mrecord&quot;, label=&quot;E&amp;nbsp;&amp;#9719;&quot;, tooltip=&quot;E (Exposed):
-	already infected but not yet able to transmit the disease&quot;, fillcolor=lightcoral, style=&quot;filled,rounded&quot;] ;
+	already infected but not yet able to transmit the disease&quot;, fillcolor=&quot;lightcoral&quot;, style=&quot;filled,rounded&quot;] ;
 	&quot;I&quot; [shape=&quot;Mrecord&quot;, label=&quot;I&quot;, tooltip=&quot;I (Infectious):
-	sick and able to transmit the disease&quot;, fillcolor=maroon, style=&quot;filled,rounded&quot;] ;
+	sick and able to transmit the disease&quot;, fillcolor=&quot;maroon&quot;, style=&quot;filled,rounded&quot;] ;
 	&quot;R&quot; [shape=&quot;Mrecord&quot;, label=&quot;R&quot;, tooltip=&quot;R (Resistant):
-	healthy again and resistant to infection&quot;, fillcolor=deepskyblue, style=&quot;filled,rounded&quot;] ;
+	healthy again and resistant to infection&quot;, fillcolor=&quot;deepskyblue&quot;, style=&quot;filled,rounded&quot;] ;
 	&quot;Q&quot; [shape=&quot;Mrecord&quot;, label=&quot;Q&amp;nbsp;&amp;#9719;&quot;, tooltip=&quot;Q (Quarantine):
-	sick animals that are put aside for a while&quot;, fillcolor=green, style=&quot;filled,rounded&quot;] ;
+	sick animals that are put aside for a while&quot;, fillcolor=&quot;green&quot;, style=&quot;filled,rounded&quot;] ;
 	&quot;D&quot; [shape=&quot;Mrecord&quot;, label=&quot;D&quot;, tooltip=&quot;D (Dead):
-	dead animals&quot;, fillcolor=white, style=&quot;filled,rounded,dotted&quot;] ;
+	dead animals&quot;, fillcolor=&quot;white&quot;, style=&quot;filled,rounded,dotted&quot;] ;
 	&quot;E&quot; -&gt; &quot;D&quot; [label=&quot;rate: mortality_sick&quot;, labeltooltip=&quot;mortality_sick [parameter]:
 	mortality rate for sick animals (E / I / Q)                             
 	0.004&quot;, arrowtail=&quot;noneoinv&quot;, arrowhead=&quot;normalnone&quot;, dir=both, tooltip=&quot;ESCAPE: True&quot;, minlen=3, style=&quot;solid&quot;];
@@ -277,20 +319,21 @@ emulsion run --plot quickstart.yaml --view-model --silent
 	0.002&quot;, arrowtail=&quot;none&quot;, arrowhead=&quot;normalnone&quot;, dir=both, tooltip=&quot;&quot;, minlen=3, style=&quot;solid&quot;];
 	&quot;S&quot; -&gt; &quot;E&quot; [label=&quot;rate: f&quot;, labeltooltip=&quot;f [parameter]:
 	force of infection                                                      
-	beta * total_I / total_herd&quot;, arrowtail=&quot;none&quot;, arrowhead=&quot;normalnone&quot;, dir=both, tooltip=&quot;&quot;, minlen=3, style=&quot;solid&quot;];
+	beta * total_I / total_population&quot;, arrowtail=&quot;none&quot;, arrowhead=&quot;normalnone&quot;, dir=both, tooltip=&quot;&quot;, minlen=3, style=&quot;solid&quot;];
 }</p></object></div>
 </div>
 <img alt="../_images/Quickstart_MSEIRQ.png" class="align-left" src="../_images/Quickstart_MSEIRQ.png" />
 <img alt="../_images/Quickstart_others.png" class="align-left" src="../_images/Quickstart_others.png" />
 </section>
-<section id="alternative-1-install-with-git">
-<h2><span class="section-number">2.5. </span>Alternative 1: install with <code class="docutils literal notranslate"><span class="pre">git</span></code><a class="headerlink" href="#alternative-1-install-with-git" title="Permalink to this heading">¶</a></h2>
-<p>This procedure assumes that you have <code class="docutils literal notranslate"><span class="pre">git</span></code> already
-<a class="reference external" href="https://git-scm.com/downloads">installed on your system</a>.
+</section>
+<section id="alternative-2-manual-install-with-git">
+<h2><span class="section-number">2.4. </span>Alternative 2: manual install with <code class="docutils literal notranslate"><span class="pre">git</span></code><a class="headerlink" href="#alternative-2-manual-install-with-git" title="Permalink to this headline">¶</a></h2>
+<p>This procedure assumes that you have both Python3 and
+<a class="reference external" href="https://git-scm.com/downloads">git</a> already installed on your system.
 It is provided here for Linux or MacOS.</p>
 <ol class="arabic">
 <li><p>Install (or update) required packages</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo pip3 install numpy scipy matplotlib pandas <span class="s1">&#39;sympy==1.1.1&#39;</span> mpmath networkx docopt jinja2 textx sortedcontainers tqdm pyyaml colorama bokeh sqlalchemy utm
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install numpy scipy matplotlib pandas sympy mpmath pydot networkx docopt jinja2 sortedcontainers tqdm pyyaml colorama bokeh sqlalchemy
 </pre></div>
 </div>
 </li>
@@ -300,9 +343,8 @@ It is provided here for Linux or MacOS.</p>
 </pre></div>
 </div>
 </li>
-<li><p>Add the local directory and <code class="docutils literal notranslate"><span class="pre">src</span></code> directory to your <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment
-variable.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export PYTHONPATH=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/src:.&quot;</span> &gt;&gt;<span class="nv">$HOME</span>/.bashrc
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">src</span></code> directory to your <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment variable.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;export PYTHONPATH=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/src:</span><span class="nv">$PYTHONPATH</span><span class="s2">&quot;</span> &gt;&gt;<span class="nv">$HOME</span>/.bashrc
 </pre></div>
 </div>
 </li>
@@ -327,7 +369,7 @@ expected (options, files, parameters…) in the command.</p>
 </ol>
 </section>
 <section id="alternative-2-install-development-version">
-<h2><span class="section-number">2.6. </span>Alternative 2: install development version<a class="headerlink" href="#alternative-2-install-development-version" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">2.5. </span>Alternative 2: install development version<a class="headerlink" href="#alternative-2-install-development-version" title="Permalink to this headline">¶</a></h2>
 <p>Draft versions of EMULSION are periodically released, usually under
 the same license. They are available through <code class="docutils literal notranslate"><span class="pre">pip</span></code> from
 <a class="reference external" href="https://test.pypi.org">PyPI’s test server</a> as follows:</p>
@@ -335,7 +377,7 @@ the same license. They are available through <code class="docutils literal notra
 <li><p>Search for “emulsion” project on <a class="reference external" href="https://test.pypi.org">PyPI’s test website</a>
 to identify a development version that suits your needs</p></li>
 <li><p>Install the development version (replace <code class="docutils literal notranslate"><span class="pre">VERSION</span></code> below with the
-version number, e.g. <code class="docutils literal notranslate"><span class="pre">1.1rc5</span></code> or <code class="docutils literal notranslate"><span class="pre">1.2b1</span></code>):</p>
+version number, e.g. <code class="docutils literal notranslate"><span class="pre">1.2rc3</span></code> or <code class="docutils literal notranslate"><span class="pre">1.3b1</span></code>):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo pip3 install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.python.org/simple/ <span class="nv">emulsion</span><span class="o">==</span>VERSION
 init_emulsion
 <span class="nb">source</span> <span class="nv">$HOME</span>/.bashrc
@@ -372,20 +414,21 @@ version publicly available can be found <a class="reference external" href="http
 <li class="toctree-l1"><a class="reference internal" href="Information.html">1. Information</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">2.1. Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-with-pip-recommended">2.2. Install with <code class="docutils literal notranslate"><span class="pre">pip</span></code> (recommended)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#linux-and-macos">Linux and MacOS:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-installation-script-recommended">2.2. Using installation script (recommended)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-your-own-installation-script">Build your own installation script</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#install-third-party-software">2.3. Install third-party software</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#linux">Linux</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#macos">MacOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternative-1-manual-install-with-pip">2.3. Alternative 1: Manual install with <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-a-python-3-environment">1. Install a Python 3 environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-linux-and-macos">2a. Linux and MacOS:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b-windows">2b. Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-completion-optional">3. Install completion (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-graphviz-optional">4. Install Graphviz (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-your-installation">5. Test your installation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#test-your-installation">2.4. Test your installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#alternative-1-install-with-git">2.5. Alternative 1: install with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#alternative-2-install-development-version">2.6. Alternative 2: install development version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternative-2-manual-install-with-git">2.4. Alternative 2: manual install with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternative-2-install-development-version">2.5. Alternative 2: install development version</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Getting_started.html">3. Getting started with EMULSION</a></li>
@@ -417,7 +460,7 @@ version publicly available can be found <a class="reference external" href="http
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -434,7 +477,7 @@ version publicly available can be found <a class="reference external" href="http
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

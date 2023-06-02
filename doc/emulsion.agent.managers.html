@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>emulsion.agent.managers package &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="emulsion.model package" href="emulsion.model.html" />
@@ -35,19 +36,19 @@
 
           <div class="body" role="main">
             
-  <section id="module-0">
-<span id="emulsion-agent-managers-package"></span><h1>emulsion.agent.managers package<a class="headerlink" href="#module-0" title="Permalink to this heading">¶</a></h1>
-<span class="target" id="module-emulsion.agent.managers"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
+  <section id="module-emulsion.agent.managers">
+<span id="emulsion-agent-managers-package"></span><h1>emulsion.agent.managers package<a class="headerlink" href="#module-emulsion.agent.managers" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-0"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </section>
 <section id="module-emulsion.agent.managers.abstract_process_manager">
-<span id="emulsion-agent-managers-abstract-process-manager-module"></span><h2>emulsion.agent.managers.abstract_process_manager module<a class="headerlink" href="#module-emulsion.agent.managers.abstract_process_manager" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-managers-abstract-process-manager-module"></span><h2>emulsion.agent.managers.abstract_process_manager module<a class="headerlink" href="#module-emulsion.agent.managers.abstract_process_manager" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-emulsion.agent.managers.functions"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.managers.abstract_process_manager.AbstractProcessManager">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.managers.abstract_process_manager.</span></span><span class="sig-name descname"><span class="pre">AbstractProcessManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stochastic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_history</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prototype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_prototype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">execute_actions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/managers/abstract_process_manager.html#AbstractProcessManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView" title="emulsion.agent.views.StructuredView"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredView</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView" title="emulsion.agent.views.StructuredView"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.views.StructuredView</span></code></a></p>
 <p>An AbstractProcessManager is aimed handling several independent
 StructuredViews at the same time, to represent several
 concerns. It can automatically build compartments for state
@@ -248,12 +249,12 @@ compartment.</p>
 
 </section>
 <section id="module-emulsion.agent.managers.compart_process_manager">
-<span id="emulsion-agent-managers-compart-process-manager-module"></span><h2>emulsion.agent.managers.compart_process_manager module<a class="headerlink" href="#module-emulsion.agent.managers.compart_process_manager" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-managers-compart-process-manager-module"></span><h2>emulsion.agent.managers.compart_process_manager module<a class="headerlink" href="#module-emulsion.agent.managers.compart_process_manager" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-1"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inrae&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inrae<span>&#46;</span>fr</a>&gt;</em></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.managers.compart_process_manager.CompartProcessManager">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.managers.compart_process_manager.</span></span><span class="sig-name descname"><span class="pre">CompartProcessManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">master</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stochastic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_history</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prototype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_prototype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">execute_actions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/managers/compart_process_manager.html#CompartProcessManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.managers.compart_process_manager.CompartProcessManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager" title="emulsion.agent.managers.abstract_process_manager.AbstractProcessManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractProcessManager</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager" title="emulsion.agent.managers.abstract_process_manager.AbstractProcessManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.managers.abstract_process_manager.AbstractProcessManager</span></code></a></p>
 <p>A CompartProcessManager is aimed handling several independent
 StructuredViews at the same time, for managing true compartments.
 It can automatically allocate compartments for state machines
@@ -268,8 +269,6 @@ time step, in order. In a compartment-based process manager, processes may be ei
 <li><p>state-machine driven processes based on the direct execution of a state machine at the population level</p></li>
 <li><p>grouping-based processes defined for the sublevel, based on the execution of a state machine on the MASTER grouping</p></li>
 </ul>
-<section id="example">
-<h3>Example:<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>processes:</dt><dd><dl class="simple">
 <dt>individual:</dt><dd><ul class="simple">
@@ -286,7 +285,6 @@ time step, in order. In a compartment-based process manager, processes may be ei
 </dl>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -350,15 +348,12 @@ All keys are assumed to be composed of values for all state machines in the curr
 CompartProcessManager.
 If <em>init</em> is True, the compartment managers counts the initial value of
 the populations in each compartment.</p>
-<section id="id3">
-<h3>Example:<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><dl class="simple">
 <dt><em>d_population_spec</em><span class="classifier">{(S, A, V): 3, (R, A, V): 5, (I, J, H): 2}</span></dt><dd><p>when executing state machine health_state</p>
 </dd>
 </dl>
 </div></blockquote>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -369,15 +364,12 @@ CompartProcessManager. Dictionay <em>d_population_spec</em> is keyed by tuples
 indexing the compartments, associated with the quantity of individuals
 to remove. All keys are assumed to be composed of values for all
 state machines of the current CompartProcessManager.</p>
-<section id="id4">
-<h3>Example:<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h3>
 <blockquote>
 <div><dl class="simple">
 <dt><em>d_population_spec</em><span class="classifier">{(S, A, V): 3, (R, A, V): 5, (I, J, H): 2}</span></dt><dd><p>when executing state machine health_state</p>
 </dd>
 </dl>
 </div></blockquote>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -438,9 +430,9 @@ TODO: column steps need to be with one of process</p>
 </dd></dl>
 
 </section>
-<section id="module-3">
-<span id="emulsion-agent-managers-functions-module"></span><h2>emulsion.agent.managers.functions module<a class="headerlink" href="#module-3" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-2"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
+<section id="module-2">
+<span id="emulsion-agent-managers-functions-module"></span><h2>emulsion.agent.managers.functions module<a class="headerlink" href="#module-2" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-3"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <dl class="py function">
 <dt class="sig sig-object py" id="emulsion.agent.managers.functions.group_and_split_populations">
 <span class="sig-prename descclassname"><span class="pre">emulsion.agent.managers.functions.</span></span><span class="sig-name descname"><span class="pre">group_and_split_populations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transitions</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/managers/functions.html#group_and_split_populations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.managers.functions.group_and_split_populations" title="Permalink to this definition">¶</a></dt>
@@ -470,12 +462,12 @@ or     ((‘agents’, list, None), attributes)</p>
 
 </section>
 <section id="module-emulsion.agent.managers.group_manager">
-<span id="emulsion-agent-managers-group-manager-module"></span><h2>emulsion.agent.managers.group_manager module<a class="headerlink" href="#module-emulsion.agent.managers.group_manager" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-managers-group-manager-module"></span><h2>emulsion.agent.managers.group_manager module<a class="headerlink" href="#module-emulsion.agent.managers.group_manager" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-4"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.managers.group_manager.GroupManager">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.managers.group_manager.</span></span><span class="sig-name descname"><span class="pre">GroupManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l_state_machines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/managers/group_manager.html#GroupManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.managers.group_manager.GroupManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView" title="emulsion.agent.views.StructuredView"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredView</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.StructuredView" title="emulsion.agent.views.StructuredView"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.views.StructuredView</span></code></a></p>
 <p>An GroupManager is able to make its content
 evolve according to specific state machines, the state of each
 subcompartment being stored in a specific state variable or
@@ -519,8 +511,6 @@ entering/exiting states or on crossing edges.</p>
 <span class="sig-name descname"><span class="pre">evolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">machine_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/managers/group_manager.html#GroupManager.evolve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.managers.group_manager.GroupManager.evolve" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ask each group to make its content evolve, then remove population or
 agents from autoremove groups and update counts.</p>
-<section id="params">
-<h3>Params:<a class="headerlink" href="#params" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>machine_index: index of the state machine to run; if None</dt><dd><p>(call from CompartProcessManager), all state machines
 associated with current group manager are run, in
@@ -529,7 +519,6 @@ only if machine_index is None or 0</p>
 </dd>
 </dl>
 <p>This parameter was introduced to run processes in the order specified in the YAML file</p>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -567,12 +556,12 @@ the population at the end of the current time step.</p>
 
 </section>
 <section id="module-emulsion.agent.managers.ibm_process_manager">
-<span id="emulsion-agent-managers-ibm-process-manager-module"></span><h2>emulsion.agent.managers.ibm_process_manager module<a class="headerlink" href="#module-emulsion.agent.managers.ibm_process_manager" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-managers-ibm-process-manager-module"></span><h2>emulsion.agent.managers.ibm_process_manager module<a class="headerlink" href="#module-emulsion.agent.managers.ibm_process_manager" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-5"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.managers.ibm_process_manager.IBMProcessManager">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.managers.ibm_process_manager.</span></span><span class="sig-name descname"><span class="pre">IBMProcessManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/managers/ibm_process_manager.html#IBMProcessManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.managers.ibm_process_manager.IBMProcessManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.managers.multi_process_manager.MultiProcessManager" title="emulsion.agent.managers.multi_process_manager.MultiProcessManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiProcessManager</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.managers.multi_process_manager.MultiProcessManager" title="emulsion.agent.managers.multi_process_manager.MultiProcessManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.managers.multi_process_manager.MultiProcessManager</span></code></a></p>
 <p>An IBMProcessManager is a MultiProcessManager dedicated to the
 management of Individual-Based Models. This class is endowed with
 a <cite>counters</cite> attribute which is a dictionary {process -&gt; counter of
@@ -685,12 +674,12 @@ returned by the method.</p>
 
 </section>
 <section id="module-emulsion.agent.managers.metapop_process_manager">
-<span id="emulsion-agent-managers-metapop-process-manager-module"></span><h2>emulsion.agent.managers.metapop_process_manager module<a class="headerlink" href="#module-emulsion.agent.managers.metapop_process_manager" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-managers-metapop-process-manager-module"></span><h2>emulsion.agent.managers.metapop_process_manager module<a class="headerlink" href="#module-emulsion.agent.managers.metapop_process_manager" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-6"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.managers.metapop_process_manager.MetapopProcessManager">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.managers.metapop_process_manager.</span></span><span class="sig-name descname"><span class="pre">MetapopProcessManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/managers/metapop_process_manager.html#MetapopProcessManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.managers.metapop_process_manager.MetapopProcessManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.managers.multi_process_manager.MultiProcessManager" title="emulsion.agent.managers.multi_process_manager.MultiProcessManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiProcessManager</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.managers.multi_process_manager.MultiProcessManager" title="emulsion.agent.managers.multi_process_manager.MultiProcessManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.managers.multi_process_manager.MultiProcessManager</span></code></a></p>
 <p>This class is in charge of handling multiple populations.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="emulsion.agent.managers.metapop_process_manager.MetapopProcessManager.get_populations">
@@ -736,12 +725,12 @@ existing.</p>
 
 </section>
 <section id="module-emulsion.agent.managers.multi_process_manager">
-<span id="emulsion-agent-managers-multi-process-manager-module"></span><h2>emulsion.agent.managers.multi_process_manager module<a class="headerlink" href="#module-emulsion.agent.managers.multi_process_manager" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-managers-multi-process-manager-module"></span><h2>emulsion.agent.managers.multi_process_manager module<a class="headerlink" href="#module-emulsion.agent.managers.multi_process_manager" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-7"></span><p><em>Module author: Sébastien Picault &lt;<a class="reference external" href="mailto:sebastien&#46;picault&#37;&#52;&#48;inra&#46;fr">sebastien<span>&#46;</span>picault<span>&#64;</span>inra<span>&#46;</span>fr</a>&gt;</em></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.managers.multi_process_manager.MultiProcessManager">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.managers.multi_process_manager.</span></span><span class="sig-name descname"><span class="pre">MultiProcessManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/managers/multi_process_manager.html#MultiProcessManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.managers.multi_process_manager.MultiProcessManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager" title="emulsion.agent.managers.abstract_process_manager.AbstractProcessManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractProcessManager</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager" title="emulsion.agent.managers.abstract_process_manager.AbstractProcessManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.managers.abstract_process_manager.AbstractProcessManager</span></code></a></p>
 <p>A MultiProcessManager is aimed handling several independent
 StructuredViews at the same time, together with a
 SimpleView containing all the atom units. It can
@@ -765,8 +754,6 @@ time step, in order. In a compartment-based process manager, processes may be ei
 <li><p>state-machine driven processes based on the direct execution of a state machine at the population level</p></li>
 <li><p>grouping-based processes defined for the sublevel, based on the execution of a state machine on the MASTER grouping</p></li>
 </ul>
-<section id="id5">
-<h3>Example:<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>processes:</dt><dd><dl class="simple">
 <dt>individual:</dt><dd><ul class="simple">
@@ -783,7 +770,6 @@ time step, in order. In a compartment-based process manager, processes may be ei
 </dl>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py method">
@@ -847,7 +833,7 @@ with the specified key.</p>
 <dd><p>Return a list of atoms selected by specific <em>value</em> or <em>state</em> of a
 <em>variable</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>variable</strong> (<em>str</em>) – the variable to be compared to the <em>value</em> - if <code class="docutils literal notranslate"><span class="pre">None</span></code>,
 all atoms are selected.</p></li>
@@ -859,7 +845,7 @@ replaced with the model state specified in parameter
 on the <em>variable</em> (to accelerate search)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>list</em> – the list of matching agents in the sublevel</p>
 </dd>
 </dl>
@@ -1046,7 +1032,7 @@ method.</p>
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -1063,7 +1049,7 @@ method.</p>
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

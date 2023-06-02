@@ -7,7 +7,7 @@ Requirements
 
 System
     EMULSION has been designed under **MacOS** and **Linux**, and
-    works (with minor limitations) with **Windows 10**. See the
+    works (with minor limitations) with **Windows 10** or later. See the
     installation procedure specific to your system.
 
     Also, in what follows, we assume that MacOS and Linux users are
@@ -16,20 +16,92 @@ System
     the documentation of your shell to adapt the commands below.
 
 Language
-    EMULSION is written in **Python 3** (version 3.9 or higher). In what
-    follows, we assume that ``python3`` and ``pip3`` refer to your
-    Python3 installation. If not, replace them by your own
-    configuration in the commands below (e.g. with Windows:
-    respectively ``python.exe`` and ``pip.exe``).
-
-    To install Python on your system, please consult
-    `Python website <https://www.python.org/downloads/>`_. When
-    installing on Windows, check the box "Add Python 3.x to PATH" to
-    make python commands available from the terminal.
+    EMULSION is written in **Python 3** (version 3.9 or higher).
 
 
-Install with ``pip`` (recommended)
-**********************************
+Using installation script (recommended)
+***************************************
+
+This installation script installs everything you need to run EMULSION without requiring administrator rights.
+To do so, it installs a **conda** environment (based on `Miniconda3 <https://docs.conda.io/en/latest/miniconda.html>`_),
+unless you already have conda installed on your system.
+
+By installing EMULSION that way, we assume that you agree with the
+terms of the Miniconda3 license and of EMULSION license (see :ref:`License`).
+
+1. Download the installation script dedicated to your platform:
+
+  - `Windows <../dist/install_emulsion-1.2rc4-Windows.exe>`_: ``install_emulsion-1.2rc4-Windows.exe``
+  - MacOS (`Silicon processor <../dist/install_emulsion-1.2rc4-MacOS-arm64>`_ e.g. M1, M2): ``install_emulsion-1.2rc4-MacOS-arm64``
+  - MacOS (`Intel processor <../dist/install_emulsion-1.2rc4-MacOS-x86_64>`_): ``install_emulsion-1.2rc4-MacOS-x86_64``
+  - `Linux <../dist/install_emulsion-1.2rc4-Linux-x86_64.sh>`_: ``install_emulsion-1.2rc4-Linux-x86_64.sh``
+
+
+2. Run the script (double-click or from the terminal). You need to be online during the process
+   to download installation files. The installation process might ask you some questions:
+    most of the time, default answers are OK.
+
+   e.g., on MacOS/Linux:
+
+   .. code-block:: bash
+
+      sh install_emulsion-1.2rc4-Linux-x86_64.sh
+
+   or on Windows (open ``powershell``):
+
+   .. code-block:: bash
+
+      install_emulsion-1.2rc4-Windows.exe
+
+   This will install version 1.2rc4, but the script can also be used to install the latest
+   stable version, for instance:
+
+   .. code-block:: bash
+
+      sh install_emulsion-1.2rc4-Linux-x86_64.sh latest
+
+
+
+
+3. At the end of the installation, you can download example models (the ``Quickstart`` model and those provided in :ref:`Feature examples`) and run the ``Quickstart`` model  to make sure that the installation succeeded.
+
+EMULSION `documentation <https://sourcesup.renater.fr/www/emulsion-public>`_
+is provided on-line.
+
+If you need a **specific version** of EMULSION (e.g., a development version such
+as 1.3b1), you can specify it when running the script:
+
+.. code-block:: bash
+
+   sh install_emulsion-latest-Linux-x86_64.sh 1.3b1
+
+or on Windows (open ``powershell``):
+
+.. code-block:: bash
+
+   install_emulsion-latest-Windows.exe 1.3b1
+
+
+Build your own installation script
+==================================
+
+If you do not find the installation script corresponding to your own machine,
+you can either install EMULSION step-by-step (see next section), or try to
+build an installation script on your system.
+
+To do so, you need a Python 3 environment with packages ``pyinstaller``, ``pyyaml`` and ``colorama``.
+
+1. Download the multi-platform installation script `install_emulsion.py <../install_emulsion.py>`_
+2. Run:
+
+.. code-block:: bash
+
+   python3 install_emulsion.py --build
+
+The resulting installation script is now located in ``dist/``. You can also specify a version number in the build command.
+
+Alternative 1: Manual install with ``pip``
+******************************************
 
 .. image:: https://img.shields.io/pypi/pyversions/emulsion.svg?logo=python&logoColor=white
 .. image:: https://img.shields.io/pypi/v/emulsion.svg?
@@ -38,30 +110,39 @@ Install with ``pip`` (recommended)
 .. image:: https://img.shields.io/pypi/l/emulsion.svg?
 .. image:: https://img.shields.io/pypi/dm/emulsion.svg?
 
-Linux and MacOS:
-================
+1. Install a Python 3 environment
+=================================
+
+To ensure a consistent environment, we recommend installing
+`Miniconda3 <https://docs.conda.io/en/latest/miniconda.html>`_.
+Otherwise, to install a classical Python environment on your system,
+please consult `Python website <https://www.python.org/downloads/>`_
+(when installing on Windows, check the box "Add Python 3.x to PATH" to
+make python commands available from the powershell).
+
+In what follows, we assume that ``python`` and ``pip`` refer to your
+Python3 installation.
+If not, replace them by your own configuration in the commands below.
+
+2a. Linux and MacOS:
+===================
 
 .. code-block:: bash
 
-   sudo pip3 install emulsion
+   pip install emulsion
    init_emulsion
    source $HOME/.bashrc
 
-Depending on how you installed Python, ``sudo`` is sometimes
-optional.
+Depending on how you installed Python, you might need administrator privileges
+(``sudo`` before ``pip install``).
 
 The second command (``init_emulsion``) initializes command-line
 completion (available with a bash shell, under Linux or MacOS), which allows
 to use ``TAB`` key to get suggestions on what is expected (options,
-files, parameters...) in the command. It also creates (or modifies)
-the environment variable named ``PYTHONPATH`` to make EMULSION able to
-find code add-ons located in the same directory as your models.
+files, parameters...) in the command.
 
-EMULSION `documentation <https://sourcesup.renater.fr/www/emulsion-public>`_
-is provided on-line.
-
-Windows
-=======
+2b. Windows
+===========
 
 Open a terminal ("Command Prompt" or "Windows Power Shell"), then
 type:
@@ -70,84 +151,58 @@ type:
 
    pip.exe install emulsion
 
-To make EMULSION able to find code add-ons in the directory where your model
-files are located, you must declare (or modify) an environment
-variable named ``PYTHONPATH`` to add the current directory ("``.``").
+3. Install completion (optional)
+================================
 
-To do so, you can use the graphical interface (from System
-Preferences), or the terminal. The syntax depends on the kind of
-terminal you are using:
+As typing long ``emulsion`` commands with many options may be tedious,
+EMULSION comes with completion scripts, so that you can get value proposals
+using the ``TAB`` key.
 
-  - with the "Command Prompt" (``cmd.exe``), type:
+To do so, you can download one of the following files and run it at the opening
+of your session:
 
-    .. code-block:: batch
+- Windows `powershell script <../emulsion-powershell-completion.ps1>`_: ``emulsion-powershell-completion.ps1``
 
-       setx PYTHONPATH ".;%PYTHONPATH%"
+  .. code-block:: powershell
 
-  - with "Windows Power Shell", type:
+     powershell -ExecutionPolicy Bypass -File emulsion-powershell-completion.ps1
 
-    .. code-block:: batch
+- Linux/MacOS `bash script <../emulsion-bash-completion.sh>`_: ``emulsion-bash-completion.sh``
+  then add to your ``.bashrc`` or ``.bash_profile``, e.g.:
 
-       setx PYTHONPATH ".;$Env:PYTHONPATH"
+  .. code-block:: bash
 
+     echo "source emulsion-bash-completion.sh" >>$HOME/.bashrc
 
-Install third-party software
-****************************
+- Linux/MacOS `zsh script <../emulsion-zsh-completion.sh>`_: ``emulsion-zsh-completion.sh``
+  then add to your ``.zshrc``:
 
-`Graphviz <http://www.graphviz.org>`_ is highly recommended
-(otherwise, simulations will run but you will not be able to get the
-nice diagrams representing model structure).
+  .. code-block:: zsh
 
-Linux
-=====
-
-.. code-block:: bash
-
-   sudo apt install graphviz
-
-MacOS
-=====
-
-To install on MacOS, use for instance `homebrew <https://brew.sh/>`_
-
-.. code-block:: bash
-
-   brew install graphviz
-
-Windows
-=======
-
-To install on Windows, download the latest stable version from
-`Graphviz website <https://graphviz.gitlab.io/_pages/Download/Download_windows.html>`_
-and update the ``PATH`` environment variable according to where you
-installed the executable files (especially ``dot.exe``). You also need
-to let Graphviz find the relevant plug-ins (especially for SVG, PDF,
-PNG diagram production) in the Windows environment.
-For instance, if ``dot.exe`` is located in
-``C:\Program Files (x86)\Graphviz\bin``, just type:
-
-  - in the "Command Prompt":
-
-    .. code-block:: batch
-
-      setx PATH "C:\Program Files (x86)\Graphviz\bin;%PATH%"
-      dot -c
-
-  - in "Windows Power Shell":
-
-    .. code-block:: batch
-
-      setx PATH "C:\Program Files (x86)\Graphviz\bin;$Env:PATH"
-      dot -c
-
-If you encounter any problem with the ``dot`` command (e.g. a message
-saying that some file does not have the proper writing permission),
-execute your shell ("Command Prompt" or "Windows Power Shell") as an
-administrator and retry the command.
+     echo -e "autoload -U compinit ; compinit\nsource $HOME/emulsion-zsh-completion.sh" >>$HOME/.zshrc
 
 
-Test your installation
-**********************
+
+4. Install Graphviz (optional)
+==============================
+
+`Graphviz <https://graphviz.org/>`_ is a third-party software used by EMULSION to produce diagrams
+for the processes represented by state machines (more specifically, the
+program called ``dot``).
+
+If you installed Python 3 with Miniconda (or Anaconda), the installation
+of Graphviz within the Python environment does not require administrator privileges:
+
+.. code-block:: batch
+
+   conda install -c conda-forge python-graphviz
+   # configure 'dot' program
+   dot -c
+
+An alternative is to follow Graphviz `installation instructions <https://graphviz.org/download/>`_.
+
+5. Test your installation
+=========================
 
 Download **model examples** `here. <../models.zip>`_
 
@@ -156,7 +211,7 @@ Extract the archive, open a terminal in the ``models`` directory, then type:
 .. code-block:: bash
 
    cd quickstart
-   emulsion run --plot quickstart.yaml --view-model --silent
+   emulsion run --plot quickstart.yaml -r 20 --view-model --silent
 
 This should produce the following output::
 
@@ -164,8 +219,8 @@ This should produce the following output::
     Generated state machine diagram img/Quickstart_age_group_machine.svg
     Generated state machine diagram img/Quickstart_life_cycle_machine.svg
     Generated state machine diagram img/Quickstart_health_state_machine.svg
-    100%|*************************************************************| 10/10
-    Simulation finished in 12.37 s
+    100%|█████████████████████████████████████████████████████████████████| 20/20
+    Simulation finished in 6.75 s
     Outputs stored in outputs/counts.csv
     Outputs plot in file: img/Quickstart.html
 
@@ -194,18 +249,18 @@ and the following figures should appear in your navigator:
 
 
 
-Alternative 1: install with ``git``
-*********************************
+Alternative 2: manual install with ``git``
+******************************************
 
-This procedure assumes that you have ``git`` already
-`installed on your system <https://git-scm.com/downloads>`_.
+This procedure assumes that you have both Python3 and
+`git <https://git-scm.com/downloads>`_ already installed on your system.
 It is provided here for Linux or MacOS.
 
 #. Install (or update) required packages
 
    .. code-block:: bash
 
-      sudo pip3 install numpy scipy matplotlib pandas 'sympy==1.1.1' mpmath networkx docopt jinja2 textx sortedcontainers tqdm pyyaml colorama bokeh sqlalchemy utm
+      pip install numpy scipy matplotlib pandas sympy mpmath pydot networkx docopt jinja2 sortedcontainers tqdm pyyaml colorama bokeh sqlalchemy
 
 #. Clone the EMULSION repository
 
@@ -214,12 +269,11 @@ It is provided here for Linux or MacOS.
       git clone https://git.renater.fr/anonscm/git/emulsion-public/emulsion-public.git
       cd emulsion-public
 
-#. Add the local directory and ``src`` directory to your ``PYTHONPATH`` environment
-   variable.
+#. Add ``src`` directory to your ``PYTHONPATH`` environment variable.
 
    .. code-block:: bash
 
-      echo "export PYTHONPATH=$(pwd)/src:." >>$HOME/.bashrc
+      echo "export PYTHONPATH=$(pwd)/src:$PYTHONPATH" >>$HOME/.bashrc
 
 #. Install command-line completion (optional but very convenient).
 
@@ -255,7 +309,7 @@ the same license. They are available through ``pip`` from
    to identify a development version that suits your needs
 
 #. Install the development version (replace ``VERSION`` below with the
-   version number, e.g. ``1.1rc5`` or ``1.2b1``):
+   version number, e.g. ``1.2rc3`` or ``1.3b1``):
 
    .. code-block:: bash
 

@@ -1,0 +1,26 @@
+digraph G {
+charset="utf-8";
+rankdir=LR;
+node [fontname=Arial, fontsize=16, shape=box, style="filled,rounded"];
+edge [fontname=Times, headtooltip="", minlen="1.5", penwidth="1.5", tailtooltip=""];
+"M" [fillcolor="cyan", label="M&nbsp;&#9719;", shape="Mrecord", style="filled,rounded", tooltip="M (Maternal protection): animal protected by maternal antibodies"];
+"S" [fillcolor="wheat", label="S", shape="Mrecord", style="filled,rounded,bold", tooltip="S (Susceptible): suceptible of becoming infectious"];
+"E" [fillcolor="lightcoral", label="E&nbsp;&#9719;", shape="Mrecord", style="filled,rounded", tooltip="E (Exposed): already infected but not yet able to transmit the disease"];
+"I" [fillcolor="maroon", label="I", shape="Mrecord", style="filled,rounded", tooltip="I (Infectious): sick and able to transmit the disease"];
+"R" [fillcolor="deepskyblue", label="R", shape="Mrecord", style="filled,rounded", tooltip="R (Resistant): healthy again and resistant to infection"];
+"Q" [fillcolor="green", label="Q&nbsp;&#9719;", shape="Mrecord", style="filled,rounded", tooltip="Q (Quarantine): sick animals that are put aside for a while"];
+"D" [fillcolor="white", label="D", shape="Mrecord", style="filled,rounded,dotted", tooltip="D (Dead): dead animals"];
+"E" -> "D"  [arrowhead="normalnone", arrowtail="noneoinv", dir=both, label="rate: mortality_sick", labeltooltip="mortality_sick [parameter]: mortality rate for sick animals (E / I / Q) 0.004", minlen=3, style="solid", tooltip="ESCAPE: True"];
+"E" -> "I"  [arrowhead="normalnone", arrowtail="none", dir=both, label="rate: alpha", labeltooltip="alpha [parameter]: rate for E->I transition 0.3", minlen=3, style="solid", tooltip=""];
+"I" -> "D"  [arrowhead="normalnone", arrowtail="none", dir=both, label="rate: mortality_sick", labeltooltip="mortality_sick [parameter]: mortality rate for sick animals (E / I / Q) 0.004", minlen=3, style="solid", tooltip=""];
+"I" -> "Q"  [arrowhead="normalnone", arrowtail="noneodot", dir=both, label="rate: detection", labeltooltip="detection [parameter]: rate at which animals are detected sick (falls to 0 if quarantine zone is full) 0.01*room_in_quarantine", minlen=3, style="solid", tooltip="WHEN: quarantine_period"];
+"I" -> "R"  [arrowhead="normalnone", arrowtail="none", dir=both, label="rate: gamma", labeltooltip="gamma [parameter]: recovery rate 0.01", minlen=3, style="solid", tooltip=""];
+"M" -> "D"  [arrowhead="normalnone", arrowtail="noneoinv", dir=both, label="rate: mortality_healthy", labeltooltip="mortality_healthy [parameter]: mortality rate for healthy animals 0.002", minlen=3, style="solid", tooltip="ESCAPE: True"];
+"M" -> "S"  [arrowhead="normalnone", arrowtail="none", dir=both, label="rate: epsilon", labeltooltip="epsilon [parameter]: maternal antibodies loss rate 0.04", minlen=3, style="solid", tooltip=""];
+"Q" -> "D"  [arrowhead="normalnone", arrowtail="noneoinv", dir=both, label="rate: mortality_sick", labeltooltip="mortality_sick [parameter]: mortality rate for sick animals (E / I / Q) 0.004", minlen=3, style="solid", tooltip="ESCAPE: True"];
+"Q" -> "R"  [arrowhead="normalnone", arrowtail="none", dir=both, label="proba: 1", labeltooltip="proba: 1", minlen=3, style="solid", tooltip=""];
+"R" -> "D"  [arrowhead="normalnone", arrowtail="none", dir=both, label="rate: mortality_healthy", labeltooltip="mortality_healthy [parameter]: mortality rate for healthy animals 0.002", minlen=3, style="solid", tooltip=""];
+"R" -> "S"  [arrowhead="normalnone", arrowtail="none", dir=both, label="rate: delta", labeltooltip="delta [parameter]: resistance loss rate 0.01", minlen=3, style="solid", tooltip=""];
+"S" -> "D"  [arrowhead="normalnone", arrowtail="none", dir=both, label="rate: mortality_healthy", labeltooltip="mortality_healthy [parameter]: mortality rate for healthy animals 0.002", minlen=3, style="solid", tooltip=""];
+"S" -> "E"  [arrowhead="normalnone", arrowtail="none", dir=both, label="rate: f", labeltooltip="f [parameter]: force of infection beta * total_I / total_population", minlen=3, style="solid", tooltip=""];
+}

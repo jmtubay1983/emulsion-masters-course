@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>EMULSION Manual &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Information" href="pages/Information.html" />
@@ -35,8 +36,8 @@
           <div class="body" role="main">
             
   <section id="emulsion-manual">
-<h1>EMULSION Manual<a class="headerlink" href="#emulsion-manual" title="Permalink to this heading">¶</a></h1>
-<p><img alt="badge-license" src="https://img.shields.io/badge/license-Apache--2.0-8cd0c3.svg" /> <img alt="badge-release" src="https://img.shields.io/badge/version-1.2b13-f16152.svg" /></p>
+<h1>EMULSION Manual<a class="headerlink" href="#emulsion-manual" title="Permalink to this headline">¶</a></h1>
+<p><img alt="badge-license" src="https://img.shields.io/badge/license-Apache--2.0-8cd0c3.svg" /> <img alt="badge-release" src="https://img.shields.io/badge/version-1.2rc4-f16152.svg" /></p>
 <p>Framework EMULSION is intended for modellers in epidemiology, to help
 them design, simulate, and revise complex mechanistic stochastic
 models, without having to write or rewrite huge amounts of code.</p>
@@ -60,32 +61,34 @@ Artificial Intelligence (see <a class="reference internal" href="pages/Informati
 </figcaption>
 </figure>
 <section id="table-of-contents">
-<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">¶</a></h2>
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pages/Information.html">1. Information</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pages/Information.html#contributors-and-contact">1.1. Contributors and contact</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pages/Information.html#how-to-cite">1.2. How to cite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/Information.html#selected-publications">1.3. Selected publications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/Information.html#acknowledgements">1.4. Acknowledgements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/Information.html#educational-resources">1.3. Educational Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/Information.html#selected-publications">1.4. Selected publications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/Information.html#funding">1.5. Funding</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pages/Install.html">2. Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pages/Install.html#requirements">2.1. Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/Install.html#install-with-pip-recommended">2.2. Install with <code class="docutils literal notranslate"><span class="pre">pip</span></code> (recommended)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#linux-and-macos">Linux and MacOS:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/Install.html#using-installation-script-recommended">2.2. Using installation script (recommended)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#build-your-own-installation-script">Build your own installation script</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pages/Install.html#install-third-party-software">2.3. Install third-party software</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#linux">Linux</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#macos">MacOS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#id1">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/Install.html#alternative-1-manual-install-with-pip">2.3. Alternative 1: Manual install with <code class="docutils literal notranslate"><span class="pre">pip</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#install-a-python-3-environment">1. Install a Python 3 environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#a-linux-and-macos">2a. Linux and MacOS:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#b-windows">2b. Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#install-completion-optional">3. Install completion (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#install-graphviz-optional">4. Install Graphviz (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pages/Install.html#test-your-installation">5. Test your installation</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pages/Install.html#test-your-installation">2.4. Test your installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/Install.html#alternative-1-install-with-git">2.5. Alternative 1: install with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="pages/Install.html#alternative-2-install-development-version">2.6. Alternative 2: install development version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/Install.html#alternative-2-manual-install-with-git">2.4. Alternative 2: manual install with <code class="docutils literal notranslate"><span class="pre">git</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages/Install.html#alternative-2-install-development-version">2.5. Alternative 2: install development version</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pages/Getting_started.html">3. Getting started with EMULSION</a><ul>
@@ -192,59 +195,13 @@ Artificial Intelligence (see <a class="reference internal" href="pages/Informati
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pages/License.html">9. License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="emulsion_for_modellers.html">10. High-level functions for model designers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#functions-available-for-models">10.1. Functions Available for Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.AND"><code class="docutils literal notranslate"><span class="pre">AND()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.DIV"><code class="docutils literal notranslate"><span class="pre">DIV()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.Eq"><code class="docutils literal notranslate"><span class="pre">Eq()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.GreaterThan"><code class="docutils literal notranslate"><span class="pre">GreaterThan()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.IfThenElse"><code class="docutils literal notranslate"><span class="pre">IfThenElse()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.LessThan"><code class="docutils literal notranslate"><span class="pre">LessThan()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.MAX"><code class="docutils literal notranslate"><span class="pre">MAX()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.MIN"><code class="docutils literal notranslate"><span class="pre">MIN()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.OR"><code class="docutils literal notranslate"><span class="pre">OR()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.ROUND"><code class="docutils literal notranslate"><span class="pre">ROUND()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.StrictGreaterThan"><code class="docutils literal notranslate"><span class="pre">StrictGreaterThan()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.StrictLessThan"><code class="docutils literal notranslate"><span class="pre">StrictLessThan()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.random_beta"><code class="docutils literal notranslate"><span class="pre">random_beta()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.random_bool"><code class="docutils literal notranslate"><span class="pre">random_bool()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.random_choice"><code class="docutils literal notranslate"><span class="pre">random_choice()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.random_choice_weighted"><code class="docutils literal notranslate"><span class="pre">random_choice_weighted()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.random_exponential"><code class="docutils literal notranslate"><span class="pre">random_exponential()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.random_gamma"><code class="docutils literal notranslate"><span class="pre">random_gamma()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.random_integers"><code class="docutils literal notranslate"><span class="pre">random_integers()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.random_multinomial"><code class="docutils literal notranslate"><span class="pre">random_multinomial()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.random_normal"><code class="docutils literal notranslate"><span class="pre">random_normal()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.random_poisson"><code class="docutils literal notranslate"><span class="pre">random_poisson()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.functions.random_uniform"><code class="docutils literal notranslate"><span class="pre">random_uniform()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#rates-probabilities">10.2. Rates / probabilities</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.misc.aggregate_probabilities"><code class="docutils literal notranslate"><span class="pre">aggregate_probabilities()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.misc.aggregate_probability"><code class="docutils literal notranslate"><span class="pre">aggregate_probability()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.misc.probabilities_to_rates"><code class="docutils literal notranslate"><span class="pre">probabilities_to_rates()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.misc.rates_to_probabilities"><code class="docutils literal notranslate"><span class="pre">rates_to_probabilities()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#computations">10.3. Computations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.misc.moving_average"><code class="docutils literal notranslate"><span class="pre">moving_average()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#selecting-agents">10.4. Selecting agents</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.tools.misc.select_random"><code class="docutils literal notranslate"><span class="pre">select_random()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#durations">10.5. Durations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.agent.core.abstract_agent.AbstractAgent"><code class="docutils literal notranslate"><span class="pre">AbstractAgent</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#agent-state-and-variable-changes">10.6. Agent State and Variable Changes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#id2"><code class="docutils literal notranslate"><span class="pre">AbstractAgent</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#introspection">10.7. Introspection</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion_for_modellers.html#emulsion.model.emulsion_model.EmulsionModel"><code class="docutils literal notranslate"><span class="pre">EmulsionModel</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#functions-available-for-models">10.1. Functions Available for Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#rates-probabilities">10.2. Rates / probabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#computations">10.3. Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#selecting-agents">10.4. Selecting agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#durations">10.5. Durations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#agent-state-and-variable-changes">10.6. Agent State and Variable Changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion_for_modellers.html#introspection">10.7. Introspection</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="emulsion.html">11. emulsion package</a><ul>
@@ -255,16 +212,13 @@ Artificial Intelligence (see <a class="reference internal" href="pages/Informati
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="emulsion.html#submodules">11.2. Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.html#module-emulsion.init_emulsion">11.3. emulsion.init_emulsion module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.html#emulsion.init_emulsion.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.html#module-emulsion.init_emulsion">11.3. emulsion.init_emulsion module</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <section id="indices-and-tables">
-<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h3>
+<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
@@ -324,7 +278,7 @@ Artificial Intelligence (see <a class="reference internal" href="pages/Informati
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -341,7 +295,7 @@ Artificial Intelligence (see <a class="reference internal" href="pages/Informati
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

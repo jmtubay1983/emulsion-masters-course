@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>7. Feature examples &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="../_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="../_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="8. Release notes" href="Release_notes.html" />
@@ -36,11 +37,11 @@
           <div class="body" role="main">
             
   <section id="feature-examples">
-<h1><span class="section-number">7. </span>Feature examples<a class="headerlink" href="#feature-examples" title="Permalink to this heading">¶</a></h1>
+<h1><span class="section-number">7. </span>Feature examples<a class="headerlink" href="#feature-examples" title="Permalink to this headline">¶</a></h1>
 <p>Directory <code class="docutils literal notranslate"><span class="pre">models/features</span></code> provides a collection of EMULSION models
 which demonstrate EMULSION features in their simplest usage.</p>
 <section id="sir-model">
-<h2><span class="section-number">7.1. </span>SIR model<a class="headerlink" href="#sir-model" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.1. </span>SIR model<a class="headerlink" href="#sir-model" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -84,7 +85,7 @@ existence of a level <code class="docutils literal notranslate"><span class="pre
 </div>
 </section>
 <section id="seirs-model">
-<h2><span class="section-number">7.2. </span>SEIRS model<a class="headerlink" href="#seirs-model" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.2. </span>SEIRS model<a class="headerlink" href="#seirs-model" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -156,7 +157,7 @@ existence of a level <code class="docutils literal notranslate"><span class="pre
 </div>
 </section>
 <section id="sirs-model-with-periodic-external-risk">
-<h2><span class="section-number">7.3. </span>SIRS model with periodic external risk<a class="headerlink" href="#sirs-model-with-periodic-external-risk" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.3. </span>SIRS model with periodic external risk<a class="headerlink" href="#sirs-model-with-periodic-external-risk" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -210,7 +211,7 @@ simulation (in time units - here days)</p>
 </div>
 </section>
 <section id="custom-state-durations">
-<h2><span class="section-number">7.4. </span>Custom state durations<a class="headerlink" href="#custom-state-durations" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.4. </span>Custom state durations<a class="headerlink" href="#custom-state-durations" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -273,7 +274,7 @@ when a duration is explicitly specified.</p></li>
 </div>
 </section>
 <section id="sir-model-with-basic-demography-births-deaths">
-<h2><span class="section-number">7.5. </span>SIR model with basic demography (births/deaths)<a class="headerlink" href="#sir-model-with-basic-demography-births-deaths" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.5. </span>SIR model with basic demography (births/deaths)<a class="headerlink" href="#sir-model-with-basic-demography-births-deaths" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -370,7 +371,7 @@ On the diagram, productions links appear as dashed arrows.</p></li>
 </div>
 </section>
 <section id="sir-model-with-age-groups">
-<h2><span class="section-number">7.6. </span>SIR model with age groups<a class="headerlink" href="#sir-model-with-age-groups" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.6. </span>SIR model with age groups<a class="headerlink" href="#sir-model-with-age-groups" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -450,7 +451,7 @@ autoremove states).</p></li>
 </div>
 </section>
 <section id="sir-model-with-age-groups-and-random-initialization">
-<h2><span class="section-number">7.7. </span>SIR model with age groups and random initialization<a class="headerlink" href="#sir-model-with-age-groups-and-random-initialization" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.7. </span>SIR model with age groups and random initialization<a class="headerlink" href="#sir-model-with-age-groups-and-random-initialization" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -500,7 +501,7 @@ probability of being infected (<code class="docutils literal notranslate"><span 
 </div>
 </section>
 <section id="sir-model-with-age-groups-and-data-based-prototypes">
-<h2><span class="section-number">7.8. </span>SIR model with age groups and data-based prototypes<a class="headerlink" href="#sir-model-with-age-groups-and-data-based-prototypes" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.8. </span>SIR model with age groups and data-based prototypes<a class="headerlink" href="#sir-model-with-age-groups-and-data-based-prototypes" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This feature is still experimental and likely to evolve in further versions.</p>
@@ -556,7 +557,7 @@ in a CSV file <code class="docutils literal notranslate"><span class="pre">data/
 </div>
 </section>
 <section id="sir-model-with-cumulative-incidence">
-<h2><span class="section-number">7.9. </span>SIR model with cumulative incidence<a class="headerlink" href="#sir-model-with-cumulative-incidence" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.9. </span>SIR model with cumulative incidence<a class="headerlink" href="#sir-model-with-cumulative-incidence" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -587,7 +588,7 @@ to a variable, here <code class="docutils literal notranslate"><span class="pre"
 </div>
 </section>
 <section id="sir-model-with-individual-actions-and-variable-aggregation">
-<h2><span class="section-number">7.10. </span>SIR model with individual actions and variable aggregation<a class="headerlink" href="#sir-model-with-individual-actions-and-variable-aggregation" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.10. </span>SIR model with individual actions and variable aggregation<a class="headerlink" href="#sir-model-with-individual-actions-and-variable-aggregation" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -669,7 +670,7 @@ convenient states.</p></li>
 </div>
 </section>
 <section id="sir-model-with-age-groups-and-explicit-age">
-<h2><span class="section-number">7.11. </span>SIR model with age groups and explicit age<a class="headerlink" href="#sir-model-with-age-groups-and-explicit-age" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.11. </span>SIR model with age groups and explicit age<a class="headerlink" href="#sir-model-with-age-groups-and-explicit-age" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -789,7 +790,7 @@ infected adults) based on the aggregate variable defined in <code class="docutil
 </div>
 </section>
 <section id="sir-model-with-explicit-gestation">
-<h2><span class="section-number">7.12. </span>SIR model with explicit gestation<a class="headerlink" href="#sir-model-with-explicit-gestation" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.12. </span>SIR model with explicit gestation<a class="headerlink" href="#sir-model-with-explicit-gestation" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -900,7 +901,7 @@ condition on sex).</p></li>
 <a class="reference internal" href="Modelling_language_advanced.html#produce-new-individuals"><span class="std std-ref">Produce new individuals</span></a>,
 <a class="reference internal" href="Modelling_language_advanced.html#design-prototypes-for-typical-individuals-or-populations"><span class="std std-ref">Design prototypes for typical individuals or populations</span></a></p>
 <p>A very complete example is also provided in the Quickstart model
-(<code class="docutils literal notranslate"><span class="pre">quickstart/quickstart.yaml</span></code>) used to <a class="reference internal" href="Install.html#test-your-installation"><span class="std std-ref">Test your installation</span></a>.</p>
+(<code class="docutils literal notranslate"><span class="pre">quickstart/quickstart.yaml</span></code>) used to <span class="xref std std-ref">Test your installation</span>.</p>
 <p>Especially:</p>
 <ul class="simple">
 <li><p>action <code class="docutils literal notranslate"><span class="pre">produce_offspring</span></code> used to model vertical transmission</p></li>
@@ -909,7 +910,7 @@ condition on sex).</p></li>
 </div>
 </section>
 <section id="sir-model-with-structured-population">
-<h2><span class="section-number">7.13. </span>SIR model with structured population<a class="headerlink" href="#sir-model-with-structured-population" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.13. </span>SIR model with structured population<a class="headerlink" href="#sir-model-with-structured-population" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -995,7 +996,7 @@ zeros, because when e.g. <code class="docutils literal notranslate"><span class=
 </div>
 </section>
 <section id="sir-model-with-metapopulation">
-<h2><span class="section-number">7.14. </span>SIR model with metapopulation<a class="headerlink" href="#sir-model-with-metapopulation" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.14. </span>SIR model with metapopulation<a class="headerlink" href="#sir-model-with-metapopulation" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -1069,7 +1070,7 @@ spread of the pathogen in intially disease-free populations (see figures)</p></l
 </div>
 </section>
 <section id="sir-model-with-metapopulation-data-driven-movements-and-data-pre-processing">
-<h2><span class="section-number">7.15. </span>SIR model with metapopulation, data-driven movements and data pre-processing<a class="headerlink" href="#sir-model-with-metapopulation-data-driven-movements-and-data-pre-processing" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">7.15. </span>SIR model with metapopulation, data-driven movements and data pre-processing<a class="headerlink" href="#sir-model-with-metapopulation-data-driven-movements-and-data-pre-processing" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-files admonition">
 <p class="admonition-title">Files</p>
 <ul class="simple">
@@ -1207,7 +1208,7 @@ as a dictionary which is available in all stochastic repetitions)</p></li>
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -1224,7 +1225,7 @@ as a dictionary which is available in all stochastic repetitions)</p></li>
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

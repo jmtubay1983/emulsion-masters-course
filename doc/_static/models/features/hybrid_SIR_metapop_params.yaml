@@ -239,9 +239,9 @@ parameters:
   initial_infected:
     desc: 'initial number of infectious individuals in the population'
     value: 'initial_population_size * initial_prevalence'
-  transmission_I:
-    desc: 'transmission rate from infectious individuals (/day)'
-    value: 0.5
+#  transmission_I:
+#    desc: 'transmission rate from infectious individuals (/day)'
+#    value: 0.5
   recovery:
     desc: 'recovery rate (/day)'
     value: 0.1
@@ -390,6 +390,6 @@ outputs:
   population:
     period: 1
     extra_vars:
-      - percentage_prevalence
-      - total_population
+      - birth
+      - transmission_I
 ...

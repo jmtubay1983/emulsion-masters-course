@@ -6,19 +6,19 @@ digraph {
         	edge[minlen=1.5, fontname=Times, penwidth=1.5, tailtooltip="", headtooltip=""];
 
         	"M" [shape="Mrecord", label="M&nbsp;&#9719;", tooltip="M (Maternal protection):
-	animal protected by maternal antibodies", fillcolor=cyan, style="filled,rounded"] ;
+	animal protected by maternal antibodies", fillcolor="cyan", style="filled,rounded"] ;
 	"S" [shape="Mrecord", label="S", tooltip="S (Susceptible):
-	suceptible of becoming infectious", fillcolor=wheat, style="filled,rounded,bold"] ;
+	suceptible of becoming infectious", fillcolor="wheat", style="filled,rounded,bold"] ;
 	"E" [shape="Mrecord", label="E&nbsp;&#9719;", tooltip="E (Exposed):
-	already infected but not yet able to transmit the disease", fillcolor=lightcoral, style="filled,rounded"] ;
+	already infected but not yet able to transmit the disease", fillcolor="lightcoral", style="filled,rounded"] ;
 	"I" [shape="Mrecord", label="I", tooltip="I (Infectious):
-	sick and able to transmit the disease", fillcolor=maroon, style="filled,rounded"] ;
+	sick and able to transmit the disease", fillcolor="maroon", style="filled,rounded"] ;
 	"R" [shape="Mrecord", label="R", tooltip="R (Resistant):
-	healthy again and resistant to infection", fillcolor=deepskyblue, style="filled,rounded"] ;
+	healthy again and resistant to infection", fillcolor="deepskyblue", style="filled,rounded"] ;
 	"Q" [shape="Mrecord", label="Q&nbsp;&#9719;", tooltip="Q (Quarantine):
-	sick animals that are put aside for a while", fillcolor=green, style="filled,rounded"] ;
+	sick animals that are put aside for a while", fillcolor="green", style="filled,rounded"] ;
 	"D" [shape="Mrecord", label="D", tooltip="D (Dead):
-	dead animals", fillcolor=white, style="filled,rounded,dotted"] ;
+	dead animals", fillcolor="white", style="filled,rounded,dotted"] ;
 	"E" -> "D" [label="rate: mortality_sick", labeltooltip="mortality_sick [parameter]:
 	mortality rate for sick animals (E / I / Q)                             
 	0.004", arrowtail="noneoinv", arrowhead="normalnone", dir=both, tooltip="ESCAPE: True", minlen=3, style="solid"];
@@ -55,5 +55,5 @@ digraph {
 	0.002", arrowtail="none", arrowhead="normalnone", dir=both, tooltip="", minlen=3, style="solid"];
 	"S" -> "E" [label="rate: f", labeltooltip="f [parameter]:
 	force of infection                                                      
-	beta * total_I / total_herd", arrowtail="none", arrowhead="normalnone", dir=both, tooltip="", minlen=3, style="solid"];
+	beta * total_I / total_population", arrowtail="none", arrowhead="normalnone", dir=both, tooltip="", minlen=3, style="solid"];
 }

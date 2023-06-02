@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>emulsion.agent package &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -12,9 +12,10 @@
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="icon" href="_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="emulsion.agent.core package" href="emulsion.agent.core.html" />
@@ -35,262 +36,42 @@
 
           <div class="body" role="main">
             
-  <section id="module-0">
-<span id="emulsion-agent-package"></span><h1>emulsion.agent package<a class="headerlink" href="#module-0" title="Permalink to this heading">¶</a></h1>
-<span class="target" id="module-emulsion.agent"></span><p>A Python implementation of EMULSION framework (Epidemiologic
+  <section id="module-emulsion.agent">
+<span id="emulsion-agent-package"></span><h1>emulsion.agent package<a class="headerlink" href="#module-emulsion.agent" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-0"></span><p>A Python implementation of EMULSION framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>This module contains classes and functions for handling all kinds of
 entities involved in epidemiologic models.</p>
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="emulsion.agent.core.html">emulsion.agent.core package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="emulsion.agent.core.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.core.html#module-emulsion.agent.core.abstract_agent">emulsion.agent.core.abstract_agent module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent"><code class="docutils literal notranslate"><span class="pre">AbstractAgent</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.from_dict"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.from_dict()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.__init__"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.get_model_value"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.get_model_value()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.delta_t"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.delta_t</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.time"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.time</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.die"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.die()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.get_information"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.get_information()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.set_information"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.set_information()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.init_time_entered"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.init_time_entered()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.change_state"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.change_state()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.update_time_to_exit"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.update_time_to_exit()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.duration_in_current_state"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.duration_in_current_state()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.reapply_prototype"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.reapply_prototype()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.apply_prototype"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.apply_prototype()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.apply_initial_prototype"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.apply_initial_prototype()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.agcount"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.agdict"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.families"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.abstract_agent.AbstractAgent.members"><code class="docutils literal notranslate"><span class="pre">AbstractAgent.members</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.core.html#module-1">emulsion.agent.core.emulsion_agent module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.__init__"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.matches_prototype"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.matches_prototype()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.activate"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.activate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.deactivate"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.deactivate()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.detach_model"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.detach_model()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.upper_level"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.upper_level()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.top_level"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.top_level()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.log_path"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.log_path()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.name"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.name</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.evolve"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.update_data_based_parameters"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.update_data_based_parameters()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.get_host"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.get_host()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.get_content"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.get_content()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.do_state_actions"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.do_state_actions()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.do_edge_actions"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.do_edge_actions()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.next_states_from"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.next_states_from()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.production_from"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.production_from()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.shift_times_to_exit"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.shift_times_to_exit()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.evaluate_condition"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.evaluate_condition()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.evaluate_event"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.evaluate_event()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.is_in_state"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.is_in_state()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.get_outbox"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.get_outbox()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.add_outbox"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.add_outbox()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.reset_outbox"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.reset_outbox()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.add_inbox"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.add_inbox()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.clean_inbox"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.clean_inbox()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.checkout_inbox"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.checkout_inbox()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.agcount"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.agdict"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.families"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent.members"><code class="docutils literal notranslate"><span class="pre">EmulsionAgent.members</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.core.html#module-2">emulsion.agent.core.groups module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.GroupAgent"><code class="docutils literal notranslate"><span class="pre">GroupAgent</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.GroupAgent.__init__"><code class="docutils literal notranslate"><span class="pre">GroupAgent.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.GroupAgent.add"><code class="docutils literal notranslate"><span class="pre">GroupAgent.add()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.GroupAgent.remove"><code class="docutils literal notranslate"><span class="pre">GroupAgent.remove()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.GroupAgent.move_to"><code class="docutils literal notranslate"><span class="pre">GroupAgent.move_to()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.GroupAgent.agcount"><code class="docutils literal notranslate"><span class="pre">GroupAgent.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.GroupAgent.agdict"><code class="docutils literal notranslate"><span class="pre">GroupAgent.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.GroupAgent.families"><code class="docutils literal notranslate"><span class="pre">GroupAgent.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.GroupAgent.members"><code class="docutils literal notranslate"><span class="pre">GroupAgent.members</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation"><code class="docutils literal notranslate"><span class="pre">Aggregation</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation.__init__"><code class="docutils literal notranslate"><span class="pre">Aggregation.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation.population"><code class="docutils literal notranslate"><span class="pre">Aggregation.population</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation.add"><code class="docutils literal notranslate"><span class="pre">Aggregation.add()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation.remove"><code class="docutils literal notranslate"><span class="pre">Aggregation.remove()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation.evolve"><code class="docutils literal notranslate"><span class="pre">Aggregation.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation.detach_model"><code class="docutils literal notranslate"><span class="pre">Aggregation.detach_model()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation.agcount"><code class="docutils literal notranslate"><span class="pre">Aggregation.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation.agdict"><code class="docutils literal notranslate"><span class="pre">Aggregation.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation.families"><code class="docutils literal notranslate"><span class="pre">Aggregation.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation.members"><code class="docutils literal notranslate"><span class="pre">Aggregation.members</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.core.html#module-emulsion.agent.core.abstract_agent">emulsion.agent.core.abstract_agent module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.core.html#module-emulsion.agent.core.emulsion_agent">emulsion.agent.core.emulsion_agent module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.core.html#module-emulsion.agent.core.groups">emulsion.agent.core.groups module</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="emulsion.agent.managers.html">emulsion.agent.managers package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.abstract_process_manager">emulsion.agent.managers.abstract_process_manager module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.__init__"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.upper_level"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.upper_level()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.load_state_from_file"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.load_state_from_file()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.save_state_to_file"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.save_state_to_file()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.apply_initial_prototype"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.apply_initial_prototype()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.apply_initial_conditions"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.apply_initial_conditions()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.initialize_level"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.initialize_level()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.finalize_level"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.finalize_level()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.add_new_population"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.add_new_population()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.init_processes"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.init_processes()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.get_default_sublevel"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.get_default_sublevel()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.add_method_process"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.add_method_process()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.add_statemachine_process"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.add_statemachine_process()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.add_compart_process"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.add_compart_process()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.create_count_properties_for_state"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.create_count_properties_for_state()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.create_properties_for_groups"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.create_properties_for_groups()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.get_group_population"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.get_group_population()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.counts"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.counts</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.remove_randomly"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.remove_randomly()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.remove"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.remove()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.population"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.population</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.agcount"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.agdict"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.families"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.members"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.members</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.abstract_process_manager.AbstractProcessManager.remove_all"><code class="docutils literal notranslate"><span class="pre">AbstractProcessManager.remove_all()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.compart_process_manager">emulsion.agent.managers.compart_process_manager module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.init_processes"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.init_processes()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.evolve"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.add_compart_process"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.add_compart_process()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.add_host"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.add_host()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.apply_initial_conditions"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.apply_initial_conditions()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.add_new_population"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.add_new_population()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.clone_and_add"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.clone_and_add()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.add_population"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.add_population()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.remove_population"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.remove_population()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.remove"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.remove()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.remove_all"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.remove_all()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.remove_randomly"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.remove_randomly()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.counts"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.counts</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.agcount"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.agdict"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.families"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.compart_process_manager.CompartProcessManager.members"><code class="docutils literal notranslate"><span class="pre">CompartProcessManager.members</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-3">emulsion.agent.managers.functions module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.functions.group_and_split_populations"><code class="docutils literal notranslate"><span class="pre">group_and_split_populations()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.group_manager">emulsion.agent.managers.group_manager module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.group_manager.GroupManager"><code class="docutils literal notranslate"><span class="pre">GroupManager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.group_manager.GroupManager.__init__"><code class="docutils literal notranslate"><span class="pre">GroupManager.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.group_manager.GroupManager.init_counts"><code class="docutils literal notranslate"><span class="pre">GroupManager.init_counts()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.group_manager.GroupManager.update_counts"><code class="docutils literal notranslate"><span class="pre">GroupManager.update_counts()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.group_manager.GroupManager.apply_changes"><code class="docutils literal notranslate"><span class="pre">GroupManager.apply_changes()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.group_manager.GroupManager.evolve"><code class="docutils literal notranslate"><span class="pre">GroupManager.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.group_manager.GroupManager.evolve_states"><code class="docutils literal notranslate"><span class="pre">GroupManager.evolve_states()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.group_manager.GroupManager.agcount"><code class="docutils literal notranslate"><span class="pre">GroupManager.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.group_manager.GroupManager.agdict"><code class="docutils literal notranslate"><span class="pre">GroupManager.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.group_manager.GroupManager.families"><code class="docutils literal notranslate"><span class="pre">GroupManager.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.group_manager.GroupManager.members"><code class="docutils literal notranslate"><span class="pre">GroupManager.members</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.ibm_process_manager">emulsion.agent.managers.ibm_process_manager module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.__init__"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.add_grouping_counts"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.add_grouping_counts()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.get_group_population"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.get_group_population()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.update_counts"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.update_counts()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.add_relative_counts"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.add_relative_counts()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.add_atoms"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.add_atoms()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.init_getters_for_initial_atoms"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.init_getters_for_initial_atoms()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.get_sublevels"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.get_sublevels()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.find_sublevel_statemachines"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.find_sublevel_statemachines()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.evolve"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.counts"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.counts</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.remove_randomly"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.remove_randomly()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.agcount"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.agdict"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.families"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.ibm_process_manager.IBMProcessManager.members"><code class="docutils literal notranslate"><span class="pre">IBMProcessManager.members</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.metapop_process_manager">emulsion.agent.managers.metapop_process_manager module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.metapop_process_manager.MetapopProcessManager"><code class="docutils literal notranslate"><span class="pre">MetapopProcessManager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.metapop_process_manager.MetapopProcessManager.get_populations"><code class="docutils literal notranslate"><span class="pre">MetapopProcessManager.get_populations()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.metapop_process_manager.MetapopProcessManager.evolve"><code class="docutils literal notranslate"><span class="pre">MetapopProcessManager.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.metapop_process_manager.MetapopProcessManager.counts"><code class="docutils literal notranslate"><span class="pre">MetapopProcessManager.counts</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.metapop_process_manager.MetapopProcessManager.agcount"><code class="docutils literal notranslate"><span class="pre">MetapopProcessManager.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.metapop_process_manager.MetapopProcessManager.agdict"><code class="docutils literal notranslate"><span class="pre">MetapopProcessManager.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.metapop_process_manager.MetapopProcessManager.families"><code class="docutils literal notranslate"><span class="pre">MetapopProcessManager.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.metapop_process_manager.MetapopProcessManager.members"><code class="docutils literal notranslate"><span class="pre">MetapopProcessManager.members</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.multi_process_manager">emulsion.agent.managers.multi_process_manager module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.__init__"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.init_processes"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.init_processes()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.add_relative_counts"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.add_relative_counts()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.add_compart_process"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.add_compart_process()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.evolve"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.evolve()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.apply_initial_conditions"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.apply_initial_conditions()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.add_host"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.add_host()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.clone_and_add"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.clone_and_add()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.add_new_population"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.add_new_population()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.select_atoms"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.select_atoms()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.get_group_atoms"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.get_group_atoms()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.get_agent_class_for_sublevel"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.get_agent_class_for_sublevel()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.new_atom"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.new_atom()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.add_atoms"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.add_atoms()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.make_all_consistent"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.make_all_consistent()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.make_consistent"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.make_consistent()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.remove"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.remove()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.remove_all"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.remove_all()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.remove_atoms"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.remove_atoms()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.select_randomly"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.select_randomly()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.remove_randomly"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.remove_randomly()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.agcount"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.agcount</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.agdict"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.agdict</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.families"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.families</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="emulsion.agent.managers.html#emulsion.agent.managers.multi_process_manager.MultiProcessManager.members"><code class="docutils literal notranslate"><span class="pre">MultiProcessManager.members</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.abstract_process_manager">emulsion.agent.managers.abstract_process_manager module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.compart_process_manager">emulsion.agent.managers.compart_process_manager module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-2">emulsion.agent.managers.functions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.group_manager">emulsion.agent.managers.group_manager module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.ibm_process_manager">emulsion.agent.managers.ibm_process_manager module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.metapop_process_manager">emulsion.agent.managers.metapop_process_manager module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="emulsion.agent.managers.html#module-emulsion.agent.managers.multi_process_manager">emulsion.agent.managers.multi_process_manager module</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </section>
 <section id="module-emulsion.agent.action">
-<span id="emulsion-agent-action-module"></span><h2>emulsion.agent.action module<a class="headerlink" href="#module-emulsion.agent.action" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-action-module"></span><h2>emulsion.agent.action module<a class="headerlink" href="#module-emulsion.agent.action" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Classes and functions for actions.</p>
@@ -336,7 +117,7 @@ action should be passed as a dictionary.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.ValueAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">ValueAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statevar_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#ValueAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.ValueAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.AbstractAction</span></code></a></p>
 <p>ValueActions represent modifications of state variables or
 attributes.</p>
 <dl class="py method">
@@ -351,7 +132,7 @@ statevar according to the parameter.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.RecordChangeAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">RecordChangeAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#RecordChangeAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.RecordChangeAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.ValueAction" title="emulsion.agent.action.ValueAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.ValueAction" title="emulsion.agent.action.ValueAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.ValueAction</span></code></a></p>
 <p>RecordChangeAction allows to record how many agents performed an
 action set. The corresponding value is added to a variable assumed
 to be defined at the upper level.</p>
@@ -375,7 +156,7 @@ specified population size.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.SampleDurationsAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">SampleDurationsAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">duration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#SampleDurationsAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.SampleDurationsAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.AbstractAction</span></code></a></p>
 <p>SampleDurationsAction computes N exit dates for the state of a given state machine, N being the number of individuals that enter the state.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="emulsion.agent.action.SampleDurationsAction.__init__">
@@ -394,7 +175,7 @@ specified population size.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.SetVarAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">SetVarAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statevar_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#SetVarAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.SetVarAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.ValueAction" title="emulsion.agent.action.ValueAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.ValueAction" title="emulsion.agent.action.ValueAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.ValueAction</span></code></a></p>
 <p>SetVarAction allows to set the variable of the agent.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="emulsion.agent.action.SetVarAction.__init__">
@@ -419,7 +200,7 @@ new state.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.SetUpperVarAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">SetUpperVarAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statevar_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#SetUpperVarAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.SetUpperVarAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.ValueAction" title="emulsion.agent.action.ValueAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.ValueAction" title="emulsion.agent.action.ValueAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.ValueAction</span></code></a></p>
 <p>SetUpperVarAction allows to set the variable of the upper level of the agent.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="emulsion.agent.action.SetUpperVarAction.__init__">
@@ -444,7 +225,7 @@ new state.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.RateAdditiveAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">RateAdditiveAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#RateAdditiveAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.RateAdditiveAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.ValueAction" title="emulsion.agent.action.ValueAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.ValueAction" title="emulsion.agent.action.ValueAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.ValueAction</span></code></a></p>
 <p>A RateChangeAction is aimed at increasing or decreasing a
 specific state variable or attribute, according to a specific rate
 (i.e. the actual increase or decrease is the product of the
@@ -468,7 +249,7 @@ specified population size.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.RateDecreaseAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">RateDecreaseAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#RateDecreaseAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.RateDecreaseAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.RateAdditiveAction" title="emulsion.agent.action.RateAdditiveAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">RateAdditiveAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.RateAdditiveAction" title="emulsion.agent.action.RateAdditiveAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.RateAdditiveAction</span></code></a></p>
 <p>A RateDecreaseAction is aimed at decreasing a specific state
 variable or attribute, according to a specific rate (i.e. the
 actual decrease is the product of the <cite>parameter</cite> attribute and a
@@ -485,7 +266,7 @@ statevar according to the parameter.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.RateIncreaseAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">RateIncreaseAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#RateIncreaseAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.RateIncreaseAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.RateAdditiveAction" title="emulsion.agent.action.RateAdditiveAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">RateAdditiveAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.RateAdditiveAction" title="emulsion.agent.action.RateAdditiveAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.RateAdditiveAction</span></code></a></p>
 <p>A RateIncreaseAction is aimed at increasing a specific state
 variable or attribute, according to a specific rate (i.e. the
 actual increase is the product of the <cite>parameter</cite> attribute and a
@@ -502,7 +283,7 @@ statevar according to the parameter.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.StochAdditiveAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">StochAdditiveAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sign</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#StochAdditiveAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.StochAdditiveAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.ValueAction" title="emulsion.agent.action.ValueAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.ValueAction" title="emulsion.agent.action.ValueAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.ValueAction</span></code></a></p>
 <p>A StochAdditiveAction is aimed at increasing or decreasing a
 specific state variable or attribute, according to a specific
 rate, using a <em>binomial sampling</em>.</p>
@@ -525,7 +306,7 @@ specified population size.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.StochDecreaseAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">StochDecreaseAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#StochDecreaseAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.StochDecreaseAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.StochAdditiveAction" title="emulsion.agent.action.StochAdditiveAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">StochAdditiveAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.StochAdditiveAction" title="emulsion.agent.action.StochAdditiveAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.StochAdditiveAction</span></code></a></p>
 <p>A StochDecreaseAction is aimed at decreasing a specific state
 variable or attribute, according to a specific rate, using a
 <em>binomial sampling</em>.</p>
@@ -541,7 +322,7 @@ statevar according to the parameter.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.StochIncreaseAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">StochIncreaseAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#StochIncreaseAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.StochIncreaseAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.StochAdditiveAction" title="emulsion.agent.action.StochAdditiveAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">StochAdditiveAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.StochAdditiveAction" title="emulsion.agent.action.StochAdditiveAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.StochAdditiveAction</span></code></a></p>
 <p>A StochIncreaseAction is aimed at increasing a specific state
 variable or attribute, according to a specific rate, using a
 <em>binomial sampling</em>.</p>
@@ -557,7 +338,7 @@ statevar according to the parameter.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.StringAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">StringAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#StringAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.StringAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.AbstractAction</span></code></a></p>
 <p>A StringAction is based on the specification of a string
 parameter.</p>
 <dl class="py method">
@@ -570,7 +351,7 @@ parameter.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.BecomeAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">BecomeAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prototypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#BecomeAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.BecomeAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.AbstractAction</span></code></a></p>
 <p>A BecomeAction is aimed at making an agent change its state
 according to one ore more specified prototypes.</p>
 <dl class="py method">
@@ -594,7 +375,7 @@ new state.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.CloneAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">CloneAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prototypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#CloneAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.CloneAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.AbstractAction</span></code></a></p>
 <p>A CloneAction produces several copies of the agent with a given
 prototype.</p>
 <dl class="py method">
@@ -618,7 +399,7 @@ new state.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.MessageAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">MessageAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#MessageAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.MessageAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.StringAction" title="emulsion.agent.action.StringAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.StringAction" title="emulsion.agent.action.StringAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.StringAction</span></code></a></p>
 <p>A MessageAction is aimed at making an agent print a given
 string. It requires a string message. This string can contain one
 reference to a variable or method of the agent, using Python’s
@@ -641,7 +422,7 @@ the action.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.LogVarsAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">LogVarsAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#LogVarsAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.LogVarsAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.StringAction" title="emulsion.agent.action.StringAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">StringAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.StringAction" title="emulsion.agent.action.StringAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.StringAction</span></code></a></p>
 <p>A LogVarsAction is aimed at making an agent print a list of
 variables into a file. Output is formatted in several
 comma-separated fields: the simulation ID, the time step when the
@@ -661,7 +442,7 @@ the action.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.MethodAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">MethodAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#MethodAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.MethodAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.AbstractAction" title="emulsion.agent.action.AbstractAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.AbstractAction</span></code></a></p>
 <p>A MethodAction is aimed at making an agent perform an action on
 a specific population. It requires a method name, and optionnally
 a list and a dictionary of parameters.</p>
@@ -683,7 +464,7 @@ will execute the action.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.action.FunctionAction">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.action.</span></span><span class="sig-name descname"><span class="pre">FunctionAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/action.html#FunctionAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.action.FunctionAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.MethodAction" title="emulsion.agent.action.MethodAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">MethodAction</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.action.MethodAction" title="emulsion.agent.action.MethodAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.action.MethodAction</span></code></a></p>
 <p>A FunctionAction is aimed at making an agent perform an action
 on a specific population. It requires a function, and optionnally
 a list and a dictionary of parameters. A FunctionAction runs
@@ -706,14 +487,14 @@ will execute the action.</p>
 
 </section>
 <section id="module-emulsion.agent.atoms">
-<span id="emulsion-agent-atoms-module"></span><h2>emulsion.agent.atoms module<a class="headerlink" href="#module-emulsion.agent.atoms" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-atoms-module"></span><h2>emulsion.agent.atoms module<a class="headerlink" href="#module-emulsion.agent.atoms" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Classes and functions for entities management.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.atoms.AtomAgent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.atoms.</span></span><span class="sig-name descname"><span class="pre">AtomAgent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/atoms.html#AtomAgent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.atoms.AtomAgent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent" title="emulsion.agent.core.emulsion_agent.EmulsionAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmulsionAgent</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent" title="emulsion.agent.core.emulsion_agent.EmulsionAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.core.emulsion_agent.EmulsionAgent</span></code></a></p>
 <p>The AtomAgent is aimed at representing an ‘individual’, i.e. the
 smallest organization level to be modeled as an entity in the
 simulation. An AtomAgent may be situated in several hosts, each one
@@ -784,7 +565,7 @@ applied to the new atom.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.atoms.EvolvingAtom">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.atoms.</span></span><span class="sig-name descname"><span class="pre">EvolvingAtom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">statemachines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/atoms.html#EvolvingAtom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.atoms.EvolvingAtom" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.atoms.AtomAgent" title="emulsion.agent.atoms.AtomAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">AtomAgent</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.atoms.AtomAgent" title="emulsion.agent.atoms.AtomAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.atoms.AtomAgent</span></code></a></p>
 <p>An EvolvingAtom is able to change state according to its
 own statemachines.</p>
 <dl class="py method">
@@ -857,14 +638,14 @@ provided, executes all the machines.</p>
 
 </section>
 <section id="module-emulsion.agent.comparts">
-<span id="emulsion-agent-comparts-module"></span><h2>emulsion.agent.comparts module<a class="headerlink" href="#module-emulsion.agent.comparts" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-comparts-module"></span><h2>emulsion.agent.comparts module<a class="headerlink" href="#module-emulsion.agent.comparts" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Classes and functions for entities management.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.comparts.Compartment">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.comparts.</span></span><span class="sig-name descname"><span class="pre">Compartment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">population</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stochastic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/comparts.html#Compartment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.comparts.Compartment" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.GroupAgent" title="emulsion.agent.core.groups.GroupAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">GroupAgent</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.GroupAgent" title="emulsion.agent.core.groups.GroupAgent"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.core.groups.GroupAgent</span></code></a></p>
 <p>An Compartment is a compartment which does not
 represent the underlying level but with aggregate information such
 as the total population (‘individuals’ are not represented).</p>
@@ -890,7 +671,7 @@ the current state is stored in a statevar called
 <code class="docutils literal notranslate"><span class="pre">_time_to_exit_machine_name</span></code>, is computed from the
 current time (<code class="docutils literal notranslate"><span class="pre">step</span></code>) plus the <em>duration</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>machine_name</strong> (<em>str</em>) – name of the state machine for which
 the duration in the current state must be updated</p></li>
@@ -993,7 +774,7 @@ Several edges can lead to the same state.</p>
 
 </section>
 <section id="module-emulsion.agent.exceptions">
-<span id="emulsion-agent-exceptions-module"></span><h2>emulsion.agent.exceptions module<a class="headerlink" href="#module-emulsion.agent.exceptions" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-exceptions-module"></span><h2>emulsion.agent.exceptions module<a class="headerlink" href="#module-emulsion.agent.exceptions" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Exceptions raised by agents.</p>
@@ -1036,7 +817,7 @@ operations, such as adding numbers to a list of units.</p>
 
 </section>
 <section id="module-emulsion.agent.meta">
-<span id="emulsion-agent-meta-module"></span><h2>emulsion.agent.meta module<a class="headerlink" href="#module-emulsion.agent.meta" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-meta-module"></span><h2>emulsion.agent.meta module<a class="headerlink" href="#module-emulsion.agent.meta" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Classes and functions for abstract agent management.</p>
@@ -1045,7 +826,7 @@ Univ. Lille).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.meta.MetaAgent">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.meta.</span></span><span class="sig-name descname"><span class="pre">MetaAgent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/meta.html#MetaAgent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.meta.MetaAgent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABCMeta</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABCMeta</span></code></p>
 <p>The Metaclass definition for all agents. When created, agents
 are stored in a class-specific dictionaries of agents. They are
 given an ID value (unique value within each class) and can be
@@ -1055,7 +836,7 @@ assigned to its own class).</p>
 
 </section>
 <section id="module-emulsion.agent.process">
-<span id="emulsion-agent-process-module"></span><h2>emulsion.agent.process module<a class="headerlink" href="#module-emulsion.agent.process" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-process-module"></span><h2>emulsion.agent.process module<a class="headerlink" href="#module-emulsion.agent.process" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Classes and functions for process management in MultiProcessCompartments.</p>
@@ -1081,7 +862,7 @@ in a compartment, and is identified by its name.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.process.MethodProcess">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.process.</span></span><span class="sig-name descname"><span class="pre">MethodProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lparams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dparams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/process.html#MethodProcess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.process.MethodProcess" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.process.AbstractProcess" title="emulsion.agent.process.AbstractProcess"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractProcess</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.process.AbstractProcess" title="emulsion.agent.process.AbstractProcess"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.process.AbstractProcess</span></code></a></p>
 <p>A MethodProcess is aimed at running a specific method (and
 possibly any function or even any callable object).</p>
 <dl class="py method">
@@ -1107,7 +888,7 @@ the target compartment.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.process.StateMachineProcess">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.process.</span></span><span class="sig-name descname"><span class="pre">StateMachineProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_machine</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/process.html#StateMachineProcess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.process.StateMachineProcess" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.process.AbstractProcess" title="emulsion.agent.process.AbstractProcess"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractProcess</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.process.AbstractProcess" title="emulsion.agent.process.AbstractProcess"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.process.AbstractProcess</span></code></a></p>
 <p>A StateMachineProcess is aimed at running a specific state machine
 within the agent (not within a grouping).</p>
 <dl class="py method">
@@ -1139,14 +920,14 @@ level of the agent.</p>
 
 </section>
 <section id="module-emulsion.agent.views">
-<span id="emulsion-agent-views-module"></span><h2>emulsion.agent.views module<a class="headerlink" href="#module-emulsion.agent.views" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-agent-views-module"></span><h2>emulsion.agent.views module<a class="headerlink" href="#module-emulsion.agent.views" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Classes and functions for entities management.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.views.SimpleView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.views.</span></span><span class="sig-name descname"><span class="pre">SimpleView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/views.html#SimpleView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.views.SimpleView" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation" title="emulsion.agent.core.groups.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation" title="emulsion.agent.core.groups.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.core.groups.Aggregation</span></code></a></p>
 <p>A SimpleView uses a set to store the underlying
 units. It is rather aimed at storing AtomAgents. All units are
 considered in the same state, thus conditions in the state
@@ -1218,7 +999,7 @@ list_of_agents). Several edges can lead to the same state.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.views.AdaptiveView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.views.</span></span><span class="sig-name descname"><span class="pre">AdaptiveView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observables</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/views.html#AdaptiveView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.views.AdaptiveView" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.views.SimpleView" title="emulsion.agent.views.SimpleView"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleView</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.views.SimpleView" title="emulsion.agent.views.SimpleView"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.views.SimpleView</span></code></a></p>
 <p>An AdaptiveView is able to evaluate conditions on individuals
 (AtomAgents) for state transitions, and to detect changes in its
 content and automatically report it to the upper level. Each
@@ -1304,7 +1085,7 @@ observable/value settings. The new content is empty.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.views.StructuredView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.views.</span></span><span class="sig-name descname"><span class="pre">StructuredView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keep_history</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/views.html#StructuredView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.views.StructuredView" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation" title="emulsion.agent.core.groups.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">Aggregation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.groups.Aggregation" title="emulsion.agent.core.groups.Aggregation"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.core.groups.Aggregation</span></code></a></p>
 <p>A StructuredView uses ad dict list to store the underlying
 units. It is rather aimed at storing other compartiments.</p>
 <dl class="py method">
@@ -1388,7 +1169,7 @@ can be specified if needed.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.views.StructuredViewWithCounts">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.views.</span></span><span class="sig-name descname"><span class="pre">StructuredViewWithCounts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">allowed_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/views.html#StructuredViewWithCounts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.views.StructuredViewWithCounts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.views.StructuredView" title="emulsion.agent.views.StructuredView"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredView</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.views.StructuredView" title="emulsion.agent.views.StructuredView"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.views.StructuredView</span></code></a></p>
 <p>Same as StructuredView, plus the capability of handling counts for
 key values.</p>
 <dl class="py method">
@@ -1442,7 +1223,7 @@ can be specified if needed.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.agent.views.AutoStructuredView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.agent.views.</span></span><span class="sig-name descname"><span class="pre">AutoStructuredView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key_variable</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/agent/views.html#AutoStructuredView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.agent.views.AutoStructuredView" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.views.StructuredView" title="emulsion.agent.views.StructuredView"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredView</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.agent.views.StructuredView" title="emulsion.agent.views.StructuredView"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.agent.views.StructuredView</span></code></a></p>
 <p>An AutoStructuredView stores agents in an OrderedDict, using a
 specific statevar as key.</p>
 <dl class="py method">
@@ -1553,7 +1334,7 @@ population is expected to be a SortedSet or list.</p>
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -1570,7 +1351,7 @@ population is expected to be a SortedSet or list.</p>
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

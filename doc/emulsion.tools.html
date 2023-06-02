@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>emulsion.tools package &#8212; EMULSION (Epidemiological Multi-Level Simulation framework)</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -12,10 +12,11 @@
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="icon" href="_static/STEMAH-favicon.png"/>
+    <link rel="shortcut icon" href="_static/STEMAH-favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="emulsion.model package" href="emulsion.model.html" />
@@ -36,16 +37,16 @@
           <div class="body" role="main">
             
   <section id="module-emulsion.tools">
-<span id="emulsion-tools-package"></span><h1>emulsion.tools package<a class="headerlink" href="#module-emulsion.tools" title="Permalink to this heading">¶</a></h1>
+<span id="emulsion-tools-package"></span><h1>emulsion.tools package<a class="headerlink" href="#module-emulsion.tools" title="Permalink to this headline">¶</a></h1>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Misc. tools</p>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </section>
-<section id="module-0">
-<span id="emulsion-tools-calendar-module"></span><h2>emulsion.tools.calendar module<a class="headerlink" href="#module-0" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.tools.calendar"></span><p>Classes and functions for the definition of Emulsion calendars.</p>
+<section id="module-emulsion.tools.calendar">
+<span id="emulsion-tools-calendar-module"></span><h2>emulsion.tools.calendar module<a class="headerlink" href="#module-emulsion.tools.calendar" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-0"></span><p>Classes and functions for the definition of Emulsion calendars.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="emulsion.tools.calendar.InvalidIntervalException">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.calendar.</span></span><span class="sig-name descname"><span class="pre">InvalidIntervalException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">begin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/calendar.html#InvalidIntervalException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.calendar.InvalidIntervalException" title="Permalink to this definition">¶</a></dt>
@@ -69,20 +70,20 @@ specified interval (from <em>begin</em> to <em>end</em>). If a <em>period</em> i
 specified, the test relies upon the periodicity, otherwise dates
 are considered absolute.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>begin</strong> (<code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code>) – the date when the interval begins</p></li>
 <li><p><strong>end</strong> (<code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code>) – the date when the interval ends</p></li>
 <li><p><strong>period</strong> (<code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code>) – the duration of the period after which the calendar cycles</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>class</em> – a callable class which depends on relations between parameter
 values and can be called on a date (<code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code>) to
 return a <code class="docutils literal notranslate"><span class="pre">bool</span></code> which indicates whether or not the date
 belongs to the <em>begin</em>-<em>end</em> interval.</p>
 </dd>
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>InvalidIntervalexception</strong> – if <em>begin</em> is posterior to <em>end</em> in a non-periodic calendar</p>
 </dd>
 </dl>
@@ -134,7 +135,7 @@ steps).</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calendar_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_duration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">initial_dates</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/calendar.html#EventCalendar.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.calendar.EventCalendar.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the calendar using the specified information.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>calendar_name</strong> (<em>string</em>) – the name of the calendar</p></li>
 <li><p><strong>step_duration</strong> (<code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code>) – actual duration of one simulation step</p></li>
@@ -155,7 +156,7 @@ punctual event)</p></li>
 <dd><p>Advance the current date by the specified number of
 simulation steps.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>steps</strong> (<em>int</em>) – number of steps to ‘add’ to the current date</p>
 </dd>
 </dl>
@@ -166,10 +167,10 @@ simulation steps.</p>
 <span class="sig-name descname"><span class="pre">step_to_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/calendar.html#EventCalendar.step_to_date"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.calendar.EventCalendar.step_to_date" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the date when the specified step begins.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>step</strong> (<em>int</em>) – the time step to convert to a date</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>d</strong> (<code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code>) – the corresponding date</p>
 </dd>
 </dl>
@@ -180,10 +181,10 @@ simulation steps.</p>
 <span class="sig-name descname"><span class="pre">date_to_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/calendar.html#EventCalendar.date_to_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.calendar.EventCalendar.date_to_step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the step corresponding the specified date.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>date</strong> (<code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code>) – the date to convert into time steps</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>t</strong> (<em>int</em>) – the time step during which the specified date occurs (the
 date occurs between the returned time step <em>t</em> and time
 step <em>t+1</em>)</p>
@@ -198,7 +199,7 @@ step <em>t+1</em>)</p>
 by its <em>name</em> and a <em>begin_end</em> tuple indicating the begin and
 end dates.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – the name of the event</p></li>
 <li><p><strong>begin_end</strong> (<em>tuple</em>) – a tuple composed of the begin date and the end date
@@ -213,7 +214,7 @@ end dates.</p>
 <span class="sig-name descname"><span class="pre">get_events</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/calendar.html#EventCalendar.get_events"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.calendar.EventCalendar.get_events" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the list of events contained in the current calendar.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><strong>l</strong> (<em>list</em>) – the list of all event names</p>
 </dd>
 </dl>
@@ -222,9 +223,9 @@ end dates.</p>
 </dd></dl>
 
 </section>
-<section id="module-1">
-<span id="emulsion-tools-debug-module"></span><h2>emulsion.tools.debug module<a class="headerlink" href="#module-1" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.tools.debug"></span><p>Tools for debugging.</p>
+<section id="module-emulsion.tools.debug">
+<span id="emulsion-tools-debug-module"></span><h2>emulsion.tools.debug module<a class="headerlink" href="#module-emulsion.tools.debug" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-1"></span><p>Tools for debugging.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="emulsion.tools.debug.debuginfo">
 <span class="sig-prename descclassname"><span class="pre">emulsion.tools.debug.</span></span><span class="sig-name descname"><span class="pre">debuginfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/debug.html#debuginfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.debug.debuginfo" title="Permalink to this definition">¶</a></dt>
@@ -233,7 +234,7 @@ end dates.</p>
 function. Information are printed in bright yellow colour, with
 the name of the python file and line number where it was used.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>*message</strong> (<em>list</em>) – the items to print</p></li>
 <li><p><strong>**options</strong> (<em>dict</em>) – options passed to the classical <cite>print</cite> function</p></li>
@@ -262,9 +263,9 @@ the name of the python file and line number where it was used.</p>
 </dd></dl>
 
 </section>
-<section id="module-2">
-<span id="emulsion-tools-functions-module"></span><h2>emulsion.tools.functions module<a class="headerlink" href="#module-2" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.tools.functions"></span><p>Additional functions for symbolic computing in YAML model definition files.</p>
+<section id="module-emulsion.tools.functions">
+<span id="emulsion-tools-functions-module"></span><h2>emulsion.tools.functions module<a class="headerlink" href="#module-emulsion.tools.functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-2"></span><p>Additional functions for symbolic computing in YAML model definition files.</p>
 <p>All functions in this module can be used in EMULSION models.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="emulsion.tools.functions.IfThenElse">
@@ -282,14 +283,14 @@ defined e.g. in the <em>calendars</em> section of the model):</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>condition</strong> (<em>bool</em>) – a boolean expression</p></li>
 <li><p><strong>val_if_true</strong> (<em>number</em>) – value to return if the expression is True</p></li>
 <li><p><strong>val_if_false</strong> (<em>number</em>) – value to return if the expression is False</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>number</em> – One of the two values, depending on <em>condition</em>.</p>
 </dd>
 </dl>
@@ -315,10 +316,10 @@ defined e.g. in the <em>calendars</em> section of the model):</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>*values</strong> (<em>list</em>) – boolean values separated by commas</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>bool</em> – True if <strong>all</strong> values are True, False otherwise.</p>
 </dd>
 </dl>
@@ -341,10 +342,10 @@ defined e.g. in the <em>calendars</em> section of the model):</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>*values</strong> (<em>list</em>) – boolean values separated by commas</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>bool</em> – True if <strong>at least one</strong> of the values is True, False otherwise.</p>
 </dd>
 </dl>
@@ -355,10 +356,10 @@ defined e.g. in the <em>calendars</em> section of the model):</p>
 <span class="sig-prename descclassname"><span class="pre">emulsion.tools.functions.</span></span><span class="sig-name descname"><span class="pre">MIN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/functions.html#MIN"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.functions.MIN" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the minimum of all values.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>*values</strong> (<em>list</em>) – boolean values separated by commas</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – the lowest value</p>
 </dd>
 </dl>
@@ -369,10 +370,10 @@ defined e.g. in the <em>calendars</em> section of the model):</p>
 <span class="sig-prename descclassname"><span class="pre">emulsion.tools.functions.</span></span><span class="sig-name descname"><span class="pre">MAX</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/functions.html#MAX"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.functions.MAX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the maximum of all values.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>*values</strong> (<em>list</em>) – boolean values separated by commas</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – the highest value</p>
 </dd>
 </dl>
@@ -383,13 +384,13 @@ defined e.g. in the <em>calendars</em> section of the model):</p>
 <span class="sig-prename descclassname"><span class="pre">emulsion.tools.functions.</span></span><span class="sig-name descname"><span class="pre">DIV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/functions.html#DIV"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.functions.DIV" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return 0 if a=0 without considering b, otherwise a/b.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> – the values to divide</p></li>
 <li><p><strong>b</strong> – the values to divide</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – 0 if a is 0, otherwise a/b</p>
 </dd>
 </dl>
@@ -400,10 +401,10 @@ defined e.g. in the <em>calendars</em> section of the model):</p>
 <span class="sig-prename descclassname"><span class="pre">emulsion.tools.functions.</span></span><span class="sig-name descname"><span class="pre">ROUND</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/functions.html#ROUND"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.functions.ROUND" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the integer rounding of the specified value .</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>value</strong> – the value to round</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – the 0-digit rounding of <em>value</em></p>
 </dd>
 </dl>
@@ -429,10 +430,10 @@ in the infectious state:</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>proba_success</strong> (<em>float in</em><em> [</em><em>0</em><em>,</em><em>1</em><em>]</em>) – probability of returning 1 (True)</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>int</em> – either 1 with probability <em>proba_success</em>, or 0 with
 probability 1-<em>proba_success</em></p>
 </dd>
@@ -455,10 +456,10 @@ sampling).</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>*values</strong> (<em>list</em>) – the possible values, separated by commas</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>val</em> – one of the values (equiprobable choice)</p>
 </dd>
 </dl>
@@ -481,11 +482,11 @@ represent 10%, 20% and 70% of the population:</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>values</strong> (<em>list</em>) – possibles choices and their weight, alternatively, separated
 by commas. Weights are normalized to be used as probabilities.</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>One of the choices</em></p>
 </dd>
 </dl>
@@ -496,13 +497,13 @@ by commas. Weights are normalized to be used as probabilities.</p>
 <span class="sig-prename descclassname"><span class="pre">emulsion.tools.functions.</span></span><span class="sig-name descname"><span class="pre">random_multinomial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number_of_samples</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">probas</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/functions.html#random_multinomial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.functions.random_multinomial" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a multinomial sample based on the specified probabilities.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>number_of_samples</strong> (<em>int</em>) – number of experiments</p></li>
 <li><p><strong>probas</strong> (<em>list</em>) – list of probabilities</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>list</em> – the drawn samples</p>
 </dd>
 </dl>
@@ -521,13 +522,13 @@ by commas. Weights are normalized to be used as probabilities.</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>low</strong> (<em>float</em>) – lower boundary of the sample interval (inclusive)</p></li>
 <li><p><strong>high</strong> (<em>float</em>) – upper boundary of the sample interval (exclusive)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – a random value sampled according to a uniform distribution
 between <em>low</em> and <em>high</em></p>
 </dd>
@@ -551,13 +552,13 @@ distribution between <em>low</em> and <em>high</em> (both inclusive).</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>low</strong> (<em>int</em>) – lower boundary of the sample interval (inclusive)</p></li>
 <li><p><strong>high</strong> (<em>int</em>) – upper boundary of the sample interval (inclusive)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>int</em> – a random integer value sampled according to a discrete uniform
 distribution between <em>low</em> and <em>high</em></p>
 </dd>
@@ -581,10 +582,10 @@ rate 1/<em>scale</em> (thus of mean <em>scale</em>).</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>scale</strong> (<em>float</em>) – the scale parameter of the distribution, i.e. the inverse of the rate</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – a random value sampled according to an exponential
 distribution of rate 1/<em>scale</em></p>
 </dd>
@@ -608,13 +609,13 @@ distribution of rate 1/<em>scale</em></p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>float</em><em>, </em><em>positive</em><em> (</em><em>&gt;0</em><em>)</em>) – first shape parameter of the beta distribution</p></li>
 <li><p><strong>b</strong> (<em>float</em><em>, </em><em>positive</em><em> (</em><em>&gt;0</em><em>)</em>) – second shape parameter of the beta distribution</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – a random value sampled according to a beta distribution of
 parameters <em>a</em> and <em>b</em></p>
 </dd>
@@ -638,13 +639,13 @@ parameters <em>a</em> and <em>b</em></p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>shape</strong> (<em>float</em><em>, </em><em>positive</em><em> (</em><em>&gt;0</em><em>)</em>) – the shape of the gamma distribution</p></li>
 <li><p><strong>scale</strong> (<em>float</em><em>, </em><em>positive</em><em> (</em><em>&gt;0</em><em>)</em>) – the scale of the gamma distribution</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – a random value sampled according to a gamma distribution of
 parameters <em>shape</em> and <em>scale</em></p>
 </dd>
@@ -668,13 +669,13 @@ and standard deviation <em>sd</em>.</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mn</strong> (<em>float</em>) – the mean of the normal distribution</p></li>
 <li><p><strong>sd</strong> (<em>float</em><em>, </em><em>positive</em><em> (</em><em>&gt;=0</em><em>)</em>) – the standard deviation of the normal distribution</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – a random value sampled according to a normal distribution of
 mean <em>mn</em> and standard deviation <em>sd</em></p>
 </dd>
@@ -703,10 +704,10 @@ individuals will be produced:</p>
 </div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>lam</strong> (<em>float</em>) – the mean of the Poisson distribution</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>int</em> – a random integer value sampled according to a Poisson distribution of
 mean <em>lam</em></p>
 </dd>
@@ -722,13 +723,13 @@ mean <em>lam</em></p>
 <span class="sig-prename descclassname"><span class="pre">emulsion.tools.functions.</span></span><span class="sig-name descname"><span class="pre">Eq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/functions.html#Eq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.functions.Eq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return 1 if <em>a</em> and <em>b</em> are equals, 0 otherwise.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>float</em>) – the values to compare</p></li>
 <li><p><strong>b</strong> (<em>float</em>) – the values to compare</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – 1 iff a == b, 0 otherwise</p>
 </dd>
 </dl>
@@ -743,13 +744,13 @@ mean <em>lam</em></p>
 <span class="sig-prename descclassname"><span class="pre">emulsion.tools.functions.</span></span><span class="sig-name descname"><span class="pre">GreaterThan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/functions.html#GreaterThan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.functions.GreaterThan" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return 1 if <em>a</em> is greater than <em>b</em> (or equal), 0 otherwise.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>float</em>) – the values to compare</p></li>
 <li><p><strong>b</strong> (<em>float</em>) – the values to compare</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – 1 iff a &gt;= b, 0 otherwise</p>
 </dd>
 </dl>
@@ -764,13 +765,13 @@ mean <em>lam</em></p>
 <span class="sig-prename descclassname"><span class="pre">emulsion.tools.functions.</span></span><span class="sig-name descname"><span class="pre">StrictGreaterThan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/functions.html#StrictGreaterThan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.functions.StrictGreaterThan" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return 1 if <em>a</em> is strictly greater than <em>b</em>, 0 otherwise.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>float</em>) – the values to compare</p></li>
 <li><p><strong>b</strong> (<em>float</em>) – the values to compare</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – 1 iff a &gt; b, 0 otherwise</p>
 </dd>
 </dl>
@@ -785,13 +786,13 @@ mean <em>lam</em></p>
 <span class="sig-prename descclassname"><span class="pre">emulsion.tools.functions.</span></span><span class="sig-name descname"><span class="pre">LessThan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/functions.html#LessThan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.functions.LessThan" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return 1 if <em>a</em> is less than <em>b</em> (or equal), 0 otherwise.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>float</em>) – the values to compare</p></li>
 <li><p><strong>b</strong> (<em>float</em>) – the values to compare</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – 1 iff a &lt;= b, 0 otherwise</p>
 </dd>
 </dl>
@@ -806,13 +807,13 @@ mean <em>lam</em></p>
 <span class="sig-prename descclassname"><span class="pre">emulsion.tools.functions.</span></span><span class="sig-name descname"><span class="pre">StrictLessThan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/functions.html#StrictLessThan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.functions.StrictLessThan" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return 1 if <em>a</em> is strictly less than <em>b</em>, 0 otherwise.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>a</strong> (<em>float</em>) – the values to compare</p></li>
 <li><p><strong>b</strong> (<em>float</em>) – the values to compare</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – 1 iff a &lt; b, 0 otherwise</p>
 </dd>
 </dl>
@@ -823,31 +824,31 @@ mean <em>lam</em></p>
 </dd></dl>
 
 </section>
-<section id="module-3">
-<span id="emulsion-tools-getters-module"></span><h2>emulsion.tools.getters module<a class="headerlink" href="#module-3" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.tools.getters"></span><p>Collection of callable classes used in EMULSION framework to replace
+<section id="module-emulsion.tools.getters">
+<span id="emulsion-tools-getters-module"></span><h2>emulsion.tools.getters module<a class="headerlink" href="#module-emulsion.tools.getters" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-3"></span><p>Collection of callable classes used in EMULSION framework to replace
 closures and lambda functions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.tools.getters.create_population_getter">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.getters.</span></span><span class="sig-name descname"><span class="pre">create_population_getter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grouping_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/getters.html#create_population_getter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.getters.create_population_getter" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.getters.</span></span><span class="sig-name descname"><span class="pre">create_population_getter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grouping_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/getters.html#create_population_getter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.getters.create_population_getter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="emulsion.tools.getters.create_population_getter.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grouping_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/getters.html#create_population_getter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.getters.create_population_getter.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grouping_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/getters.html#create_population_getter.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.getters.create_population_getter.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a callable class used as a getter for property of the form
 <code class="docutils literal notranslate"><span class="pre">total_X_Y</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code> are states of two
 different states machines used in the grouping <em>grouping_name</em>.</p>
 <p>The functions can handle groupings with an arbitrary number of
 states.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grouping_name</strong> (<em>str</em>) – the name of the grouping for which the population getter is created</p></li>
 <li><p><strong>t_states</strong> (<em>str</em><em> or </em><em>tuple</em>) – either a string representing the state name (if only one), or
 a tuple of several state names</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which can be applied to an
 <code class="docutils literal notranslate"><span class="pre">AbstractProcessManager</span></code> agent which returns the
 population size for the specified group.</p>
@@ -872,7 +873,7 @@ or keywords built upon a state machine name <code class="docutils literal notran
 <p>The functions can handle groupings with an arbitrary number of
 states.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>model</strong> (<a class="reference internal" href="emulsion_for_modellers.html#emulsion.model.emulsion_model.EmulsionModel" title="emulsion.model.emulsion_model.EmulsionModel"><em>EmulsionModel</em></a>) – the model in which population counts apply</p></li>
 <li><p><strong>t_variables</strong> (<em>str</em><em> or </em><em>tuple</em>) – tuple of strings (possibly one string), each one
@@ -882,7 +883,7 @@ state of the agent for a specific state machine (e.g.
 the agent for a specific state machine (e.g. ‘other_health_state’)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which can be applied to an
 <code class="docutils literal notranslate"><span class="pre">AtomAgent</span></code> agent which returns the
 population size for the specified group.</p>
@@ -906,13 +907,13 @@ those states can be calculated from the specified
 <em>grouping_name</em>.</p>
 <p>If a single state is passed to <em>t_states</em>, a tuple is created.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grouping_name</strong> (<em>str</em>) – the name of the grouping (or single state machine) to use for calculation</p></li>
 <li><p><strong>t_states</strong> (<em>tuple</em>) – tuple of states to count (possibly single value)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which can be applied to an
 <code class="docutils literal notranslate"><span class="pre">IBMProcessManager</span></code> agent which returns the
 population size for the specified group.</p>
@@ -932,10 +933,10 @@ population size for the specified group.</p>
 <dd><p>Build a callable class used as a getter for property of the form
 <code class="docutils literal notranslate"><span class="pre">is_X</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is a state of a state machine.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>state_name</strong> (<em>str</em>) – the name of state</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which can be applied to an <code class="docutils literal notranslate"><span class="pre">AtomAgent</span></code>
 agent which returns True if the agent is in state
 <em>state_name</em>, False otherwise.</p>
@@ -955,10 +956,10 @@ agent which returns True if the agent is in state
 <dd><p>Build a callable class used as a getter for property of the form
 <code class="docutils literal notranslate"><span class="pre">duration_in_M</span></code> where <code class="docutils literal notranslate"><span class="pre">M</span></code> is a <em>machine_name</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>machine_name</strong> (<em>str</em>) – the name of the state machine</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which can be applied to an <code class="docutils literal notranslate"><span class="pre">AtomAgent</span></code>
 agent which returns the duration elapsed since the agent
 entered the current state of <em>machine_name</em></p>
@@ -983,10 +984,10 @@ in <cite>numpy</cite>.</p>
 is interpreted as the partial function
 <code class="docutils literal notranslate"><span class="pre">numpy.percentile(q=int(XX))</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>operator</strong> (<em>str</em>) – the name of the aggregation operator</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – a callable class which can be called on a list (or
 array-like) as input and returns the application of the
 <em>operator</em> to the values.</p>
@@ -1008,13 +1009,13 @@ aggregator function has to collect all values of <em>sourcevar</em>
 for agents contained in a given host, and reduce them to one
 avalue using the specified <em>operator</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>sourcevar</strong> (<em>str</em>) – the name of the variable to collect in the sublevel</p></li>
 <li><p><strong>operator</strong> (<em>str</em>) – the name of the operator to apply to the collected values</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which can be applied to a
 <cite>MultiProcessManager</cite> agent (i.e. with explicit sublevel
 agents) which returns the aggregated values for the whole
@@ -1027,11 +1028,11 @@ population.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.tools.getters.create_group_aggregator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.getters.</span></span><span class="sig-name descname"><span class="pre">create_group_aggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sourcevar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/getters.html#create_group_aggregator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.getters.create_group_aggregator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.getters.</span></span><span class="sig-name descname"><span class="pre">create_group_aggregator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sourcevar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/getters.html#create_group_aggregator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.getters.create_group_aggregator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="emulsion.tools.getters.create_group_aggregator.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sourcevar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/getters.html#create_group_aggregator.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.getters.create_group_aggregator.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sourcevar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/getters.html#create_group_aggregator.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.getters.create_group_aggregator.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a getter for property of the form <code class="docutils literal notranslate"><span class="pre">newvar_X_Y</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code>
 and <code class="docutils literal notranslate"><span class="pre">Y</span></code> are states of two different states machines used in
 a grouping, <code class="docutils literal notranslate"><span class="pre">newvar</span></code> is an aggregate variable based on
@@ -1040,7 +1041,7 @@ collecting all values of <em>sourcevar</em> for the specific
 functions can handle groupings with an arbitrary number of
 states.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>sourcevar</strong> (<em>str</em>) – the name of the variable to collect in the sublevel</p></li>
 <li><p><strong>operator</strong> (<em>str</em>) – the name of the operator to apply to the collected values</p></li>
@@ -1050,7 +1051,7 @@ the population getter is created</p></li>
 a tuple of several state names</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which can be applied to an
 <cite>MultiProcessManager</cite> agent (i.e. with explicit sublevel
 agents) which returns the aggregated value for the
@@ -1076,7 +1077,7 @@ aggregating the values using <em>operator</em>. This function is
 intended to work on <cite>IBMProcessManager</cite> agents, which do not
 benefit from groupings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>sourcevar</strong> (<em>str</em>) – the name of the variable to collect in the sublevel</p></li>
 <li><p><strong>operator</strong> (<em>str</em>) – the name of the operator to apply to the collected values</p></li>
@@ -1084,7 +1085,7 @@ benefit from groupings.</p>
 <li><p><strong>state_name</strong> (<em>str</em>) – the state name</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class on which can be applied to an
 <cite>IBMProcessManager</cite> agent (i.e. with explicit but
 ungrouped sublevel agents) which returns the aggregated
@@ -1124,10 +1125,10 @@ variable.</p>
 <dd><p>Create a callable class to access the successor state for the
 specified <em>machine_name</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>machine_name</strong> (<em>str</em>) – the name of a state machine for which the function will be built</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – a function that returns the successor state for the
 current state of the statevar specified by
 <em>state_machine</em>. If no value is set, returns a random
@@ -1148,10 +1149,10 @@ state of this state machine.</p>
 <dd><p>Create a function to access the predecessor state for the specified
 <em>machine_name</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>machine_name</strong> (<em>str</em>) – the name of a state machine for which the function will be built</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – a callable class that returns the predecessor state for
 the current state of the statevar specified by
 <em>state_machine</em>. If no value is set, returns a random
@@ -1177,7 +1178,7 @@ number of available states, the last state getting the complement
 to 1), or as true weights which are then normalized to be used as
 probabilities.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>machine_name</strong> (<em>str</em>) – the name of the state machine where the states must be chosen
 among the <em>N</em> non-autoremove states.</p></li>
@@ -1185,7 +1186,7 @@ among the <em>N</em> non-autoremove states.</p></li>
 <li><p><strong>model</strong> (<a class="reference internal" href="emulsion_for_modellers.html#emulsion.model.emulsion_model.EmulsionModel" title="emulsion.model.emulsion_model.EmulsionModel"><em>EmulsionModel</em></a>) – the model where this function is defined</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – a callable class that returns a random state according to the
 values of the weights list, interpreted either as
 probabilities (if size <em>N-1</em>) or as weights (if size <em>N</em>)
@@ -1206,13 +1207,13 @@ which are then normalized to provide probabilities</p>
 <dd><p>Return a function to access to random prototypes based on given
 frequencies.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>names</strong> (<em>list</em>) – the list of prototypes to sample</p></li>
 <li><p><strong>freqs</strong> (<em>list</em>) – list of probabilities for random sampling</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – a callable class that returns a random prototype name sampled
 randomly in <em>names</em> based on <em>freqs</em></p>
 </dd>
@@ -1248,7 +1249,7 @@ randomly in <em>names</em> based on <em>freqs</em></p>
 <dd><p>Return a function to access to prototypes in order, based on given
 <em>names</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>names</strong> (<em>list</em>) – the list of prototypes to sample</p></li>
 <li><p><strong>freqs</strong> (<em>list</em>) – the list of probabilities associated with each name</p></li>
@@ -1258,7 +1259,7 @@ randomly in <em>names</em> based on <em>freqs</em></p>
 False otherwise</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – a callable class that returns a prototype name when called</p>
 </dd>
 </dl>
@@ -1274,10 +1275,10 @@ False otherwise</p></li>
 to return the value of the specified parameter (or expression) in
 the the agent.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>value_name</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – the name of the statevar to get</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>class</em> – a callable which can be called on an agent</p>
 </dd>
 </dl>
@@ -1298,10 +1299,10 @@ the the agent.</p>
 <dd><p>Build a callable class used as a getter for property of the form
 <code class="docutils literal notranslate"><span class="pre">index_X</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is a state of a state machine.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>state_name</strong> (<em>str</em>) – the name of state</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which can be applied to any agent
 which returns the index of the specified state.</p>
 </dd>
@@ -1320,10 +1321,10 @@ which returns the index of the specified state.</p>
 <dd><p>Build a callable class used as a getter for property of the form
 <code class="docutils literal notranslate"><span class="pre">index_my_X</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is a state machine.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>state_machine_name</strong> (<em>str</em>) – the name of state machine</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which can be applied to any agent which returns the index of the current state of the specified state machine if any, 0 otherwise.</p>
 </dd>
 </dl>
@@ -1340,14 +1341,14 @@ which returns the index of the specified state.</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">condition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression_if_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression_if_false</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/getters.html#create_lazy_ternary.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.getters.create_lazy_ternary.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a callable class used to return a value depending on the condition. Evaluations of condition and values are delayed until requested, and non-relevant value is not even calculated.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>condition</strong> (<em>str</em>) – the expression of the condition</p></li>
 <li><p><strong>expression_if_true</strong> (<em>str</em>) – the expression of the value to calculate if the condition is true</p></li>
 <li><p><strong>expression_if_false</strong> (<em>str</em>) – the expression of the value to calculate if the condition is false</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which returns the value of value_value_if_value_if_true if the condition is fulfilled, otherwise the value of value_if_value_if_false.</p>
 </dd>
 </dl>
@@ -1364,10 +1365,10 @@ which returns the index of the specified state.</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conditions</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/getters.html#create_lazy_OR.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.getters.create_lazy_OR.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a callable class used to return a boolean OR on the conditions. Evaluation of conditions is delayed until requested, and returns true as soon as one condition is fulfilled.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>conditions</strong> (<em>str</em>) – the list of the conditions to test</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which returns the logical true if any condition is fulfilled, false otherwise.</p>
 </dd>
 </dl>
@@ -1384,10 +1385,10 @@ which returns the index of the specified state.</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conditions</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/getters.html#create_lazy_AND.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.getters.create_lazy_AND.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a callable class used to return a boolean AND on the conditions. Evaluation of conditions is delayed until requested, and returns false as soon as one condition is not fulfilled.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>conditions</strong> (<em>str</em>) – the list of the conditions to test</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>callable</em> – A callable class which returns the logical false if any condition is false, true otherwise.</p>
 </dd>
 </dl>
@@ -1397,14 +1398,15 @@ which returns the index of the specified state.</p>
 
 </section>
 <section id="module-emulsion.tools.graph">
-<span id="emulsion-tools-graph-module"></span><h2>emulsion.tools.graph module<a class="headerlink" href="#module-emulsion.tools.graph" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-tools-graph-module"></span><h2>emulsion.tools.graph module<a class="headerlink" href="#module-emulsion.tools.graph" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Tools aimed at handling graphs for the state machines</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.tools.graph.EdgeTypes">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.graph.</span></span><span class="sig-name descname"><span class="pre">EdgeTypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#emulsion.tools.graph.EdgeTypes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.tools.state.EmulsionEnum" title="emulsion.tools.state.EmulsionEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmulsionEnum</span></code></a></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.graph.</span></span><span class="sig-name descname"><span class="pre">EdgeTypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#emulsion.tools.graph.EdgeTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.tools.state.EmulsionEnum" title="emulsion.tools.state.EmulsionEnum"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.tools.state.EmulsionEnum</span></code></a></p>
+<p>An enumeration.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="emulsion.tools.graph.EdgeTypes.TRANSITION">
 <span class="sig-name descname"><span class="pre">TRANSITION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#emulsion.tools.graph.EdgeTypes.TRANSITION" title="Permalink to this definition">¶</a></dt>
@@ -1474,9 +1476,9 @@ to all edges going out of the <cite>from_id</cite> node.</p>
 </dd></dl>
 
 </section>
-<section id="module-4">
-<span id="emulsion-tools-misc-module"></span><h2>emulsion.tools.misc module<a class="headerlink" href="#module-4" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.tools.misc"></span><p>Collection of various useful functions used in EMULSION framework,
+<section id="module-emulsion.tools.misc">
+<span id="emulsion-tools-misc-module"></span><h2>emulsion.tools.misc module<a class="headerlink" href="#module-emulsion.tools.misc" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-4"></span><p>Collection of various useful functions used in EMULSION framework,
 especially regarding introspection.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="emulsion.tools.misc.AGENTS">
@@ -1494,18 +1496,18 @@ especially regarding introspection.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="emulsion.tools.misc.load_class">
-<span class="sig-prename descclassname"><span class="pre">emulsion.tools.misc.</span></span><span class="sig-name descname"><span class="pre">load_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/misc.html#load_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.misc.load_class" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">emulsion.tools.misc.</span></span><span class="sig-name descname"><span class="pre">load_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/misc.html#load_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.misc.load_class" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dynamically load the class with the specified <em>class_name</em> from the
 given <em>module</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>module</strong> – a Python module, where the class is expected to be located.</p></li>
 <li><p><strong>class_name</strong> (<em>str</em>) – the name of the class to load</p></li>
 <li><p><strong>options</strong> – some options</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>tuple</em> – a tuple composed of the class (type) and the options.</p>
 </dd>
 </dl>
@@ -1523,11 +1525,11 @@ given <em>module</em>.</p>
 <dd><p>Dynamically load the module with the specified <em>module_name</em> and
 return it.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>module_name</strong> (<em>str</em>) – the name of a valid Python module (accessible in the
 <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment variable).</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>ref</em> – A reference to the Python module.</p>
 </dd>
 </dl>
@@ -1547,7 +1549,7 @@ probability to stay in current state is given by:</p>
 <div class="math notranslate nohighlight">
 \[p_i = \frac{\rho_i}{\sum_i \rho_i} (1 - p_0)\]</div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>total_rate</strong> (<em>float</em>) – the total exit rate, used for normalization purposes. If
 <em>rate_values</em> represent all possible exit rates, <em>total_rate</em>
@@ -1556,7 +1558,7 @@ is their sum.</p></li>
 <li><p><strong>delta_t</strong> (<em>float</em>) – the value of the time step (expressed in time units)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>list</em> – the list of probabilities corresponding to the <em>rate_values</em>.</p>
 </dd>
 </dl>
@@ -1569,13 +1571,13 @@ is their sum.</p></li>
 a probability for events tested each time unit, into the
 probability for the specified time step (<em>delta_t</em>).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>probability</strong> (<em>float</em>) – the probability value of an event (during 1 time unit)</p></li>
 <li><p><strong>delta_t</strong> (<em>float</em>) – the value of the time step (expressed in time units)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>float</em> – the probability of the event during <em>delta_t</em> time units.</p>
 </dd>
 </dl>
@@ -1588,13 +1590,13 @@ probability for the specified time step (<em>delta_t</em>).</p>
 probabilities of events duting one time unit, compute the
 probabilities for the specified time step (<em>delta_t</em>).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>probability_values</strong> (<em>list</em>) – a list of probability values for several events (during 1 time unit)</p></li>
 <li><p><strong>delta_t</strong> (<em>float</em>) – the value of the time step (expressed in time units)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>list</em> – the probabilities of the same events during <em>delta_t</em> time units.</p>
 </dd>
 </dl>
@@ -1607,11 +1609,11 @@ probabilities for the specified time step (<em>delta_t</em>).</p>
 last value is expected to represent the probability of staying in
 the current state.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>probability_values</strong> (<em>list</em>) – a list of probabilities, the last one representing the
 probability to stay in the current state</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>list</em> – a list of rates corresponding to those probabilities.</p>
 </dd>
 </dl>
@@ -1631,24 +1633,21 @@ probability to stay in the current state</p>
 <li><p>missing value for each state machine in <em>l_state_machines</em> are replaced with the default state if any</p></li>
 <li><p>remaining missing values are all non-autoremove states, which leads to building all possible consistent combinations</p></li>
 </ol>
-<section id="returns">
-<h3>Returns:<a class="headerlink" href="#returns" title="Permalink to this heading">¶</a></h3>
 <dl class="simple">
 <dt>list:</dt><dd><p>list of tuples which correspond to valid keys for this specification</p>
 </dd>
 </dl>
-</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="emulsion.tools.misc.count_population">
-<span class="sig-prename descclassname"><span class="pre">emulsion.tools.misc.</span></span><span class="sig-name descname"><span class="pre">count_population</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agents_or_pop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></span><a class="reference internal" href="_modules/emulsion/tools/misc.html#count_population"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.misc.count_population" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">emulsion.tools.misc.</span></span><span class="sig-name descname"><span class="pre">count_population</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agents_or_pop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/emulsion/tools/misc.html#count_population"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.misc.count_population" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the amount of atoms represented in <em>agents_or_pop</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>agents_or_pop</strong> (<em>tuple</em>) – either (‘population’, qty, esc) or (‘agents’, list of agents, None)</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>int or float</em> – the amount corresponding to the population: generally, an int
 value, but deterministic models produce float values.</p>
 </dd>
@@ -1657,20 +1656,20 @@ value, but deterministic models produce float values.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="emulsion.tools.misc.select_random">
-<span class="sig-prename descclassname"><span class="pre">emulsion.tools.misc.</span></span><span class="sig-name descname"><span class="pre">select_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SortedSet</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">SortedSet([])</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span></span></span><a class="reference internal" href="_modules/emulsion/tools/misc.html#select_random"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.misc.select_random" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">emulsion.tools.misc.</span></span><span class="sig-name descname"><span class="pre">select_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sortedcontainers.sortedset.SortedSet</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">SortedSet([])</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span></span></span><a class="reference internal" href="_modules/emulsion/tools/misc.html#select_random"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.misc.select_random" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a random selection of <em>quantity</em> agents from the <em>origin</em>
 group, avoiding those explicitly in the <em>exclude</em> set. If the
 <em>origin</em> population proves too small, all available agents are
 taken, irrespective to the <em>quantity</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>origin</strong> (<em>iterable</em>) – the population where agents must be selected</p></li>
 <li><p><strong>quantity</strong> (<em>int</em>) – the number of agents to select in the population</p></li>
 <li><p><strong>exclude</strong> (<em>set</em>) – agents which are not available for the selection</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>list</em> – a list of randomly selected agents according to the above constraints.</p>
 </dd>
 </dl>
@@ -1682,10 +1681,10 @@ taken, irrespective to the <em>quantity</em>.</p>
 <dd><p>Read the specified YAML <em>filename</em> and return the corresponding
 Python document.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – the name of the YAML file to load</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>object</em> – a Python object built by parsing of the YAML file, i.e. either
 a dict, list, or even str/int/etc… (Most YAML document will
 produce dictionaries.)</p>
@@ -1700,14 +1699,14 @@ produce dictionaries.)</p>
 <em>value_or_function</em> if it is a true value, or computed from this
 parameter seen as a function, with the specified <em>agent</em> as argument.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value_or_function</strong> – either a callable (function that applies to an agent to
 retrieve an individual value), or the value itself</p></li>
 <li><p><strong>agent</strong> – the agent to use as parameter of the callable if necessary</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>value</em> – the expected value (agent-based or not).</p>
 </dd>
 </dl>
@@ -1722,14 +1721,14 @@ moving average has the same size as the original values. To avoid
 boundary effects, use <code class="docutils literal notranslate"><span class="pre">mode='valid'</span></code>, which produce a result of
 size <code class="docutils literal notranslate"><span class="pre">len(values)</span> <span class="pre">-</span> <span class="pre">window_size</span> <span class="pre">+</span> <span class="pre">1</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>values</strong> (<em>array-like</em>) – contains the values for moving average computation</p></li>
 <li><p><strong>window_size</strong> (<em>int</em>) – width of the moving average window</p></li>
 <li><p><strong>mode</strong> (<em>str</em>) – a parameter for <cite>numpy.convolve</cite></p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>nd_array</em> – a numpy <code class="docutils literal notranslate"><span class="pre">nd_array</span></code> containing the values of the moving average.</p>
 </dd>
 </dl>
@@ -1745,7 +1744,7 @@ properties must me done through instances rather than classes,
 since agents must add the name of the property to their
 <code class="docutils literal notranslate"><span class="pre">_mbr_cache</span></code> attribute.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>agent</strong> (<a class="reference internal" href="emulsion_for_modellers.html#id2" title="emulsion.agent.core.abstract_agent.AbstractAgent"><em>AbstractAgent</em></a>) – the agent to which the property must be added</p></li>
 <li><p><strong>property_name</strong> (<em>str</em>) – the name of the property</p></li>
@@ -1770,7 +1769,7 @@ where <code class="docutils literal notranslate"><span class="pre">X</span></cod
 machines used in a grouping, or keywords built upon a state
 machine name <code class="docutils literal notranslate"><span class="pre">M</span></code> of the form <code class="docutils literal notranslate"><span class="pre">my_M</span></code> or <code class="docutils literal notranslate"><span class="pre">other_M</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>agent</strong> (<a class="reference internal" href="emulsion.agent.core.html#emulsion.agent.core.emulsion_agent.EmulsionAgent" title="emulsion.agent.core.emulsion_agent.EmulsionAgent"><em>EmulsionAgent</em></a><em> (</em><a class="reference internal" href="emulsion.agent.html#emulsion.agent.views.AdaptiveView" title="emulsion.agent.views.AdaptiveView"><em>AdaptiveView</em></a><em> or </em><a class="reference internal" href="emulsion.agent.html#emulsion.agent.atoms.AtomAgent" title="emulsion.agent.atoms.AtomAgent"><em>AtomAgent</em></a><em>)</em>) – the agent which will be endowed with the new properties</p></li>
 <li><p><strong>key_variables</strong> (<em>tuple</em>) – string of tuple containing the names of the state machines</p></li>
@@ -1785,7 +1784,7 @@ machine name <code class="docutils literal notranslate"><span class="pre">M</spa
 <dd><p>Read the definitions of prototypes contained in file <em>filename</em> and
 return a dictionary representing the collection.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>collection_name</strong> (<em>str</em>) – the name of the prototypes collection</p></li>
 <li><p><strong>filename</strong> (<em>Path</em>) – the path to the CSV file to read</p></li>
@@ -1796,7 +1795,7 @@ return a dictionary representing the collection.</p>
 sampling. If None, all prototypes are given the same weight</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p><em>list</em> – A prototype collection, as a list of tuples composed of the
 prototype frequency, the prototype name, and the dictionary
 describing the prototype itself</p>
@@ -1822,7 +1821,7 @@ fulfil a given condition (provided as a function here).</p>
 
 </section>
 <section id="module-emulsion.tools.parallel">
-<span id="emulsion-tools-parallel-module"></span><h2>emulsion.tools.parallel module<a class="headerlink" href="#module-emulsion.tools.parallel" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-tools-parallel-module"></span><h2>emulsion.tools.parallel module<a class="headerlink" href="#module-emulsion.tools.parallel" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Tools for parallel computing.</p>
@@ -1852,7 +1851,7 @@ MUlti-Level SImulatiONs).</p>
 
 </section>
 <section id="module-emulsion.tools.plot">
-<span id="emulsion-tools-plot-module"></span><h2>emulsion.tools.plot module<a class="headerlink" href="#module-emulsion.tools.plot" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-tools-plot-module"></span><h2>emulsion.tools.plot module<a class="headerlink" href="#module-emulsion.tools.plot" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Plotting tools… to be improved!</p>
@@ -1877,7 +1876,7 @@ MUlti-Level SImulatiONs).</p>
 <dd><p>Return a bokeh figure based on the representation of the states in
 the <em>counts</em> dataframe, with the associated colors.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>counts</strong> – a Pandas dataframe containing the values to plot</p></li>
 <li><p><strong>cols</strong> (<em>dict</em>) – dictionary which maps state/variable names to colors</p></li>
@@ -1888,7 +1887,7 @@ the <em>counts</em> dataframe, with the associated colors.</p>
 the field containing each legend items.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A bokeh gridplot (reduced to one figure a the herd level, one
 figure per herd at metapopulation level).</p>
 </dd>
@@ -1901,10 +1900,10 @@ figure per herd at metapopulation level).</p>
 <dd><p>Return a bokeh figure based on the representation of the state
 machine, with the associated colors.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>machine</strong> – the state machine to which the states are related</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A bokeh gridplot.</p>
 </dd>
 </dl>
@@ -1920,9 +1919,9 @@ saved.</p>
 </dd></dl>
 
 </section>
-<section id="module-5">
-<span id="emulsion-tools-preprocessor-module"></span><h2>emulsion.tools.preprocessor module<a class="headerlink" href="#module-5" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.tools.preprocessor"></span><p>Tools for providing generic preprocessor classes.</p>
+<section id="module-emulsion.tools.preprocessor">
+<span id="emulsion-tools-preprocessor-module"></span><h2>emulsion.tools.preprocessor module<a class="headerlink" href="#module-emulsion.tools.preprocessor" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-5"></span><p>Tools for providing generic preprocessor classes.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.tools.preprocessor.EmulsionPreprocessor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.preprocessor.</span></span><span class="sig-name descname"><span class="pre">EmulsionPreprocessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simulation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_based_parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/preprocessor.html#EmulsionPreprocessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.preprocessor.EmulsionPreprocessor" title="Permalink to this definition">¶</a></dt>
@@ -1949,9 +1948,9 @@ saved.</p>
 </dd></dl>
 
 </section>
-<section id="module-6">
-<span id="emulsion-tools-simulation-module"></span><h2>emulsion.tools.simulation module<a class="headerlink" href="#module-6" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.tools.simulation"></span><p>Tools for providing generic simulation classes.</p>
+<section id="module-emulsion.tools.simulation">
+<span id="emulsion-tools-simulation-module"></span><h2>emulsion.tools.simulation module<a class="headerlink" href="#module-emulsion.tools.simulation" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-6"></span><p>Tools for providing generic simulation classes.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.tools.simulation.OutputManager">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.simulation.</span></span><span class="sig-name descname"><span class="pre">OutputManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'counts.csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'log.txt'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/simulation.html#OutputManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.simulation.OutputManager" title="Permalink to this definition">¶</a></dt>
@@ -1986,15 +1985,15 @@ directory where outputs will be stored.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.tools.simulation.AbstractSimulation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.simulation.</span></span><span class="sig-name descname"><span class="pre">AbstractSimulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stock_agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'outputs/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_agent_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_from_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_to_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/simulation.html#AbstractSimulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.simulation.AbstractSimulation" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.simulation.</span></span><span class="sig-name descname"><span class="pre">AbstractSimulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stock_agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'outputs/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_agent_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_from_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_to_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/simulation.html#AbstractSimulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.simulation.AbstractSimulation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Abstract class from which any simulation class inherits.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="emulsion.tools.simulation.AbstractSimulation.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stock_agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'outputs/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_agent_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_from_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_to_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/simulation.html#AbstractSimulation.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.simulation.AbstractSimulation.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stock_agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'outputs/'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_agent_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">load_from_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_to_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shared_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/simulation.html#AbstractSimulation.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.simulation.AbstractSimulation.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the simulation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>start_id</strong> – ID of the (first) simulation</p></li>
 <li><p><strong>model</strong> – instance of the model to run</p></li>
@@ -2029,7 +2028,7 @@ between several simulations (without reloading them)</p></li>
 <dd><p>Operations to perform at each time step. Should be defined in
 subclasses.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>steps</strong> – </p>
 </dd>
 </dl>
@@ -2062,7 +2061,7 @@ before of after loading data-based parameters.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.tools.simulation.Simulation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.simulation.</span></span><span class="sig-name descname"><span class="pre">Simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simu_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nocount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/simulation.html#Simulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.simulation.Simulation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.tools.simulation.AbstractSimulation" title="emulsion.tools.simulation.AbstractSimulation"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSimulation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.tools.simulation.AbstractSimulation" title="emulsion.tools.simulation.AbstractSimulation"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.tools.simulation.AbstractSimulation</span></code></a></p>
 <p>Simulation class is aimed at running one repetition of a given
 model (for several repetitions, use <cite>MultiSimulation</cite>).</p>
 <dl class="py method">
@@ -2070,7 +2069,7 @@ model (for several repetitions, use <cite>MultiSimulation</cite>).</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simu_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nocount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/simulation.html#Simulation.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.simulation.Simulation.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an instance of simulation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>steps</strong> – number of time steps to run</p></li>
 <li><p><strong>simu_id</strong> – ID of the simulation</p></li>
@@ -2102,7 +2101,7 @@ model (for several repetitions, use <cite>MultiSimulation</cite>).</p>
 <span class="sig-name descname"><span class="pre">evolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/simulation.html#Simulation.evolve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.simulation.Simulation.evolve" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make the target agent evolve.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>steps</strong> – the number of time steps to run</p>
 </dd>
 </dl>
@@ -2127,7 +2126,7 @@ and NO column steps for inter herd</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.tools.simulation.MultiSimulation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.simulation.</span></span><span class="sig-name descname"><span class="pre">MultiSimulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multi_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_simu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nocount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dparams</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/simulation.html#MultiSimulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.simulation.MultiSimulation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.tools.simulation.AbstractSimulation" title="emulsion.tools.simulation.AbstractSimulation"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSimulation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.tools.simulation.AbstractSimulation" title="emulsion.tools.simulation.AbstractSimulation"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.tools.simulation.AbstractSimulation</span></code></a></p>
 <p>MultiSimulation can handle multiple repetitions of a given model.
 For sensibility study (same model with different values of variables),
 please check out SensitivitySimulation.</p>
@@ -2144,7 +2143,7 @@ model.</p>
 <dd><p>Operations to perform at each time step. Should be defined in
 subclasses.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>steps</strong> – </p>
 </dd>
 </dl>
@@ -2171,7 +2170,7 @@ subclasses.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.tools.simulation.SensitivitySimulation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.simulation.</span></span><span class="sig-name descname"><span class="pre">SensitivitySimulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scenario_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_multi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/simulation.html#SensitivitySimulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.simulation.SensitivitySimulation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#emulsion.tools.simulation.AbstractSimulation" title="emulsion.tools.simulation.AbstractSimulation"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractSimulation</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#emulsion.tools.simulation.AbstractSimulation" title="emulsion.tools.simulation.AbstractSimulation"><code class="xref py py-class docutils literal notranslate"><span class="pre">emulsion.tools.simulation.AbstractSimulation</span></code></a></p>
 <p>SensitivitySimulation can handle sensibility study with a given
 pandas DataFrame of parameters or a path linked with file which contains
 scenarios of parameters. Then it will be transformed to a dictionary of
@@ -2190,7 +2189,7 @@ scenario in the <code class="docutils literal notranslate"><span class="pre">`d_
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scenario_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_multi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">others</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/simulation.html#SensitivitySimulation.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.simulation.SensitivitySimulation.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the simulation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>start_id</strong> – ID of the (first) simulation</p></li>
 <li><p><strong>model</strong> – instance of the model to run</p></li>
@@ -2238,9 +2237,9 @@ between several simulations (without reloading them)</p></li>
 </dd></dl>
 
 </section>
-<section id="module-7">
-<span id="emulsion-tools-state-module"></span><h2>emulsion.tools.state module<a class="headerlink" href="#module-7" title="Permalink to this heading">¶</a></h2>
-<span class="target" id="module-emulsion.tools.state"></span><p>This module defines:</p>
+<section id="module-emulsion.tools.state">
+<span id="emulsion-tools-state-module"></span><h2>emulsion.tools.state module<a class="headerlink" href="#module-emulsion.tools.state" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-7"></span><p>This module defines:</p>
 <ul class="simple">
 <li><p>a class <code class="docutils literal notranslate"><span class="pre">StateVarDict</span></code> which is a special auto-referential
 dictionary to handle state variables</p></li>
@@ -2284,8 +2283,8 @@ the agent’s host (if any).</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="emulsion.tools.state.EmulsionEnum">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.state.</span></span><span class="sig-name descname"><span class="pre">EmulsionEnum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/state.html#EmulsionEnum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.state.EmulsionEnum" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">emulsion.tools.state.</span></span><span class="sig-name descname"><span class="pre">EmulsionEnum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/emulsion/tools/state.html#EmulsionEnum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#emulsion.tools.state.EmulsionEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
 <p>This class represents enumerations for states of state machines in
 EMULSION. They are endowed with some special features:</p>
 <ol class="arabic simple">
@@ -2299,7 +2298,7 @@ greater than <code class="docutils literal notranslate"><span class="pre">None</
 
 </section>
 <section id="module-emulsion.tools.timing">
-<span id="emulsion-tools-timing-module"></span><h2>emulsion.tools.timing module<a class="headerlink" href="#module-emulsion.tools.timing" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-tools-timing-module"></span><h2>emulsion.tools.timing module<a class="headerlink" href="#module-emulsion.tools.timing" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Tools for performance assessment.</p>
@@ -2311,7 +2310,7 @@ MUlti-Level SImulatiONs).</p>
 
 </section>
 <section id="module-emulsion.tools.view">
-<span id="emulsion-tools-view-module"></span><h2>emulsion.tools.view module<a class="headerlink" href="#module-emulsion.tools.view" title="Permalink to this heading">¶</a></h2>
+<span id="emulsion-tools-view-module"></span><h2>emulsion.tools.view module<a class="headerlink" href="#module-emulsion.tools.view" title="Permalink to this headline">¶</a></h2>
 <p>A Python implementation of the EMuLSion framework (Epidemiologic
 MUlti-Level SImulatiONs).</p>
 <p>Tools for data / map visualization.</p>
@@ -2421,7 +2420,7 @@ stored in that file.</p>
     </form>
     </div>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<script>$('#searchbox').show(0);</script>
 
 
 
@@ -2438,7 +2437,7 @@ stored in that file.</p>
       &copy;2016, INRAE and Univ. Lille.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

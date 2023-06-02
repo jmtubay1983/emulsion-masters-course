@@ -1,13 +1,15 @@
 digraph {
+          charset="utf-8"
         	rankdir=LR;
+        
         	node[fontsize=16, fontname=Arial, shape=box, style="filled,rounded"];
-        	edge[minlen=1.5, penwidth=1.5, tailtooltip="", headtooltip=""];
+        	edge[minlen=1.5, fontname=Times, penwidth=1.5, tailtooltip="", headtooltip=""];
 
         	"G" [shape="Mrecord", label="G&nbsp;&#9719;", tooltip="G (Gestating):
-	state for gestating animals", fillcolor=green, style="filled,rounded"] ;
+	state for gestating animals", fillcolor="green", style="filled,rounded"] ;
 	"NG" [shape="Mrecord", label="NG&nbsp;&#9719;", tooltip="NG (NonGestating):
-	state for empty animals", fillcolor=cyan, style="filled,rounded,bold"] ;
-	"G" -> "NG" [label="proba: 1", labeltooltip="proba: 1", arrowtail="none", arrowhead="normalnonediamond", dir=both, tooltip="", minlen=3, style="solid"];
+	state for empty animals", fillcolor="cyan", style="filled,rounded,bold"] ;
+	"G" -> "NG" [label="amount-all-but: 0", labeltooltip="amount-all-but: 0", arrowtail="none", arrowhead="normalnonediamond", dir=both, tooltip="", minlen=3, style="solid"];
 	"G" -> "NG" [label="proba: daily_abortion", labeltooltip="daily_abortion [parameter]:
 	daily probability that an infected animal aborts during gestation       
 	1 - (1 - global_abortion)**(1/gestation_duration)", arrowtail="noneoinv", arrowhead="normalnonediamond", dir=both, tooltip="ESCAPE: is_I", minlen=3, style="solid"];

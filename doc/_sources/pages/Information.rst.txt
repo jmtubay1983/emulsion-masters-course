@@ -15,7 +15,7 @@ Contributors and contact
 .. image:: https://img.shields.io/twitter/follow/bioepar_dynamo?label=DYNAMO%20research%20group&style=plastic&logo=twitter
    :target: http://twitter.com/intent/follow?screen_name=bioepar_dynamo
 
-INRAE, Oniris, BIOEPAR, 44300 Nantes, France
+Oniris, INRAE, BIOEPAR, 44300 Nantes, France
 
 How to cite
 ***********
@@ -30,37 +30,55 @@ publishing, with a reference to the following article:
    stochastic models in human, animal and plant epidemiology", PLoS
    Computational Biology 15(9): e1007342.
 
-   DOI: `10.1371/journal.pcbi.1007342 <https://doi.org/10.1371/journal.pcbi.1007342>`_
+   .. raw:: html
+
+      <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+      <span data-badge-popover="right" data-badge-type="donut" data-doi="10.1371/journal.pcbi.1007342" data-hide-no-mentions="true" class="altmetric-embed"></span><span style="vertical-align: top;line-height:70px;display: inline-block;">&nbsp;DOI: <A HREF="https://doi.org/10.1371/journal.pcbi.1007342">10.1371/journal.pcbi.1007342</A><P></span>
 
    .. literalinclude:: ../_static/how_to_cite.bib
+
+Educational Resources
+*********************
+
+- `On-line doctoral training on EMULSION <https://forgemia.inra.fr/dynamo/software/emulsion-training>`_, providing an online virtual machine through Binder
 
 
 Selected publications
 *********************
 
-- On Swine influenza virus in batch-rearing pig farms:
+- On **bovine respiratory disease (BRD)** in fattening farms:
 
-  V. Sicard, M. Andraud, S. Picault (2022). "Coupling spatial and temporal structure
-  in batch rearing modeling for understanding the spread of the swine influenza A virus",
-  *Proceedings of the Conference of the Society for Veterinary Epidemiology and Preventive
-  Medicine (SVEPM)*
+  - S. Picault, P. Ezanno, K. Smith, D. Amrine, B. White, S. Assié (2022). "Modelling the
+    effects of antimicrobial metaphylaxis and pen size on bovine respiratory disease in high
+    and low risk fattening cattle", *Veterinary Research* **53**:77,
 
-- On bovine respiratory disease (BRD) in fattening farms:
+    DOI: `10.1186/s13567-022-01094-1 <https://doi.org/10.1186/s13567-022-01094-1>`_
 
-  S. Picault, P. Ezanno, S. Assié (2019). "Combining early hyperthermia detection
-  with metaphylaxis for reducing antibiotics usage in newly received beef bulls at
-  fattening operations: a simulation-based approach", *Proceedings of the Conference
-  of the Society for Veterinary Epidemiology and Preventive Medicine (SVEPM)*, p. 148-159
+  - S. Picault, P. Ezanno, S. Assié (2019). "Combining early hyperthermia detection
+    with metaphylaxis for reducing antibiotics usage in newly received beef bulls at
+    fattening operations: a simulation-based approach", *Proceedings of the Conference
+    of the Society for Veterinary Epidemiology and Preventive Medicine (SVEPM)*, p. 148-159
 
-- On the generation of synthetic epidemiological data for a modelling challenge:
+    `author version on HAL <https://hal.science/hal-01987110>`_
 
-  S. Picault, T. Vergne, M. Mancini, S. Bareille, P. Ezanno (2022). "The African
-  swine fever modelling challenge: Objectives, model description and synthetic data
-  generation", *Epidemics* 40
+- On **Swine influenza** virus in batch-rearing pig farms:
 
-  DOI: `10.1016/j.epidem.2022.100616 <https://doi.org/10.1016/j.epidem.2022.100616>`_
+  - V. Sicard, M. Andraud, S. Picault (2022). "Coupling spatial and temporal structure
+    in batch rearing modeling for understanding the spread of the swine influenza A virus",
+    *Proceedings of the Conference of the Society for Veterinary Epidemiology and Preventive
+    Medicine (SVEPM)*
 
-- On Q fever (Coxiellosis) in dairy herds:
+    `author version on HAL <https://hal.inrae.fr/hal-03790020v1>`_
+
+- On the **generation of synthetic epidemiological data** for the first modelling challenge in animal health (ASF Challenge):
+
+  - S. Picault, T. Vergne, M. Mancini, S. Bareille, P. Ezanno (2022). "The African
+    swine fever modelling challenge: Objectives, model description and synthetic data
+    generation", *Epidemics* 40
+
+    DOI: `10.1016/j.epidem.2022.100616 <https://doi.org/10.1016/j.epidem.2022.100616>`_
+
+- On **Q fever** (Coxiellosis) in dairy herds:
 
   ..
      - S. Picault, Y.-L. Huang, V. Sicard, T. Hoch, E. Vergu,
@@ -80,12 +98,14 @@ Selected publications
 
     DOI: `10.1007/978-3-319-59930-4_17 <https://doi.org/10.1007/978-3-319-59930-4_17>`_
 
-- On Artificial Intelligence research involved in EMULSION:
+- On **Artificial Intelligence** research involved in EMULSION:
 
   - V. Sicard, M. Andraud, S. Picault (2022). "A declarative modelling language
     for the design of complex structured agent-based epidemiological models",
     *Proceedings of the 20th International Conference on Practical Applications
     of Agents and Multi-Agent Systems (PAAMS)*, Springer.
+
+    DOI: `10.1007/978-3-031-18192-4_31 <https://doi.org/10.1007/978-3-031-18192-4_31>`_
 
   - V. Sicard, M. Andraud, S. Picault (2021). "Organization as a multi-level
     design pattern for agent-based simulation of complex systems",
@@ -117,29 +137,32 @@ Selected publications
     DOI: `10.5591/978-1-57735-516-8/IJCAI11-065 <https://doi.org/10.5591/978-1-57735-516-8/IJCAI11-065>`_
 
 
-Acknowledgements
-****************
+Funding
+*******
 
 This work was carried out with the financial support of:
 
-  - INRAE, the French National Research Institute for Agriculture,
-    Food and Environment:
+- INRAE, the French National Research Institute for Agriculture, Food and Environment:
 
-    - Animal Health Division
-    - Partnerships and Innovation Transfer Division
+  - Animal Health Division
+  - Partnerships and Innovation Transfer Division ("DPTI")
 
-  - the European Union:
+- the European Union:
 
-    - the European fund for the regional development (FEDER) of Pays de la Loire
-    - project H2020 DECIDE (101000494)
+  - the European fund for the regional development (FEDER) of Pays de la Loire
+  - project H2020 DECIDE (101000494)
 
-  - the French Research Agency (ANR):
+- the French Research Agency (ANR):
 
-    - Program Investments for the Future, project ANR-10-BINF-07 (MIHMES)
-    - project ANR-16-CE32-0007-01 (CADENCE)
+  - Program Investments for the Future, project ANR-10-BINF-0007 (MIHMES)
+  - project ANR-16-CE32-0007-01 (CADENCE)
 
-  - the French Région Pays de la Loire: PULSAR grant
-  - the Carnot Institute "France Futur Élevage" (SEPTIME)
-  - the For and On Regional Development (PSDR) French research programme, funded by
-    INRAE and the French regions of Bretagne, Pays de la Loire, Normandie and Nouvelle
-    Aquitaine (SANT'Innov)
+- the French Région Pays de la Loire:
+
+  - PULSAR grant
+  - CAENOME Ph.D. grant
+
+- the Carnot Institute "France Futur Élevage" (SEPTIME project)
+- the For and On Regional Development (PSDR) French research programme, funded by
+  INRAE and the French regions of Bretagne, Pays de la Loire, Normandie and Nouvelle
+  Aquitaine (SANT'Innov)
