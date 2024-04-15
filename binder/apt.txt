@@ -1,2 +1,2 @@
 graphviz
-bash-completion
+# bash-completion
